@@ -14,6 +14,7 @@ function App() {
       <Route path = "/login" element = {<LoginPage />}/>
       <Route path = "/join" element = {<JoinPage />}/>
       <Route path = "/write" element = {<WritePage />}/>
+      <Route path = "/write" element = {<WritePage />}/>
     </Routes>
   );
 }

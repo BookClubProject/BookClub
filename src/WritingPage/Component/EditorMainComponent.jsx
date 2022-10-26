@@ -53,7 +53,7 @@ class EditorComponent extends Component {
   render() {
     const { value, onChange } = this.props;
     return (
-      <div style = {{display : "flex", flex : "1.5",}}>
+      <div style = {{display : "flex", flex : "1.7",}}>
         <div class = "main-left">{/**왼쪽 공백 색깔 */}
           </div>
         <div style={{ height: "600px", width : "400%"}}>{/**여기 높이 올리면 footer랑 간격 높아짐 */}

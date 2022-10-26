@@ -1,7 +1,5 @@
 .book-container{
     width : 100%;
-    border : 1px solid #dee2e6;
-    background-color: rgb(245, 245, 245);
 }
 .book-thumnail{
     width : 200px;
@@ -22,11 +20,38 @@
 .book-and-search-form{
     display : flex;
     border : 1px solid black;
-    margin : 10px;
-    width : 38.7%;
-    position : fixed;
+    margin-left : 10px;
+    margin-right : 10px;
+    width : 97%;
     background-color: white;
 }
 .detail-container{
     width : 100%;
+}
+.reserve-container{
+    width:100%;
+    border : 1px solid black;
+    margin : 10px;
+    width : 97%;
+    background-color: white;
+}
+.reserve-calender-time{
+    margin-left:20px;
+    margin-top:10px;
+}
+.react-date-picker .react-date-picker--closed .react-date-picker--enabled{  
+    height : 35px;
+}
+.react-date-picker__wrapper{
+    border-radius: 5px;
+}
+.time-picker{
+    margin-left: 15px;
+}
+.react-timerange-picker{
+    height : 37px;
+    border-radius: 5px;
+}
+.react-timerange-picker__wrapper{
+    border-radius: 5px;
 }

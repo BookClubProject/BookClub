@@ -1,6 +1,7 @@
 import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
 import EditorComponent from "./Component/EditorMainComponent";
-import EditorRightTopComponent from "./Component/EditorRightTopComponent"
+import EditorRightTopComponent from "./Component/EditorRightTopComponent";
+import EditorRightBottomComponent from "./Component/EditorRightBottomComponent";
 import Address from "./Component/AddressSearchComponent";
 import Search from "./Component/SearchConent";
 import Bottom from "../PublicComponent/BottomComponent";
@@ -16,6 +17,9 @@ const styles = {
         color: "black",
         fontSize: 16,
     },
+    line : {
+        border : "1px solid black",
+    }
 };
 
 
@@ -29,9 +33,13 @@ function WritePage(){
     return(
         <div style = {styles.wrapper}>
         <TopMenuBarComponent />
+        <div style = {styles.line}/>
         <div style = {{display : "flex", flexWrap: "wrap"}}>
         <EditorComponent value={desc} onChange={onEditorChange}/>
-        <EditorRightTopComponent/>
+            <div style = {{border : "1px solid #dee2e6", backgroundColor: "rgb(245, 245, 245)", height : "5000px"}}>
+                <EditorRightTopComponent/>
+                <EditorRightBottomComponent/>
+            </div>
         </div>
         <Bottom />
         </div>
