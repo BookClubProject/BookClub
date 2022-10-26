@@ -30,6 +30,8 @@ function TopMenuComponent(){
                 <span class = "mypage">마이페이지</span>
             </div>
             <hr class = "line" size="1" color="red"></hr>
+
+          {/*상단 홈페이지로 이동, 도서검색, 캘린더 등 모여있는 것*/}
         <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
@@ -51,6 +53,7 @@ function TopMenuComponent(){
             </NavDropdown>
           </Nav>
 
+          {/*캘린더*/}
           <Form className="d-flex">
             <NavDropdown 
             align="end"
@@ -71,6 +74,8 @@ function TopMenuComponent(){
                 </Button>
                 </div>
             </NavDropdown>
+
+            {/*도서검색*/}
             <Form.Control
               type="search"
               placeholder="도서검색"
@@ -78,7 +83,8 @@ function TopMenuComponent(){
               aria-label="Search"
             />
           </Form>
-          <Button variant="outline-success" class = "login-button">Search</Button>
+          <Button variant="outline-success" class = "login-button">검색</Button>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>

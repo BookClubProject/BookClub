@@ -1,5 +1,8 @@
 import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
-import EditorComponent from "./Component/EditorComponent";
+import EditorComponent from "./Component/EditorMainComponent";
+import EditorRightTopComponent from "./Component/EditorRightTopComponent"
+import Address from "./Component/AddressSearchComponent";
+import Search from "./Component/SearchConent";
 import Bottom from "../PublicComponent/BottomComponent";
 import {useState} from "react";
 
@@ -26,7 +29,10 @@ function WritePage(){
     return(
         <div style = {styles.wrapper}>
         <TopMenuBarComponent />
-        <EditorComponent value={desc} onChange={onEditorChange} />
+        <div style = {{display : "flex", flexWrap: "wrap"}}>
+        <EditorComponent value={desc} onChange={onEditorChange}/>
+        <EditorRightTopComponent/>
+        </div>
         <Bottom />
         </div>
     );
