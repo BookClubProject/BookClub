@@ -8,6 +8,8 @@ import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
 import Search from "./SearchComponent";
 import "../Write.css";
 
+const { kakao } = window;
+
 const styles = {
     wrapper : {
         position : "relative",
@@ -17,14 +19,28 @@ function EditorRightBottomComponent(){
 
     {/*토글버튼관련*/}
     const [state, setChecked] = useState(true);
+    let a = '0';
     const onOffChange = () =>{
-        if(state === false) setChecked(true);
-        else setChecked(false);
+        if(state === false) {
+            setChecked(true);
+            a = '1';
+        }
+        else {
+            setChecked(false);
+            a = '0';
+        }
     }
+
+    useEffect (()=>{
+        console.log('나타남');
+        return() => {
+            console.log('안나타남');
+        };
+    }, [a]);
 
     {/**달력 */}
     const [value, onChange] = useState(new Date());
-    
+    {/**시계 */}
     const [valueTime, onChangeTime] = useState(['10:00', '11:00']);
 
     return(
@@ -108,6 +124,7 @@ function EditorRightBottomComponent(){
                 id="small-radius-switch"
                 />
             </label>
+            <button type="submit" class = "add-club">모임추가</button>
             </div>
 
             <div class = "reserve-calender-time">
@@ -124,12 +141,13 @@ function EditorRightBottomComponent(){
                     hourPlaceholder = "시"
                     minutePlaceholder = "분"
                     rangeDivider = "~"
-                    disableClock = {false}
+                    disableClock = {true}
                     onChange={onChangeTime} value={valueTime} 
                     />
                 </span>
             </div>
-            <Search />
+            { !state && <Search /> }
+            {state && <div>askdlaskld</div>}
             </div>
         </div>
         </StickyBox>
