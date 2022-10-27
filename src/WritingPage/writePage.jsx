@@ -2,7 +2,6 @@ import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
 import EditorComponent from "./Component/EditorMainComponent";
 import EditorRightTopComponent from "./Component/EditorRightTopComponent";
 import EditorRightBottomComponent from "./Component/EditorRightBottomComponent";
-import Address from "./Component/AddressSearchComponent";
 import Bottom from "../PublicComponent/BottomComponent";
 import {useState} from "react";
 

@@ -5,7 +5,7 @@ import Switch from "react-switch";
 import DatePicker from 'react-date-picker';
 import calendar from '../../ImageSource/calendar.png';
 import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
-import Search from "./SearchComponent";
+import Search from "./SearchPlaceComponent";
 import "../Write.css";
 
 const { kakao } = window;
@@ -30,13 +30,6 @@ function EditorRightBottomComponent(){
             a = '0';
         }
     }
-
-    useEffect (()=>{
-        console.log('나타남');
-        return() => {
-            console.log('안나타남');
-        };
-    }, [a]);
 
     {/**달력 */}
     const [value, onChange] = useState(new Date());
@@ -147,7 +140,12 @@ function EditorRightBottomComponent(){
                 </span>
             </div>
             { !state && <Search /> }
-            {state && <div>askdlaskld</div>}
+            {state && 
+            <pre class = "information">
+                온라인의 경우 글쓴이(?)가 직접 신청자들에게<br/>
+                문자나 메시지로 화상회의 링크를 전달해주셔야 합니다.<br/>
+                신청자들의 번호나 메시지는 저희측에서 글쓴이에게 제공해드립니다.<br/>
+            </pre>}
             </div>
         </div>
         </StickyBox>
