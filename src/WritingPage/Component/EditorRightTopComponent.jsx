@@ -46,7 +46,6 @@ function EditorRightTopComponent(){
           />
 
         {/**책 표지 옆 세부사항 감싸는 컨테이너 */}
-        
         <div class = "detail-container">
           {/*검색*/}
           <div class = "search-form">

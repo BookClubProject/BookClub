@@ -58,7 +58,7 @@ function TopMenuComponent(){
             <NavDropdown 
             align="end"
             id="basic-nav-dropdown"
-            flip
+          
             title = {
             <div className = "image">
             <img src={calendar} id = "calendar"/>

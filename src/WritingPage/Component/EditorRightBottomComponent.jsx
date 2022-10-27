@@ -5,6 +5,7 @@ import Switch from "react-switch";
 import DatePicker from 'react-date-picker';
 import calendar from '../../ImageSource/calendar.png';
 import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
+import Search from "./SearchComponent";
 import "../Write.css";
 
 const styles = {
@@ -30,24 +31,6 @@ function EditorRightBottomComponent(){
         <StickyBox offsetTop={340}>
         <div style = {styles.wrapper}>
             <div class = "reserve-container">
-
-            <div class = "reserve-calender-time">
-                <span class = "date-picker">
-                    <DatePicker
-                    onChange={onChange} value={value} 
-                    calendarIcon = {<img src = {calendar} style = {{width : "27px"}}/>}
-                    />
-                </span>
-                <span class = "time-picker">
-                    <TimeRangePicker 
-                    hourPlaceholder = "시"
-                    minutePlaceholder = "분"
-                    rangeDivider = "~"
-                    disableClock = "true"
-                    onChange={onChangeTime} value={valueTime} 
-                    />
-                </span>
-            </div>
 
             {/*온라인 오프라인 설정*/} 
             <div className="example">
@@ -126,6 +109,27 @@ function EditorRightBottomComponent(){
                 />
             </label>
             </div>
+
+            <div class = "reserve-calender-time">
+                 {/*날짜설정*/} 
+                <span class = "date-picker">
+                    <DatePicker
+                    onChange={onChange} value={value} 
+                    calendarIcon = {<img src = {calendar} style = {{width : "27px"}}/>}
+                    />
+                </span>
+                {/*시간설정*/} 
+                <span class = "time-picker">
+                    <TimeRangePicker 
+                    hourPlaceholder = "시"
+                    minutePlaceholder = "분"
+                    rangeDivider = "~"
+                    disableClock = {false}
+                    onChange={onChangeTime} value={valueTime} 
+                    />
+                </span>
+            </div>
+            <Search />
             </div>
         </div>
         </StickyBox>

@@ -3,7 +3,6 @@ import EditorComponent from "./Component/EditorMainComponent";
 import EditorRightTopComponent from "./Component/EditorRightTopComponent";
 import EditorRightBottomComponent from "./Component/EditorRightBottomComponent";
 import Address from "./Component/AddressSearchComponent";
-import Search from "./Component/SearchConent";
 import Bottom from "../PublicComponent/BottomComponent";
 import {useState} from "react";
 

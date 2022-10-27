@@ -36,7 +36,7 @@
     background-color: white;
 }
 .reserve-calender-time{
-    margin-left:20px;
+    margin-left:8px;
     margin-top:10px;
 }
 .react-date-picker .react-date-picker--closed .react-date-picker--enabled{  
@@ -46,7 +46,7 @@
     border-radius: 5px;
 }
 .time-picker{
-    margin-left: 15px;
+    margin-left: 10px;
 }
 .react-timerange-picker{
     height : 37px;
@@ -54,4 +54,8 @@
 }
 .react-timerange-picker__wrapper{
     border-radius: 5px;
+}
+.react-switch{
+    margin-top : 10px;
+    margin-left : 10px;
 }
