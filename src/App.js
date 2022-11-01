@@ -4,7 +4,7 @@ import HomePage from "./HomePage/homePage";
 import LoginPage from "./LoginJoinPage/loginPage.jsx"
 import JoinPage from "./LoginJoinPage/joinPage.jsx"
 import WritePage from "./WritingPage/writePage.jsx"
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 
 
 function App() {
