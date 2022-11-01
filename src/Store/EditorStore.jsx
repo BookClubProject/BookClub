@@ -1,12 +1,10 @@
 import {createStore} from "redux";
 
-const ADD = "calendar";
-const DELETE = "time";
 
 
 const addPlan = (calendar, time) =>{
     return{
-        type : addPlan,
+        type : "ADD",
         calendar,
         time,
     };
@@ -14,14 +12,14 @@ const addPlan = (calendar, time) =>{
 
 const deletePlan = (id) =>{
     return{
-        type : DELETE,
-        id
+        type : "DELETE",
+        id : parseInt(id)
     };
 };
 
 const reducer = (plan = [''], action) =>{
     switch(action.type){
-        case addPlan : {
+        case "ADD" : {
             return [
                 {
                     calendar : action.calendar.toString(),
@@ -30,8 +28,8 @@ const reducer = (plan = [''], action) =>{
                 }, ...plan
             ]
         }
-        case deletePlan : {
-            return plan.filter(toDo => toDo != action.id);
+        case "DELETE" : {
+            return plan.filter(minusPlan => minusPlan.id !== action.id);
         }
         default:
             return plan; 

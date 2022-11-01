@@ -3,10 +3,13 @@ import {actionCreators} from "../../Store/EditorStore";
 import React, {useRef, useState, useEffect} from "react";
 import StickyBox from "react-sticky-box";
 import Switch from "react-switch";
-import DatePicker from 'react-date-picker';
+import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import calendarImage from '../../ImageSource/calendar.png';
 import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
 import Search from "./SearchPlaceComponent";
+import { ko } from "date-fns/esm/locale";
+import { getMonth, getDate, getDay } from "date-fns";
+import "react-datepicker/dist/react-datepicker.css";
 import "../Write.css";
 
 
@@ -30,16 +33,20 @@ function EditorRightBottomComponent({dispatch}){
     }
 
     {/**달력 */}
-    const [calendar, onChange] = useState(new Date());
+    const [calendar, setCalendar] = useState(new Date());
     {/**시계 */}
     const [Time, onChangeTime] = useState(['10:00', '11:00']);
-
 
     const [list, setList] = useState([]);
 
     const addList = () => {
-        setList((t) => [...t, `${calendar}`, `${Time}`]);
-        dispatch(actionCreators.addPlan(calendar, Time))
+        let Days = ['일', '월', '화', '수', '목', '금', '토'];
+        let Month = getMonth(calendar) + 1;
+        let Date = getDate(calendar);
+        let Day = Days[getDay(calendar)]; 
+        dispatch(actionCreators.addPlan((String(Month + "." + Date + " (" + Day + ")")), Time));
+
+        {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
       };
    
     return(
@@ -131,10 +138,12 @@ function EditorRightBottomComponent({dispatch}){
             <div class = "reserve-calender-time">
                  {/*날짜설정*/} 
                 <span class = "date-picker">
-                    <DatePicker
-                    onChange={onChange} value={calendar} 
-                    calendarIcon = {<img src = {calendarImage} style = {{width : "27px"}}/>}
-                    />
+                     <DatePicker
+                     className="calendar-container" 
+                     selected={calendar} 
+                     onChange={date => setCalendar(date)}
+                     dateFormat="yyyy.MM.dd (eee)"
+                     locale={ko} />
                 </span>
                 {/*시간설정*/} 
                 <span class = "time-picker">
