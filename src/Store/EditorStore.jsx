@@ -2,6 +2,8 @@ import {createStore} from "redux";
 
 
 
+
+
 const addPlan = (calendar, time) =>{
     return{
         type : "ADD",
@@ -12,6 +14,7 @@ const addPlan = (calendar, time) =>{
 
 const deletePlan = (id) =>{
     return{
+
         type : "DELETE",
         id : parseInt(id)
     };

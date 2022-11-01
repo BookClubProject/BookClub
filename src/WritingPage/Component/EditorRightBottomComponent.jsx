@@ -1,3 +1,4 @@
+
 import {connect} from "react-redux";
 import {actionCreators} from "../../Store/EditorStore";
 import React, {useRef, useState, useEffect} from "react";
@@ -47,6 +48,7 @@ function EditorRightBottomComponent({dispatch}){
         dispatch(actionCreators.addPlan((String(Month + "." + Date + " (" + Day + ")")), Time));
 
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
+
       };
    
     return(
@@ -138,12 +140,14 @@ function EditorRightBottomComponent({dispatch}){
             <div class = "reserve-calender-time">
                  {/*날짜설정*/} 
                 <span class = "date-picker">
+
                      <DatePicker
                      className="calendar-container" 
                      selected={calendar} 
                      onChange={date => setCalendar(date)}
                      dateFormat="yyyy.MM.dd (eee)"
                      locale={ko} />
+
                 </span>
                 {/*시간설정*/} 
                 <span class = "time-picker">

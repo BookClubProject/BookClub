@@ -1,15 +1,12 @@
-import React from "react";
-import {useEffect, useState} from "react";
+
 import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
-import TopComponent from "./Component/TopViewComponent";
-import Bottom from "../PublicComponent/BottomComponent";
-import BookList from "./Component/FirstBookListComponent";
-import Second from "./Component/SecondBookListComponent";
-import Third from "./Component/ThirdBookListComponent";
+import Banner from "./Component/Banner";
+import BestSeller from "./Component/BestSeller";
 
 
 const styles = {
     wrapper : {
+        height:"100px",
         bottom: "0", /* 하단에 여백 없이 */
         width: "100%", /* 가로 사이즈를 브라우저에 가득 채움 */
     },
@@ -19,17 +16,13 @@ const styles = {
     },
 };
 
-
 function TopMenu(){
 
     return(
         <div style = {styles.wrapper}>
         <TopMenuBarComponent />
-        <TopComponent  />
-        <BookList />
-        <Second />
-        <Third />
-        <Bottom />
+        <Banner />
+        <BestSeller />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {actionCreators} from "../../Store/EditorStore";
+
 import { useDispatch } from 'react-redux'
 import "../Write.css";
 
@@ -30,6 +31,7 @@ function EditorLeft({storedPlan}){
 }
 
 {/** 여기서 리턴하면 props로 보내짐 */}
+
 {/** 스토어에서 정보 가져오는 코드 */}
 function mapStateToProps(plan){
     console.log(store);
