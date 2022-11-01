@@ -7,18 +7,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import calendar from '../ImageSource/calendar.png';
 import {Link} from "react-router-dom";
-
-import {
-  DatePicker,
-  DatePickerProvider,
-  useDatePickGetter,
-  useDatePickReset,
-} from '@bcad1591/react-date-picker';
-
+import DatePicker from 'react-date-picker';
+import "./TopMenuBarComponent.css"
 
 function TopMenuComponent(){
-    const { pickedDates } = useDatePickGetter();
-    const resetFunc = useDatePickReset();
 
     return(
         <div class = "top-menu-container">
@@ -67,11 +59,8 @@ function TopMenuComponent(){
                 <div>
                 <DatePicker disablePreviousDays />
                 <hr />
-                <div>{pickedDates.firstPickedDate?.toString()}</div>
-                <div>{pickedDates.secondPickedDate?.toString()}</div>
-                <Button variant="outline-success" onClick={resetFunc}>
-                    초기화
-                </Button>
+        
+              
                 </div>
             </NavDropdown>
 

@@ -1,10 +1,12 @@
 import React from "react";
+import "./BottomComponent"
 
 const styles = {
     wrapper : {
         padding: "30px 0",
-        background: "#333",
-        color: "#fff"
+        backgroundColor: "tomato",
+        color: "#fff",
+        
     },
 }
 function BottomComponent(){

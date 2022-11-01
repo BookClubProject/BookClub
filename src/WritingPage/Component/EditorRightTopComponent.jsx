@@ -81,7 +81,7 @@ function EditorRightTopComponent(){
                   placeholder="도서검색"
                   value={search}
                   onChange={handleChange}
-                  disabled='false'
+                  disabled={false}
               />
               <button type="submit" style = {styles.searchButton} onClick = {handleShow}>검색</button>
           </div>

@@ -1,18 +1,12 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// import required modules
-
 import SwiperCore, { Pagination, Autoplay, Navigation }  from "swiper/core";
-
-// Import Swiper styles
 import 'swiper/components/autoplay'
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-import "../homePage.css";
+import "../Homepage.css";
 
 SwiperCore.use([Pagination, Autoplay, Navigation]);
 
