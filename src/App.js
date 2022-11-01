@@ -4,6 +4,7 @@ import JoinPage from "./LoginJoinPage/joinPage.jsx";
 import WritePage from "./WritingPage/writePage.jsx";
 import {Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
    
