@@ -18,4 +18,9 @@ function Testt(){
         </div>
     );
 }
+
+function a()
+{
+    
+}
 export default Testt
