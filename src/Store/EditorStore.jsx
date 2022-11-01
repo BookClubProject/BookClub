@@ -1,51 +1,41 @@
 import {createStore} from "redux";
 
-const ADD = "calendar";
-const DELETE = "time";
 
 
-const addPlan = (calendar, Time) =>{
+
+
+const addPlan = (calendar, time) =>{
     return{
-        type : addPlan,
+        type : "ADD",
         calendar,
-        Time,
+        time,
     };
 };
 
 const deletePlan = (id) =>{
     return{
-        type : DELETE,
-        id
+
+        type : "DELETE",
+        id : parseInt(id)
     };
 };
 
-const initialstate = {
-    set :[
-        {
-            calendar : '',
-            time : '',
-            id : Date.now(),
-        }
-    ]
-}
-
-const reducer = (state = [''], action) =>{
-    console.log(addPlan);
+const reducer = (plan = [''], action) =>{
     switch(action.type){
-        case addPlan : {
+        case "ADD" : {
             return [
                 {
-                    calendar : action.calendar,
+                    calendar : action.calendar.toString(),
                     time : action.time,
                     id : Date.now()
-                }, ...state
+                }, ...plan
             ]
         }
-        case deletePlan : {
-            return state.filter(toDo => toDo != action.id);
+        case "DELETE" : {
+            return plan.filter(minusPlan => minusPlan.id !== action.id);
         }
         default:
-            return state; 
+            return plan; 
     }
 
 }

@@ -1,8 +1,9 @@
-import HomePage from "./HomePage/Homepage";
+import HomePage from "./HomePage/HomePage";
 import LoginPage from "./LoginJoinPage/loginPage.jsx";
 import JoinPage from "./LoginJoinPage/joinPage.jsx";
 import WritePage from "./WritingPage/writePage.jsx";
 import {Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
