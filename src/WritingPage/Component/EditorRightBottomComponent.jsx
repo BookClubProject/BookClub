@@ -36,9 +36,9 @@ function EditorRightBottomComponent({dispatch}){
     {/**달력 */}
     const [calendar, setCalendar] = useState(new Date());
     {/**시계 */}
-    const [Time, onChangeTime] = useState(['10:00', '11:00']);
+    const [Time, onChangeTime] = useState(['10:00 ', '11:00']);
 
-    const [list, setList] = useState([]);
+    {/**const [list, setList] = useState([]);*/}
 
     const addList = () => {
         let Days = ['일', '월', '화', '수', '목', '금', '토'];

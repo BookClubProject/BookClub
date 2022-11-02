@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import {actionCreators} from "../../Store/EditorStore";
-
 import { useDispatch } from 'react-redux'
 import "../Write.css";
+
 
 const styles = {
     button : {
@@ -11,21 +11,29 @@ const styles = {
         backgroundColor : "white",
         border : "1px solid green",
         marginLeft : "10px",
+    },
+    calender : {
+        marginRight : "5px"
+    },
+    time : {
+        textAlign : "justify",
+        width : "500px"
     }
 }
-let store;
 
 function EditorLeft({storedPlan}){  
     const dispatch = useDispatch()
     return (
         <div class = "main-left">{/**왼쪽 공백 색깔 */}
             {storedPlan.map((plan, index) => {
-            return <div key={index} class = "plan-container">
-                {plan.calendar}
-                {plan.time}
-                <button style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button>
-                </div>;
-            })}
+            return <div class="box">
+                        <div key={index} class = "plan-container">
+                        <span style = {styles.calender}>{plan.calendar}</span>
+                        <span style = {styles.time}>{plan.time}</span>
+                        <button style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button>
+                        </div>
+                    </div>;
+                })}
         </div>
     );
 }
@@ -34,7 +42,6 @@ function EditorLeft({storedPlan}){
 
 {/** 스토어에서 정보 가져오는 코드 */}
 function mapStateToProps(plan){
-    console.log(store);
     {/** props */}
     return {
         storedPlan : plan
