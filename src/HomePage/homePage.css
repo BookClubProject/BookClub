@@ -2,33 +2,37 @@ html,
 body {
   position: relative;
   height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
 
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
   color: rgb(0, 0, 0);
-  margin: 0;
-  padding: 0;
 }
-
+article {
+  display: block;
+}
+* {
+  outline: none;
+}
+/* 베스트 셀러 */
 .swiper {
   width: 100%;
   height: 100%;
 }
 .swiper-container{
-  background: rgb(37, 37, 134);
+  background: rgb(190, 190, 199);
   padding:10px;
 }
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: rgb(254, 254, 254);
   height: 300px;
 
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -42,7 +46,6 @@ body {
   -webkit-align-items: center;
   align-items: center;
 }
-
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -50,7 +53,7 @@ body {
   object-fit: cover;
 }
 .swiper-button-prev{
-  color : rgb(202, 28, 28);
+  color : rgb(0, 0, 0);
 }
 .swiper-button-next{
   color : black;
@@ -58,6 +61,68 @@ body {
 .swiper-pagination-bullet{
   color:black;
 }
+
+/* Content1 */
+
+.Content1{
+  background-color: #82e787;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top left;
+  padding: 18.9rem 0 0;
+}
+.Content1-session {
+  padding : 10rem 7.4rem 7rem;
+  background-color: white;
+  width: 124.2rem;
+  margin: auto;
+}
+
+.Maintitle {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 3.3rem !important;
+  white-space: nowrap;
+  color :black;
+}
+.Subtitle {
+  font-size: 1.8rem !important;
+  margin-top: 1.3rem;
+  white-space: nowrap;
+  color :black;
+}
+.Content-btn  {
+  display: block;
+  width: 70%;
+  font-size: 1.6rem;
+}
+.Content-btn ul {
+  display: flex;
+  list-style: none;
+  margin-top: 7rem;
+  align-items: center;
+}
+
+
+
+.Content2{
+  background-color: #4caf50;
+  width: 100%;
+  height: 100%;
+}
+.Content3{
+  background-color: #66bb6a;
+}
+.Content4{
+  background-color: #388e3c;
+}
+.Content5{
+  background-color: #2e7d32;
+}
+
+
+
+
+
 
 .book-list-title{
     font-size:large;
