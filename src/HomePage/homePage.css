@@ -65,7 +65,7 @@ article {
 /* Content1 */
 
 .Content1{
-  background-color: #82e787;
+  /* background-color: #82e787; */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top left;
@@ -102,6 +102,7 @@ article {
   align-items: center;
 }
 
+/* 카테고리 버튼*/
 .category_btn {
   margin: 0;
   border: none;
@@ -117,31 +118,43 @@ article {
     background:  #025ce2;
   } */
 }
-
 .active {
   font-size:1.25rem;
   padding: 16px 50px;
   border-radius: 12px;
 }
-
 .on1 {
   background:  #82BAF3;
 }
-
 .on2 {
-  background:  #1DE3E2;
+  background:  #7cc5c5;
 }
 .on3 {
   background:  #FBCED5;
 }
 .on4 {
   background:  #EFD236;
-
 }
 .on5 {
   background:  #E6C9FF;
 }
 
+/* 카테고리 배경화면 */
+.backGround1 {
+  background-image: url(../ImageSource/HomePageBackround/color1.jpg);
+}
+.backGround2 {
+  background-image: url(../ImageSource/HomePageBackround/color2.jpg);
+}
+.backGround3 {
+  background-image: url(../ImageSource/HomePageBackround/color4.jpg);
+}
+.backGround4 {
+  background-image: url(../ImageSource/HomePageBackround/color5.jpg);
+}
+.backGround5 {
+  background-image: url(../ImageSource/HomePageBackround/color3.jpg);
+}
 
 
 
