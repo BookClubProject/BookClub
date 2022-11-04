@@ -9,8 +9,8 @@ const styles = {
     width: "100%",
   },
   container: {
-    marginLeft: "7%",
-    marginRight: "7%",
+   // marginLeft: "7%",
+   // marginRight: "7%",
   },
 };
 

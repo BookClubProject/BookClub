@@ -1,5 +1,9 @@
-.bottom-information{
+.footer_inner{
     margin-top: 10%;
     font-size: 30px;
-  }
+}
+
+.footer_link a:link {
+  color:black;
+}
   
