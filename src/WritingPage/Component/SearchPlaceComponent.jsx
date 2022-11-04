@@ -1,21 +1,27 @@
 // SearchPlace.js
 import React, { useState, useEffect } from "react";
-
+import { useDispatch } from 'react-redux'
+import {searchPlace, searchDetailPlace} from "../../Store/Store";
 const { kakao } = window;
 
 const SearchPlace = () => {
-  
+  const dispatch = useDispatch()
+
   const [InputText, setInputText] = useState('')
+  const [inputDetailLocation, setInputDetailLocation] = useState('');
   const [Place, setPlace] = useState('')
 
   const onChangeText = (e) => {
     setInputText(e.target.value)
   }
+  const onChangeLocation = (e) => (
+    setInputDetailLocation(e.target.value),
+    dispatch(searchDetailPlace(e.target.value))
+  )
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setPlace(InputText)
-    setInputText('')
   }
 
   useEffect(() => {
@@ -29,7 +35,7 @@ const SearchPlace = () => {
     const map = new kakao.maps.Map(container, options);
     const geocoder = new kakao.maps.services.Geocoder();
 
-    geocoder.addressSearch({Place}, function(result, status) {
+    geocoder.addressSearch(Place, function(result, status) {
 
       if (status === kakao.maps.services.Status.OK) {
           const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
@@ -53,8 +59,11 @@ const SearchPlace = () => {
   return (
     <>
       <form className="inputForm" onSubmit={handleSubmit}>
-        <input placeholder="모임장소를 입력하세요" class = "input-place" onChange={onChangeText} value={InputText} />
-        <button type="submit" class = "input-place-button">검색</button>
+        <input placeholder="모임 장소를 입력하세요" class = "input-place" onChange={onChangeText} value={InputText} />
+        <button type="submit" class = "input-place-button" onClick={() => dispatch(searchPlace(InputText))}>검색</button>
+        <br/>
+        <input placeholder="상세 주소 (없으면 생략)" class = "input-place" onChange={onChangeLocation} value={inputDetailLocation} style = {{marginTop : "3px"}}/>
+        <button type="submit" class = "input-place-button" onClick={() => (setInputText(''), setInputDetailLocation(''))}>초기화</button>
       </form>
       
       <div id='map' style={{

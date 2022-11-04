@@ -1,6 +1,6 @@
 
 import {connect} from "react-redux";
-import {actionCreators} from "../../Store/EditorStore";
+import {actionCreators} from "../../Store/Store";
 import React, {useRef, useState, useEffect} from "react";
 import StickyBox from "react-sticky-box";
 import Switch from "react-switch";
@@ -45,8 +45,7 @@ function EditorRightBottomComponent({dispatch}){
         let Month = getMonth(calendar) + 1;
         let Date = getDate(calendar);
         let Day = Days[getDay(calendar)]; 
-        dispatch(actionCreators.addPlan((String(Month + "." + Date + " (" + Day + ")")), Time));
-
+        dispatch(actionCreators.addPlan((String(Month + "." + Date + " (" + Day + ")")), Time, state.toString()));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
 
       };
@@ -156,11 +155,13 @@ function EditorRightBottomComponent({dispatch}){
                     minutePlaceholder = "분"
                     rangeDivider = "~"
                     disableClock = {true}
-                    onChange={onChangeTime} value={Time} 
+                    onChange={onChangeTime} 
                     />
                 </span>
             </div>
+            {/**오프라인일때 */}
             { !state && <Search /> }
+            {/**온라인일때 */}
             {state && 
             <pre class = "information">
                 온라인의 경우 주최자가 직접 신청자들에게<br/>

@@ -108,3 +108,6 @@
 .calendar-container{
     height : 36px;
 }
+#map{
+    z-index : 0;
+}
