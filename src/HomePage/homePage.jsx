@@ -1,7 +1,8 @@
 
-import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
+import Header from "../PublicComponent/TopMenuBarComponent";
 import Banner from "./Component/Banner";
 import BestSeller from "./Component/BestSeller";
+import Footer from "../PublicComponent/BottomComponent"
 import Content1 from "./Component/Content1";
 import Content2 from "./Component/Content2";
 import Content3 from "./Component/Content3";
@@ -25,13 +26,14 @@ function TopMenu(){
 
     return(
         <div style = {styles.wrapper}>
-        <TopMenuBarComponent />
+        <Header />
         <Banner />
         <Content1/>
         <Content2/>
         <Content3/>
         <Content4/>
         <Content5/>
+        <Footer />
       
         </div>
     );

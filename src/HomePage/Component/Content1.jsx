@@ -3,23 +3,6 @@ import { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 
-const style = {
-  backGround1 : {
-
-  },
-  backGround2 : {
-
-  },
-  backGround3 : {
-
-  },
-  backGround4 : {
-
-  },
-  backGround5 : {
-
-  },
-}
 function Content1() {
   let [btnData, setbtnData] = useState([
     { id: 1, name: "버튼1", active: true },
@@ -66,11 +49,6 @@ function Content1() {
                   className ={(item.active === true
                          ? "category_btn " + "active on" +item.id
                          :"category_btn " + item.id)}
-                  // style={
-                  //   (item.active === true
-                  //     ? { backgroundColor: "yellow" }
-                  //     : btnStyle.button)
-                  // }
                 >
                   {item.name}
                 </button>
