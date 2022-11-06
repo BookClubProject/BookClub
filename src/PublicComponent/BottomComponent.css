@@ -1,9 +1,52 @@
 .footer_inner{
-    margin-top: 10%;
-    font-size: 30px;
+    padding: 2% 2%;
+    font-size: 1.2rem;
+    background-color: #1D2221;
+    height: 300px;
+    white-space: nowrap;
 }
 
-.footer_link a:link {
-  color:black;
+.footer_inner a {
+  text-decoration: none;
+}
+.footer_inner a:hover {
+  color :#b3b6b6
+}
+.footer_contents_wrap a{
+  color :white;
+}
+.footer_contents_wrap {
+  height: 32px;
+}
+.logo_box a{
+  margin-left: 32px;
+  Color : rgb(29, 185, 5);
+  font-weight: bold;
+  font-size:20px;
+}
+.footer_list { 
+  list-style-type: none;
+  float: left;
+  margin-left: 13px;
+}
+
+/* 가운데 라인 */
+.footer_division_line {
+  border-top: 1px solid #9d9e9e;
+  margin: 0px 30px;
+}
+
+/* 아래쪽 */
+.footer_bottom {
+  margin-top: 20px;
+  margin-left: 32px;
+  padding: auto;
+  color :white;
+  display: block;
+}
+
+.sns_link a img{
+  width: 4.5rem;
+  margin-left: 10px;
 }
   
