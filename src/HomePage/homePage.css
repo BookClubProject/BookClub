@@ -99,12 +99,15 @@ article {
   display: flex;
   list-style: none;
   margin-top: 7rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
 /* 카테고리 버튼*/
 .category_btn {
   margin: 0;
+  margin-left: 4rem;
   border: none;
   cursor: pointer;
   font-family: "Noto Sans KR", sans-serif;
