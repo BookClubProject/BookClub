@@ -27,20 +27,24 @@ const styles = {
 
 function EditorLeft({storedPlan}){  
     const dispatch = useDispatch()
+    console.log('stroedPlan : ' + storedPlan.length);
     return (
         <div class = "main-left">{/**왼쪽 공백 색깔 */}
             {storedPlan.map((plan, index) => {
+                if(storedPlan.length !== 1){ 
+
             return <div key={index} class="box">
                         <div class = "plan-container">
                         <span style = {styles.calender}>{plan.calendar}</span>
                         <span style = {styles.time}>{plan.time}</span>
-                        <button style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button>
+                        <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button>
                         <span>{plan.state}</span>
                         <div style = {styles.decoLocation}>{plan.location}</div>
                         <div>{plan.detailLocation}</div>
                         </div>
                     </div>;
-                })}
+                }})}
+                
         </div>
     );
 }

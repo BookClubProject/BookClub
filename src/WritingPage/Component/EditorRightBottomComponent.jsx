@@ -133,7 +133,10 @@ function EditorRightBottomComponent({dispatch}){
                 id="small-radius-switch"
                 />
             </label>
-            <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
+                <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
+                <span>
+                <button type="submit" class = "apply-club">적용</button>
+                </span>
             </div>
 
             <div class = "reserve-calender-time">

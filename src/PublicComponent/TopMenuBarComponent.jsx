@@ -36,7 +36,7 @@ function TopMenuComponent(){
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">about</Nav.Link>
+            <Link to = {`/clublist`} class = "club-list-menu">모임목록</Link>
             <Nav.Link href="#action2">service</Nav.Link>
             <NavDropdown title="캘린더" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">
