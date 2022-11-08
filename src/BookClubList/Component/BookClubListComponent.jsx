@@ -19,14 +19,16 @@ const styles = {
     marginTop : "30px",
   },
   sortText : {
-    color : "white",
-    textAlign : "center",
+    color : "black",
+    backgroundColor : "white",
     marginTop : "10px",
+    border : "none",
+    borderRadius : "5px",
   },
   imageSize : {
     width : "100%",
     height : "100%",
-    backgroundColor : "green",
+    backgroundColor : "#19ce60",
   },
   searchButton : {
     border : "1px solid black",
@@ -35,7 +37,7 @@ const styles = {
   inputSize : {
     width : "100%",
     height : "100%",
-    border : "2px solid black",
+    border : "1px solid black",
     borderRight : "0px",
   },
   line : {
@@ -104,8 +106,10 @@ function ClubList(){
             <button type="submit" style = {styles.searchButton}><img src={image.searchImage} style = {styles.imageSize}/></button>
           </div>
           {/*추가분류*/}
-          <div onClick={handleShow} style = {styles.sortText}>
-            추가분류
+          <div style = {{width : "100%", display : "flex", justifyContent: "center"}}>
+            <button onClick={handleShow} style = {styles.sortText}>
+              추가분류
+            </button>
           </div>
         
         <Offcanvas show={show} onHide={handleClose}>
