@@ -5,11 +5,11 @@ import styled, { css } from "styled-components";
 
 function Content1() {
   let [btnData, setbtnData] = useState([
-    { id: 1, name: "버튼1", active: true },
-    { id: 2, name: "버튼2", active: false },
-    { id: 3, name: "버튼3", active: false },
-    { id: 4, name: "버튼4", active: false },
-    { id: 5, name: "버튼5", active: false },
+    { id: 1, name: "소설", active: true },
+    { id: 2, name: "사회과학", active: false },
+    { id: 3, name: "경제경영", active: false },
+    { id: 4, name: "정치", active: false },
+    { id: 5, name: "역사와 문화", active: false },
   ]);
 
   let [image, setImage] = useState(1);

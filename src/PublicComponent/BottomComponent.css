@@ -4,6 +4,7 @@
     background-color: #1D2221;
     height: 300px;
     white-space: nowrap;
+    bottom :0;
 }
 
 .footer_inner a {
