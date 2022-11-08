@@ -51,9 +51,9 @@ function BottomComponent() {
             </p>
             <p>주소 : 서울시 구로구 경인로 248-29 기숙사 304호</p>
           </div>
-        <p className="copyright">
-          Copyright © 2018 HongSee Inc. All rights reserved
-        </p>
+          <p className="copyright">
+            Copyright © 2018 HongSee Inc. All rights reserved
+          </p>
         </div>
         <div className="right">
           <div className="sns_title">Follow US</div>

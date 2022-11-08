@@ -12,20 +12,26 @@ body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   color: rgb(0, 0, 0);
 }
-article {
-  display: block;
-}
-* {
-  outline: none;
-}
+
 /* 베스트 셀러 */
+.bestseller_wrap {
+  width: 124.2rem;
+  margin: auto;
+  height: 40rem;
+  /* background: black; */
+  margin-bottom: 10rem;
+}
+.book-list-title {
+  font-size: 3.3rem !important;
+  /* background: #000000; */
+}
 .swiper {
   width: 100%;
   height: 100%;
 }
 .swiper-container{
-  background: rgb(190, 190, 199);
-  padding:10px;
+  background: rgb(218, 218, 225);
+  padding:20px;
 }
 .swiper-slide {
   text-align: center;
@@ -33,24 +39,14 @@ article {
   background: rgb(254, 254, 254);
   height: 300px;
 
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 .swiper-button-prev{
   color : rgb(0, 0, 0);
@@ -59,7 +55,7 @@ article {
   color : black;
 }
 .swiper-pagination-bullet{
-  color:black;
+  background: #000000;
 }
 
 /* Content1 */
@@ -92,7 +88,7 @@ article {
 }
 .Content-btn  {
   display: block;
-  width: 70%;
+  width: 100%;
   font-size: 1.6rem;
 }
 .Content-btn ul {
@@ -107,24 +103,25 @@ article {
 /* 카테고리 버튼*/
 .category_btn {
   margin: 0;
-  margin-left: 4rem;
-  border: none;
+  outline: 0;
+  margin-right: -3px;
   cursor: pointer;
   font-family: "Noto Sans KR", sans-serif;
   font-size:1rem;
-  padding: 12px 16px;
-  border-radius: 8px;
-  color:  #ffffff;
-  background:  #0d6efd;
-  
-  /* &.active &.hover& .focus {
-    background:  #025ce2;
-  } */
+  width: 200px;
+  padding: 14px 25px;
+  z-index: 10;
+  border-color: #cacaca;
+  /* border-radius: 8px; */
+  color: black;
+  /* background:  #0d6efd; */
 }
 .active {
-  font-size:1.25rem;
-  padding: 16px 50px;
-  border-radius: 12px;
+  font-size:1.3rem;
+  padding: 17px 50px;
+  border-radius: 8px;
+  z-index: 20;
+  border: none;
 }
 .on1 {
   background:  #82BAF3;
@@ -176,18 +173,6 @@ article {
   width: 100%;
   height: 100%;
 }
-.Content4{
-  background-color: #388e3c;
-  width: 100%;
-  height: 100%;
-}
-.Content5{
-  background-color: #2e7d32;
-  width: 100%;
-  height: 100%;
-}
-
-
 
 
 

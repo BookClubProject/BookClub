@@ -35,7 +35,7 @@ function Content1() {
   return (
     <article className={"Content1 backGround"+image}>
       <section className="Content1-session">
-        <p className="Maintitle">조준희가 추천하는 독서토론~</p>
+        <p className="Maintitle">준희형이 추천하는 독서토론~</p>
         <p className="Subtitle">
           책을 즐기는 다양한 방법, 준희에게 물어보세요!
         </p>
