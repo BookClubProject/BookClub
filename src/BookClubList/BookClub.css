@@ -1,12 +1,20 @@
 body{
     height : 100%;
 }
+.container{
+    width : 100%;
+    height : 100%;
+}
 .book-club-list-container{
     height: 1000px;
     margin-left: 150px;
     margin-right : 150px;
     margin-top : 100px;
-    background-color: rgb(190, 189, 189);
+    padding-top : 50px;
+    /*background-color: rgb(190, 189, 189);*/
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 .book-search-container{
     height : 300px;
@@ -26,4 +34,56 @@ body{
 }
 .dropdown-toggle::after{
     display : none;
+}
+.club-entity-container{
+    height : 250px;
+    margin-bottom: 50px;
+    margin-left : 50px;
+    padding: 50px;
+    width: 76%;
+    border-radius: 10px;
+    display:flex;
+    background-color: rgb(250, 250, 250);
+    box-shadow: -2px -2px 5px black inset;
+    /**box-shadow: 0px 0px 6px 1px rgb(77, 71, 71) inset;*/
+    margin-top : 5px;
+    transition-duration: 0.3s;
+}
+.club-entity-container:active{
+    box-shadow : none;
+}
+#book-thumnail-container{
+    width : 100px;
+    height : 150px;
+    text-align: center;
+    border-bottom : 1px solid gray;
+}
+#book-thumnail{
+    width : 100px;
+    height : 100%;
+}
+#thumnail-discription-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height : 150px;
+    width : 80%;
+}
+#book-title-container{
+    width : 100%;
+    padding-top:5px;
+    padding-left:20px;
+    padding-right:5px;
+}
+#plan-container{
+    color : silver;
+    width : 100%;
+    padding-left : 20px;
+    padding-top : 2px;
+    padding-bottom : 5px;
+}
+
+#book-title{
+    color : black;
+    font-size:18px;
 }

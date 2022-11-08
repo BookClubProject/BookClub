@@ -45,7 +45,7 @@ function EditorRightBottomComponent({dispatch}){
         let Month = getMonth(calendar) + 1;
         let Date = getDate(calendar);
         let Day = Days[getDay(calendar)]; 
-        dispatch(actionCreators.addPlan((String(Month + "." + Date + " (" + Day + ")")), Time, state.toString()));
+        dispatch(actionCreators.addPlan((String(Month + "/" + Date + " (" + Day + ")")), Time, state.toString()));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
       };
 

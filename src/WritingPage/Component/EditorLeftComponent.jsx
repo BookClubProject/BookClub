@@ -27,7 +27,6 @@ const styles = {
 
 function EditorLeft({storedPlan}){  
     const dispatch = useDispatch()
-    console.log('stroedPlan : ' + storedPlan.length);
     return (
         <div class = "main-left">{/**왼쪽 공백 색깔 */}
             {storedPlan.map((plan, index) => {
