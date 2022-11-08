@@ -37,7 +37,7 @@ function TopMenuComponent(){
             navbarScroll
           >
             <Link to = {`/clublist`} class = "club-list-menu">모임목록</Link>
-            <Nav.Link href="#action2">service</Nav.Link>
+            <Link to = {`/test`} class = "club-list-menu" style = {{marginLeft : "10px"}}>test</Link>
             <NavDropdown title="캘린더" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">
                 Action
@@ -59,8 +59,6 @@ function TopMenuComponent(){
                 <div>
                 <DatePicker disablePreviousDays />
                 <hr />
-        
-              
                 </div>
             </NavDropdown>
 

@@ -3,7 +3,6 @@ import EditorComponent from "./Component/EditorMainComponent";
 import EditorRightTopComponent from "./Component/EditorRightTopComponent";
 import EditorRightBottomComponent from "./Component/EditorRightBottomComponent";
 import EditorLeftComponent from "./Component/EditorLeftComponent"
-import Test from "./Component/test";
 import Bottom from "../PublicComponent/BottomComponent";
 import {useState} from "react";
 
@@ -45,7 +44,6 @@ function WritePage(){
             </div>
         </div>
         <Bottom />
-        <Test />
         </div>
     );
 }

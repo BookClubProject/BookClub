@@ -36,7 +36,7 @@ function EditorRightBottomComponent({dispatch}){
     {/**달력 */}
     const [calendar, setCalendar] = useState(new Date());
     {/**시계 */}
-    const [Time, onChangeTime] = useState(['10:00 ', '11:00']);
+    const [Time, onChangeTime] = useState(['10:00~', '11:00']);
 
     {/**const [list, setList] = useState([]);*/}
 
@@ -47,9 +47,8 @@ function EditorRightBottomComponent({dispatch}){
         let Day = Days[getDay(calendar)]; 
         dispatch(actionCreators.addPlan((String(Month + "." + Date + " (" + Day + ")")), Time, state.toString()));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
-
       };
-   
+
     return(
         <StickyBox offsetTop={340}>
         <div style = {styles.wrapper}>

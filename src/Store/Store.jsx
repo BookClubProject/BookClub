@@ -29,8 +29,6 @@ const deletePlan = (id) =>{
     };
 };
 
-const initstate = ["example"];
-
 export const searchPlace = (inputLocation) =>{
     location = inputLocation;
 }
@@ -38,8 +36,9 @@ export const searchDetailPlace = (setDetailLocation) =>{
     detailLocation = setDetailLocation;
 }
 
+const initstate = ["example"];
 
-const reducer = (plan = initstate, action) =>{
+export const reducer = (plan = initstate, action) =>{
     switch(action.type){
         case "ADD" : {
             return [
@@ -58,18 +57,6 @@ const reducer = (plan = initstate, action) =>{
         }
         default:
             return plan; 
-    }
-}
-
-const placeReducer = (place = '', action) =>{
-    switch(action.type){
-        case "OFFLINE" : {
-            return {
-                location : action.location,
-            }
-        }
-        default:
-            return place;
     }
 }
 

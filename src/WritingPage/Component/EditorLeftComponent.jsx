@@ -10,7 +10,7 @@ const styles = {
         color : "green",
         backgroundColor : "white",
         border : "1px solid green",
-        marginLeft : "10px",
+        marginLeft : "5px",
         borderRadius : "5px",
     },
     calender : {
