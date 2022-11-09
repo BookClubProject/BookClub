@@ -1,8 +1,10 @@
-import React, { Component, useRef,useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import StickyBox from "react-sticky-box";
+import axios from 'axios';
 import "../Write.css";
+import { List } from '@mui/material';
 
 const styles = {
     search : {
@@ -45,7 +47,7 @@ const styles = {
 function EditorRightTopComponent(){
 
     {/*도서검색관련*/}
-    const [search, setSearch] = React.useState("");
+    const [search, setSearch] = useState('');
     const handleChange = (event) => {
         setSearch(event.target.value);
     };
@@ -59,6 +61,39 @@ function EditorRightTopComponent(){
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+
+    const [book, setBook] = useState(['']);
+
+    const [pickBook, setPickBook] = useState(['']);
+
+    const selectBook = (list) => {
+      setPickBook(list);
+      console.log(list);
+    }
+
+    {/**API 가져오기 */}
+    const getSearchBook = async () => {
+      try {
+          const searchedBook = await axios.get('v1/search/book.json',{
+              params:{
+                query: naverBook,
+                display: 10,
+                start : 1,
+                sort : 'sim'
+              },
+              headers: {
+                  'X-Naver-Client-Id': 'mT8QQrmD4w7I5tcpqexQ',
+                  'X-Naver-Client-Secret': 'oh6xEebpVb'
+                },
+            });
+            setBook(searchedBook.data.items);
+            console.log(searchedBook.data.items);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
 
     return (
       <StickyBox offsetBottom={340}>
@@ -97,11 +132,22 @@ function EditorRightTopComponent(){
                   value={naverBook}
                   onChange={searchNaverBook}
           />
-          <button type="submit" style = {styles.modalSearchButton}>검색</button>
+          <button type="submit" style = {styles.modalSearchButton} onClick = {getSearchBook}>검색</button>
+          {book.map((list, index) => {
+              return <div key = {index} id = "searched-book-list" onClick={() => selectBook(list)}>
+                <img src = {list.image} id = "searched-book-image"/>
+                <div id = "searched-book-text-container">
+                  <div>제목 : {list.title}</div>
+                  <div>작가 : {list.author}</div>
+                  <div>출판사 : {list.publisher}</div>
+                  <div>출간일 : {list.pubdate}</div>
+                </div>
+              </div>
+          })}
           </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            닫기
           </Button>
         </Modal.Footer>
       </Modal>

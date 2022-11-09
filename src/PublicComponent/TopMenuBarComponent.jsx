@@ -16,9 +16,9 @@ function TopMenuComponent(){
         <div class = "top-menu-container">
             <div class = "login-container">
                 <span class = "intro">모두를 위한 책 읽는 공간</span>
-                <Link to = {`/write/`} class = "writing">글쓰기</Link>
-                <Link to = {`/login/`} class = "login">로그인</Link>
-                <Link to = {`/join/`} class = "join">회원가입</Link>
+                <Link to = {`/write`} class = "writing">글쓰기</Link>
+                <Link to = {`/login`} class = "login">로그인</Link>
+                <Link to = {`/join`} class = "join">회원가입</Link>
                 <span class = "mypage">마이페이지</span>
             </div>
             <hr class = "line" size="1" color="red"></hr>
