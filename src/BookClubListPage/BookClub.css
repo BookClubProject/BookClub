@@ -6,15 +6,15 @@ body{
     height : 100%;
 }
 .book-club-list-container{
-    height: 1000px;
-    margin-left: 150px;
-    margin-right : 150px;
     margin-top : 100px;
     padding-top : 50px;
+    padding-right : 50px;
+    padding-left : 50px;
     /*background-color: rgb(190, 189, 189);*/
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 50px;
 }
 .book-search-container{
     height : 300px;
@@ -38,9 +38,8 @@ body{
 .club-entity-container{
     height : 250px;
     margin-bottom: 50px;
-    margin-left : 50px;
     padding: 50px;
-    width: 76%;
+    width: 100%;
     border-radius: 10px;
     display:flex;
     background-color: rgb(250, 250, 250);
@@ -48,6 +47,7 @@ body{
     /**box-shadow: 0px 0px 6px 1px rgb(77, 71, 71) inset;*/
     margin-top : 5px;
     transition-duration: 0.3s;
+    text-decoration-line: none;
 }
 .club-entity-container:active{
     box-shadow : none;
@@ -62,6 +62,7 @@ body{
     width : 100px;
     height : 100%;
 }
+
 #thumnail-discription-container{
     display:flex;
     flex-direction: column;
@@ -86,4 +87,7 @@ body{
 #book-title{
     color : black;
     font-size:18px;
+}
+#sub-title{
+    color : black;
 }

@@ -4,6 +4,7 @@ import axios from 'axios';
 import "../BookClub.css"
 import Spinner from 'react-bootstrap/Spinner';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {Link} from "react-router-dom";
 import { useDispatch,useSelector } from 'react-redux';
 
 const styles = {
@@ -125,7 +126,7 @@ function ClubList(){
 
         <div class = "book-club-list-container">
           {clubList.map((list, index) => {
-            return <div key={index} class="club-entity-container">
+            return <Link to = {`/detail/${list.id}`} key={index} class="club-entity-container">
               <div id = "book-thumnail-container">
                 <img src = {list.bookImage} id = "book-thumnail"/>
               </div>
@@ -133,7 +134,7 @@ function ClubList(){
 
               <div id = "book-title-container">
                   <div id = "book-title">{list.booktitle}</div>
-                  <div>{list.author}&nbsp;{list.publisher}</div>
+                  <div id = "sub-title">{list.author}&nbsp;{list.publisher}</div>
               </div>
               
                   <div id = "plan-container">
@@ -142,22 +143,8 @@ function ClubList(){
                     <div>시간 : {list.calendar}&nbsp;{list.time}</div>
                   </div>
               </div>      
-            </div>
+            </Link>
           })}
-          {/**
-          <img src = {clubList[0].bookImage}/>
-          {clubList[0].calendar}
-          {clubList[0].booktitle}
-          {clubList[0].author}
-          {clubList[0].price}
-          {clubList[0].publishDay}
-          {clubList[0].publisher}
-          {clubList[0].time}
-          {clubList[0].state}
-          {clubList[0].location}
-          {clubList[0].detailLocation}
-          {clubList[0].id}
-           */}
         </div>  
         </>
       );
