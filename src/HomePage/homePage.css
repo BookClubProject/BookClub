@@ -176,10 +176,21 @@ body {
 
 /* Content2 */
 .Content2{
-  background-color: #4caf50;
   width: 100%;
-  height: 100%;
+  height: 40rem;
 }
+
+.content2_wrap {
+  background-color:  #82BAF3;
+  width: 124.2rem;
+  height: 100%;
+  margin: auto;
+}
+
+
+
+
+
 
 
 /* Content3 */
@@ -192,9 +203,9 @@ body {
 
 .content3_wrap {
   padding : 7rem 5rem ;
-  background-color: #cacaca;
+  /* background-color: #cacaca; */
   width: 124.2rem;
-  height: 70rem;
+  height: 80rem;
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -206,11 +217,7 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
 }
-.content3_list {
-  width: 100%;
-  height: 100%;
-  background: #E6C9FF;
-}
+
 .content3_list ul {
  list-style: none;
  padding-left: 0px;
@@ -222,28 +229,82 @@ flex-direction:column;
 .report_li a{
   text-decoration:none;
   color: #000000;
-  display:block;
+  display:flex;
   height:100%;
 }
 .report_li {
-height :100%;
+  height :100%;
+}
+.info {
+  display: inline-block;
+  width: 70%;
+}
+.report_img {
+  width: 30%;
+  height: 100%;
+  margin-left: 3.5rem;
+}
+
+.content3_division_line {
+  border-top: 1px solid #9d9e9e;
+  margin-right:25px
+}
+.content3_report_content {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 .best_report1  {
-  background-color: #ad7777;
+  /* background-color: #ad7777; */
+  padding : 2rem 1rem;
 
-  /*padding: 7rem 1rem;*/
 }
 .best_report2{
-  background-color: #82BAF3;
+  /* background-color: #82BAF3; */
+  padding : 2rem 1rem;
 
-  /*padding: 7rem 1rem;*/
 }
 .best_report3 {
-  background-color: #4caf50;
-  /*padding: 7rem 1rem;*/
+  /* background-color: #4caf50; */
+  padding : 2rem 1rem;
+
 }
 
 .conten3_right {
   width: 100%;
-  background: #EFD236;
+  /* background: #EFD236; */
+  text-align: center;
+  padding: 10px;
+}
+.content3_right_wrap{
+  height: 90%;
+  padding-top: 20px;
+  border-radius: 4%;
+  /* padding: 20px; */
+  background-color: #a1d1a3;
+}
+.content3_debate_img {
+  height: 40%;
+  margin: 10px 40px 0px 40px;
+  padding-top: 40px;
+  background-color: #c5cccc;
+}
+.content3_debate_write {
+  height: 50%;
+  margin: 0px 40px 0px 40px;
+  padding: 30px;
+  text-align: left;
+  background-color: #9d9e9e;
+}
+.content3_right_title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.contetn3_right_add_button {
+  margin-top: 14px;
+  font-size:1.4rem;
+  font-weight: 500;
+  padding: 17px 50px;
+  border-radius: 8px;
+  background-color: #4caf50;
+  border: none;
 }
