@@ -52,15 +52,27 @@ const styles = {
 }
 
 const image = {
-    // 사이트에 있는 이미지 가져오는 소스 
     searchImage: require('../../ImageSource/search.jpg'),
   }
   
 function ClubList(){
 
+  {/*도서검색관련*/}
+  const [search, setSearch] = useState('');
+  const handleChange = (event) => {
+      setSearch(event.target.value);
+  };
+
   {/**독서모임 api 가져오기 및 로딩창 */}
+  const [clubApiList, setClubApiList] = useState([]);
+  const [tempList, setTempList] = useState([]);
   const [clubList, setClubList] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
+  const searchBookClub = () =>{
+    setClubList(tempList.filter(list => list.booktitle.includes(search)));
+  }
 
   {/**오프캔버스 */}
   const [show, setShow] = useState(false);
@@ -71,6 +83,7 @@ function ClubList(){
   const getClubList = async() =>{
         try {
           const getClubList = await (await axios.get("https://894a7a67-113b-453b-ad3b-578b44b1c2c2.mock.pstmn.io/booklist"));
+          setTempList(getClubList.data);
           setClubList(getClubList.data); {/** api 가져오기 */} 
           setLoading(false); {/**로딩중 없애기 */}
         } catch {
@@ -87,7 +100,7 @@ function ClubList(){
     if(loading === true){
       return(
         <div>
-          <Spinner animation="border" />;
+          <Spinner animation="border" />
         </div>
       );
     }
@@ -103,8 +116,10 @@ function ClubList(){
             <input style = {styles.inputSize}
                   type="text"
                   placeholder="도서검색"
+                  value={search}
+                  onChange={handleChange}
               />
-            <button type="submit" style = {styles.searchButton}><img src={image.searchImage} style = {styles.imageSize}/></button>
+            <button type="submit" style = {styles.searchButton}><img src={image.searchImage} style = {styles.imageSize} onClick = {searchBookClub}/></button>
           </div>
           {/*추가분류*/}
           <div style = {{width : "100%", display : "flex", justifyContent: "center"}}>

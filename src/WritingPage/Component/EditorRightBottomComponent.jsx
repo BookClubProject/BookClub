@@ -53,8 +53,6 @@ function EditorRightBottomComponent({dispatch}){
         <StickyBox offsetTop={340}>
         <div style = {styles.wrapper}>
             <div class = "reserve-container">
-        
-            {/*<EditorLeft list = {list}/>*/}
 
             {/*온라인 오프라인 설정*/} 
             <div className="example">

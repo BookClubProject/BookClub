@@ -27,6 +27,18 @@ const styles = {
       fontWeight : "bold",
       fontSize : "20px",
     },
+    author : {
+      marginLeft: "3%",
+      marginTop: "3%",
+    },
+    pubdate : {
+      marginLeft: "3%",
+      marginTop: "3%",
+    },
+    publisher : {
+      marginLeft: "3%",
+      marginTop: "3%",
+    },
     modalSearch : {
       height : "30px",
       width : "380px",
@@ -42,6 +54,9 @@ const styles = {
       backgroundColor : "white",
       color : "green"
     }
+};
+const image = {
+  bookCover: require('../../ImageSource/Demian.jpg'),
 }
 
 function EditorRightTopComponent(){
@@ -63,9 +78,9 @@ function EditorRightTopComponent(){
     const handleShow = () => setShow(true);
 
 
-    const [book, setBook] = useState(['']);
+    const [book, setBook] = useState([]);
 
-    const [pickBook, setPickBook] = useState(['']);
+    const [pickBook, setPickBook] = useState({image : image.bookCover, title : '데미안', author : '헤르만 헤세', pubdate : '1919', publisher : ''});
 
     const selectBook = (list) => {
       setPickBook(list);
@@ -96,14 +111,14 @@ function EditorRightTopComponent(){
     
 
     return (
-      <StickyBox offsetBottom={340}>
+      <StickyBox offsetBottom={250}>
         <div style = {styles.rightContainer}>
         <div class="book-container">
 
         <div class = "book-and-search-form">
           {/*책 표지*/}
           <img
-            src="https://image.yes24.com/goods/106131562/XL"
+            src={pickBook.image} 
             class="book-thumnail"
           />
 
@@ -134,7 +149,7 @@ function EditorRightTopComponent(){
           />
           <button type="submit" style = {styles.modalSearchButton} onClick = {getSearchBook}>검색</button>
           {book.map((list, index) => {
-              return <div key = {index} id = "searched-book-list" onClick={() => selectBook(list)}>
+              return <div key = {index} id = "searched-book-list" onClick={() => (selectBook(list), handleClose())}>
                 <img src = {list.image} id = "searched-book-image"/>
                 <div id = "searched-book-text-container">
                   <div>제목 : {list.title}</div>
@@ -151,12 +166,13 @@ function EditorRightTopComponent(){
           </Button>
         </Modal.Footer>
       </Modal>
-
-            <div style = {styles.title}>제목:</div>
-            <div style = {styles.title}>저자:</div>
-            <div style = {styles.title}>가격:</div>
-            <div style = {styles.title}>출시일:</div>
-            <div style = {styles.title}>출판사:</div>
+            <div id = "detail-text-container">
+              <hr/>
+              <div style = {styles.title}>{pickBook.title}</div>
+              <div style = {styles.author}>저자 : {pickBook.author}</div>
+              <div style = {styles.pubdate}>출간일 : {pickBook.pubdate}</div>
+              <div style = {styles.publisher}>출판사 : {pickBook.publisher}</div>
+            </div>
           </div>
         </div>
       </div>
