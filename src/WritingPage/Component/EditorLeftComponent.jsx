@@ -10,8 +10,8 @@ const styles = {
         color : "green",
         backgroundColor : "white",
         border : "1px solid green",
-        marginLeft : "5px",
         borderRadius : "5px",
+        width : "50px",
     },
     calender : {
         marginRight : "5px"
@@ -36,8 +36,10 @@ function EditorLeft({storedPlan}){
                         <div class = "plan-container">
                         <span style = {styles.calender}>{plan.calendar}</span>
                         <span style = {styles.time}>{plan.time}</span>
-                        <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button>
-                        <span>{plan.state}</span>
+                        <span style = {{float : "right", paddingBottom : "30px"}}>
+                        <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button><br/>
+                        </span>
+                        <div>{plan.state}</div>
                         <div style = {styles.decoLocation}>{plan.location}</div>
                         <div>{plan.detailLocation}</div>
                         </div>

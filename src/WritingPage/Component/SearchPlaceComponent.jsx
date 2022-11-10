@@ -67,7 +67,7 @@ const SearchPlace = () => {
       </form>
       
       <div id='map' style={{
-        width: '520px', 
+        width: '98%', 
         height: '250px',
         marginLeft : '5px',
     }}></div>

@@ -91,3 +91,49 @@ body{
 #sub-title{
     color : black;
 }
+.sort-container{
+    width : 800px;
+    height : 200px;
+    background-color: rgb(245, 245, 245);
+    margin : 0 auto;
+    margin-top : 100px;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+}
+#toggleContainer{
+    height : 50px;
+    
+}
+#toggleContent{
+    height : 100%;
+    width : 100%;
+    display: flex; 
+    align-items: center;
+    font-size: 20px;
+}
+#calendarContainer{
+    height : 50px;
+}
+#calendarContent{
+    height : 100%;
+    width : 100%;
+    display: flex; 
+    align-items: center;
+    font-size: 20px;
+}
+#temaContainer{
+    height : 50px;
+}
+#temaContent{
+    height : 100%;
+    width : 100%;
+    display: flex; 
+    align-items: center;
+    font-size: 20px;
+}
+.rw-multiselect{
+    margin-left : 10px;
+    width : 90%;
+}

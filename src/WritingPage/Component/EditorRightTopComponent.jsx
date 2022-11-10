@@ -167,7 +167,7 @@ function EditorRightTopComponent(){
         </Modal.Footer>
       </Modal>
             <div id = "detail-text-container">
-              <hr/>
+              <hr style = {{width : "97%"}}/>
               <div style = {styles.title}>{pickBook.title}</div>
               <div style = {styles.author}>저자 : {pickBook.author}</div>
               <div style = {styles.pubdate}>출간일 : {pickBook.pubdate}</div>

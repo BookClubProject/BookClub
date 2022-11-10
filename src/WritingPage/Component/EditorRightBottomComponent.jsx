@@ -56,6 +56,7 @@ function EditorRightBottomComponent({dispatch}){
 
             {/*온라인 오프라인 설정*/} 
             <div className="example">
+            <div id = "toggleContainer">
             <label htmlFor="material-switch">
                 <Switch
                 checked={state}
@@ -131,9 +132,11 @@ function EditorRightBottomComponent({dispatch}){
                 />
             </label>
                 <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
-                <span>
-                <button type="submit" class = "apply-club">적용</button>
-                </span>
+            </div>
+
+            <div>
+            <button type="submit" class = "apply-club">작성하기</button>
+            </div>
             </div>
 
             <div class = "reserve-calender-time">

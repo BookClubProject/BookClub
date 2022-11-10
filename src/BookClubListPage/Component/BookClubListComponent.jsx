@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import "../BookClub.css"
 import Spinner from 'react-bootstrap/Spinner';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import {Link} from "react-router-dom";
+import "react-widgets/styles.css";
+import Multiselect from "react-widgets/Multiselect";
 import { useDispatch,useSelector } from 'react-redux';
 
 const styles = {
@@ -50,7 +51,17 @@ const styles = {
     marginBottom : "5px",
   }
 }
-
+const placeData = [
+    { id: 1, color: "온라인" },
+    { id: 2, color: "오프라인" },
+]
+const bookTemaData = [
+  { id: 1, color: "자기계발" },
+  { id: 2, color: "금융/경제" },
+  { id: 3, color: "인문학" },
+  { id: 4, color: "종교" },
+  { id: 5, color: "과학" },
+]
 const image = {
     searchImage: require('../../ImageSource/search.jpg'),
   }
@@ -64,12 +75,11 @@ function ClubList(){
   };
 
   {/**독서모임 api 가져오기 및 로딩창 */}
-  const [clubApiList, setClubApiList] = useState([]);
   const [tempList, setTempList] = useState([]);
   const [clubList, setClubList] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
+  {/**독서모임 검색 */}
   const searchBookClub = () =>{
     setClubList(tempList.filter(list => list.booktitle.includes(search)));
   }
@@ -121,24 +131,34 @@ function ClubList(){
               />
             <button type="submit" style = {styles.searchButton}><img src={image.searchImage} style = {styles.imageSize} onClick = {searchBookClub}/></button>
           </div>
-          {/*추가분류*/}
-          <div style = {{width : "100%", display : "flex", justifyContent: "center"}}>
-            <button onClick={handleShow} style = {styles.sortText}>
-              추가분류
-            </button>
-          </div>
-        
-        <Offcanvas show={show} onHide={handleClose}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>분류</Offcanvas.Title>
-          </Offcanvas.Header>
-
-          <Offcanvas.Body>
-            여기서 분류를 하면 우짤까
-          </Offcanvas.Body>
-        </Offcanvas>
         </div>
 
+        {/*추가분류*/}
+        <div class = "sort-container">
+          <div id = "toggleContainer">
+            <div id = "toggleContent">지역 : 
+            <Multiselect
+              dataKey="id"
+              textField="place"
+              defaultValue={[1]}
+              data={placeData}
+            />
+            </div>
+          </div>
+          <div id = "calendarContainer">
+            <div id = "calendarContent">시간 : </div>
+          </div>
+          <div id = "temaContainer">
+            <div id = "temaContent">테마 : 
+            <Multiselect
+              dataKey="id"
+              textField="book-tema"
+              defaultValue={[1]}
+              data={bookTemaData}
+            />
+            </div>
+          </div>
+        </div>
         <div class = "book-club-list-container">
           {clubList.map((list, index) => {
             return <Link to = {`/detail/${list.id}`} key={index} class="club-entity-container">
