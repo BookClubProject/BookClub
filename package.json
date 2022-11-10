@@ -30,6 +30,7 @@
     "react-switch": "^7.0.0",
     "react-widgets": "^5.8.4",
     "redux": "^4.1.2",
+    "styled-components": "^5.3.6",
     "swiper": "^6.8.4",
     "web-vitals": "^2.1.4"
   },
@@ -60,5 +61,6 @@
   },
   "devDependencies": {
     "sass": "^1.55.0"
-  }
+  },
+  "proxy" : "http://book.interpark.com"
 }

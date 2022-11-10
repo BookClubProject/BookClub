@@ -1,6 +1,10 @@
-import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
+import Header from "../PublicComponent/TopMenuBarComponent";
 import Banner from "./Component/Banner";
 import BestSeller from "./Component/BestSeller";
+import Footer from "../PublicComponent/BottomComponent"
+import Content1 from "./Component/Content1";
+import Content2 from "./Component/Content2";
+import Content3 from "./Component/Content3";
 
 
 const styles = {
@@ -19,11 +23,16 @@ function TopMenu(){
 
     return(
         <div style = {styles.wrapper}>
-        <TopMenuBarComponent />
+        <Header />
         <Banner />
-        <BestSeller />
+        <Content1/>
+        <Content2/>
+        <Content3/>
+        <BestSeller/>
+        <Footer />
+      
         </div>
     );
 }
-
+// <BestSeller />
 export default TopMenu;
