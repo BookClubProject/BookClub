@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 html,
 body {
   position: relative;
@@ -6,10 +8,11 @@ body {
   font-size: 10px;
   margin: 0;
   padding: 0;
+  font-family: 'Jua', sans-serif;
 }
 
 body {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /*ont-family: Helvetica Neue, Helvetica, Arial, sans-serif;*/
   color: rgb(0, 0, 0);
 }
 .bestseller_wrap {
@@ -81,19 +84,22 @@ body {
 }
 .Content1-session {
   padding : 10rem 7.4rem 7rem;
+  border-radius: 20px 20px 0px 0px ;
   background-color: white;
   width: 124.2rem;
   margin: auto;
 }
 
 .Maintitle {
-  font-family:Arial, Helvetica, sans-serif;
+  /*font-family:Arial, Helvetica, sans-serif;*/
   font-size: 3.3rem !important;
+  margin-left: 3.5rem;
   white-space: nowrap;
   color :black;
 }
 .Subtitle {
   font-size: 1.8rem !important;
+  margin-left: 3.5rem;
   margin-top: 1.3rem;
   white-space: nowrap;
   color :black;
@@ -120,7 +126,7 @@ body {
   box-shadow: none;
   margin-right: -3px;
   cursor: pointer;
-  font-family: "Noto Sans KR", sans-serif;
+  /*font-family: "Noto Sans KR", sans-serif;*/
   font-size:1rem;
   width: 200px;
   padding: 14px 25px;
@@ -183,6 +189,7 @@ body {
 .content2_wrap {
   background-color:  #82BAF3;
   width: 124.2rem;
+  border-radius: 0px 0px 20px 20px ;
   height: 100%;
   margin: auto;
 }
