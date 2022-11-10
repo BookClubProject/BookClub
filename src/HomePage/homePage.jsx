@@ -1,4 +1,3 @@
-
 import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
 import Banner from "./Component/Banner";
 import BestSeller from "./Component/BestSeller";

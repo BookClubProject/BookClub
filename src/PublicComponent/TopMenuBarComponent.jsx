@@ -16,9 +16,9 @@ function TopMenuComponent(){
         <div class = "top-menu-container">
             <div class = "login-container">
                 <span class = "intro">모두를 위한 책 읽는 공간</span>
-                <Link to = {`/write/`} class = "writing">글쓰기</Link>
-                <Link to = {`/login/`} class = "login">로그인</Link>
-                <Link to = {`/join/`} class = "join">회원가입</Link>
+                <Link to = {`/write`} class = "writing">글쓰기</Link>
+                <Link to = {`/login`} class = "login">로그인</Link>
+                <Link to = {`/join`} class = "join">회원가입</Link>
                 <span class = "mypage">마이페이지</span>
             </div>
             <hr class = "line" size="1" color="red"></hr>
@@ -36,8 +36,8 @@ function TopMenuComponent(){
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">about</Nav.Link>
-            <Nav.Link href="#action2">service</Nav.Link>
+            <Link to = {`/clublist`} class = "club-list-menu">모임목록</Link>
+            <Link to = {`/test`} class = "club-list-menu" style = {{marginLeft : "10px"}}>test</Link>
             <NavDropdown title="캘린더" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">
                 Action
@@ -59,8 +59,6 @@ function TopMenuComponent(){
                 <div>
                 <DatePicker disablePreviousDays />
                 <hr />
-        
-              
                 </div>
             </NavDropdown>
 

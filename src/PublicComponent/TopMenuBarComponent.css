@@ -64,3 +64,8 @@
     color:rgb(116, 116, 116);
     text-decoration: none;
   }
+  .club-list-menu{
+    text-decoration-line: none;
+    color : black;
+    margin : auto;
+  }

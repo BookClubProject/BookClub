@@ -1,31 +1,51 @@
 import React from "react";
 import {connect} from "react-redux";
-import {actionCreators} from "../../Store/EditorStore";
-
-import { useDispatch } from 'react-redux'
+import {actionCreators} from "../../Store/Store";
+import { useDispatch } from 'react-redux';
 import "../Write.css";
+
 
 const styles = {
     button : {
         color : "green",
         backgroundColor : "white",
         border : "1px solid green",
-        marginLeft : "10px",
+        borderRadius : "5px",
+        width : "50px",
+    },
+    calender : {
+        marginRight : "5px"
+    },
+    time : {
+        textAlign : "justify",
+        width : "500px"
+    },
+    decoLocation : {
+
     }
 }
-let store;
 
 function EditorLeft({storedPlan}){  
     const dispatch = useDispatch()
     return (
         <div class = "main-left">{/**왼쪽 공백 색깔 */}
             {storedPlan.map((plan, index) => {
-            return <div key={index} class = "plan-container">
-                {plan.calendar}
-                {plan.time}
-                <button style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button>
-                </div>;
-            })}
+                if(storedPlan.length !== 1){ 
+
+            return <div key={index} class="box">
+                        <div class = "plan-container">
+                        <span style = {styles.calender}>{plan.calendar}</span>
+                        <span style = {styles.time}>{plan.time}</span>
+                        <span style = {{float : "right", paddingBottom : "30px"}}>
+                        <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button><br/>
+                        </span>
+                        <div>{plan.state}</div>
+                        <div style = {styles.decoLocation}>{plan.location}</div>
+                        <div>{plan.detailLocation}</div>
+                        </div>
+                    </div>;
+                }})}
+                
         </div>
     );
 }
@@ -34,8 +54,8 @@ function EditorLeft({storedPlan}){
 
 {/** 스토어에서 정보 가져오는 코드 */}
 function mapStateToProps(plan){
-    console.log(store);
     {/** props */}
+    console.log(plan.state);
     return {
         storedPlan : plan
     };

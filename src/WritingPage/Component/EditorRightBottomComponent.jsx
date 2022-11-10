@@ -1,6 +1,6 @@
 
 import {connect} from "react-redux";
-import {actionCreators} from "../../Store/EditorStore";
+import {actionCreators} from "../../Store/Store";
 import React, {useRef, useState, useEffect} from "react";
 import StickyBox from "react-sticky-box";
 import Switch from "react-switch";
@@ -36,30 +36,27 @@ function EditorRightBottomComponent({dispatch}){
     {/**달력 */}
     const [calendar, setCalendar] = useState(new Date());
     {/**시계 */}
-    const [Time, onChangeTime] = useState(['10:00', '11:00']);
+    const [Time, onChangeTime] = useState(['10:00~', '11:00']);
 
-    const [list, setList] = useState([]);
+    {/**const [list, setList] = useState([]);*/}
 
     const addList = () => {
         let Days = ['일', '월', '화', '수', '목', '금', '토'];
         let Month = getMonth(calendar) + 1;
         let Date = getDate(calendar);
         let Day = Days[getDay(calendar)]; 
-        dispatch(actionCreators.addPlan((String(Month + "." + Date + " (" + Day + ")")), Time));
-
+        dispatch(actionCreators.addPlan((String(Month + "/" + Date + " (" + Day + ")")), Time, state.toString()));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
-
       };
-   
+
     return(
         <StickyBox offsetTop={340}>
         <div style = {styles.wrapper}>
             <div class = "reserve-container">
-        
-            {/*<EditorLeft list = {list}/>*/}
 
             {/*온라인 오프라인 설정*/} 
             <div className="example">
+            <div id = "toggleContainer">
             <label htmlFor="material-switch">
                 <Switch
                 checked={state}
@@ -134,7 +131,12 @@ function EditorRightBottomComponent({dispatch}){
                 id="small-radius-switch"
                 />
             </label>
-            <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
+                <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
+            </div>
+
+            <div>
+            <button type="submit" class = "apply-club">작성하기</button>
+            </div>
             </div>
 
             <div class = "reserve-calender-time">
@@ -156,11 +158,13 @@ function EditorRightBottomComponent({dispatch}){
                     minutePlaceholder = "분"
                     rangeDivider = "~"
                     disableClock = {true}
-                    onChange={onChangeTime} value={Time} 
+                    onChange={onChangeTime} 
                     />
                 </span>
             </div>
+            {/**오프라인일때 */}
             { !state && <Search /> }
+            {/**온라인일때 */}
             {state && 
             <pre class = "information">
                 온라인의 경우 주최자가 직접 신청자들에게<br/>
