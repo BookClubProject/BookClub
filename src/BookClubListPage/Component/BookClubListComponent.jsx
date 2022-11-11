@@ -52,16 +52,17 @@ const styles = {
   }
 }
 const placeData = [
-    { id: 1, color: "온라인" },
-    { id: 2, color: "오프라인" },
-]
+    { id: 1, place: "온라인" },
+    { id: 2, place: "오프라인" },
+];
 const bookTemaData = [
-  { id: 1, color: "자기계발" },
-  { id: 2, color: "금융/경제" },
-  { id: 3, color: "인문학" },
-  { id: 4, color: "종교" },
-  { id: 5, color: "과학" },
-]
+  { id: 1, tema: "자기계발" },
+  { id: 2, tema: "금융/경제" },
+  { id: 3, tema: "인문학" },
+  { id: 4, tema: "종교" },
+  { id: 5, tema: "과학" },
+];
+
 const image = {
     searchImage: require('../../ImageSource/search.jpg'),
   }
@@ -151,10 +152,10 @@ function ClubList(){
           <div id = "temaContainer">
             <div id = "temaContent">테마 : 
             <Multiselect
-              dataKey="id"
-              textField="book-tema"
-              defaultValue={[1]}
               data={bookTemaData}
+              dataKey="id"
+              textField="tema"
+              defaultValue={[1]}
             />
             </div>
           </div>
