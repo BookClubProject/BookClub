@@ -19,7 +19,7 @@ function TopMenuComponent(){
                 <Link to = {`/write`} class = "writing">글쓰기</Link>
                 <Link to = {`/login`} class = "login">로그인</Link>
                 <Link to = {`/join`} class = "join">회원가입</Link>
-                <span class = "mypage">마이페이지</span>
+                <Link to = {`/mypage`}class = "mypage">마이페이지</Link>
             </div>
             <hr class = "line" size="1" color="red"></hr>
 

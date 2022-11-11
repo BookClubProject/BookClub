@@ -4,6 +4,7 @@ import JoinPage from "./LoginJoinPage/joinPage.jsx";
 import WritePage from "./WritingPage/writePage.jsx";
 import BookClub from "./BookClubListPage/BookClub.jsx";
 import Detail from "./BookClubDetailPage/BookDetail";
+import MyPage from "./MyPage/Mypage.jsx"
 import Test from "./test";
 import {Routes, Route } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/clublist" element = {<BookClub />} />
         <Route path="/test" element = {<Test />} />
         <Route path = "/detail/:id" element = {<Detail />}/>
+        <Route path ="/mypage" element={<MyPage/>}/>
       </Routes>
    
   );
