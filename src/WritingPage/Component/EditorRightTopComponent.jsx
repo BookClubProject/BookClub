@@ -90,7 +90,7 @@ function EditorRightTopComponent(){
     {/**API 가져오기 */}
     const getSearchBook = async () => {
       try {
-          const searchedBook = await axios.get('v1/search/book.json',{
+          const searchedBook = await axios.get('/v1/search/book.json',{
               params:{
                 query: naverBook,
                 display: 10,

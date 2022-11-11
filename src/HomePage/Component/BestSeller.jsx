@@ -21,6 +21,7 @@ const Book = () => {
         "/api/bestSeller.api?key=" + key + "&categoryId=100&output=json"
       )
     ).json();
+    console.log(json);
     setbestBooks(json.item);
     setLoading(false);
   };
