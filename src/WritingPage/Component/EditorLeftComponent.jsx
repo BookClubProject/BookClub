@@ -36,7 +36,7 @@ function EditorLeft({storedPlan}){
                         <div class = "plan-container">
                         <span style = {styles.calender}>{plan.calendar}</span>
                         <span style = {styles.time}>{plan.time}</span>
-                        <span style = {{float : "right", paddingBottom : "30px"}}>
+                        <span style = {{float : "right", width : "50px"}}>
                         <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button><br/>
                         </span>
                         <div>{plan.state}</div>
