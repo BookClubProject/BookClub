@@ -2,12 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "./BottomComponent.css";
 
-const styles = {
-  wrapper: {
-    padding: "30px 0",
-    color: "#fff",
-  },
-};
 function BottomComponent() {
   let [menu, setMenu] = useState([
     { data: "회사소개" },

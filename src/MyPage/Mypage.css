@@ -1,0 +1,13 @@
+/* 탑 메뉴 */
+.topinf_wrap {
+    height: 4rem;
+    background-color: aqua;
+}
+
+.sidebar {
+    flex : 2;
+}
+.content_wrap {
+    flex: 8;
+    background-color: antiquewhite;
+}

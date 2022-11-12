@@ -1,53 +1,69 @@
 import "../Mypage.css";
 import { useState } from "react";
+import styled from "styled-components";
 
-function Menu() {
-  const profil = [
+function Sidebar() {
+  const data = [
     {
       id: 0,
-      title: "알림",
+      title: "프로필",
     },
     {
       id: 1,
-      title: "회원정보수정",
+      title: "알림",
     },
-  ];
-
-  const management = [
     {
       id: 2,
-      title: "토론승인",
+      title: "회원정보수정",
     },
     {
       id: 3,
-      title: "토론수정",
+      title: "토론관리",
     },
-  ];
-
-  const participation = [
     {
       id: 4,
-      title: "후기",
+      title: "토론승인",
     },
     {
       id: 5,
-      title: "토론취소",
+      title: "토론수정",
     },
-  ];
-
-  const inquiry = [
     {
       id: 6,
-      title: "문의하기",
+      title: "참여토론",
     },
     {
       id: 7,
+      title: "후기",
+    },
+    {
+      id: 8,
+      title: "토론참가취소",
+    },
+    {
+      id: 9,
+      title: "문의",
+    },
+    {
+      id: 10,
       title: "문의내역",
     },
   ];
-  <aside className="sidebar_left">
-    <div className="menu_container">
-      <p className="menu_title">프로필</p>
+
+
+
+  return (
+  <aside className="sidebar">
+    <div className="sidebar_wrap">
+      {/* {data.map((item) => (
+         <div className="sidebar_menu">
+          <h3 className="sidebar_title">대쉬보드</h3>
+         </div>
+      ))} */}
+     안녕하세요
+        
+
+      {/* <p className="menu_title">프로필</p>
       <ul className="menu_list">
         <li>
           <a className="link_btn">알림</a>
@@ -77,9 +93,13 @@ function Menu() {
       <p className="menu_title">문의</p>
       <li>
         <a className="link_btn">문의 내역</a>
-      </li>
+      </li> */}
+
+
+
     </div>
-  </aside>;
+  </aside>
+  );
 }
 
-export default Menu;
+export default Sidebar;
