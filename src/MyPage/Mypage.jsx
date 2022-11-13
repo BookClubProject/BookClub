@@ -1,9 +1,10 @@
 import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
 import Bottom from "../PublicComponent/BottomComponent";
 import Sidebar from "./Component/Sidebar";
-import Content from "./Component/Content";
 import TopInf from "./Component/TopInf";
-
+import { Routes, Route } from "react-router-dom";
+import Content from "./Component/Content.jsx";
+import Content2 from "./Component/Content2.jsx";
 
 const styles = {
   wrapper: {
@@ -33,10 +34,13 @@ function MyPage() {
       <TopMenuBarComponent />
       <TopInf />
       <div style={styles.main_wrap}>
-      
         <div style={styles.main_content}>
           <Sidebar />
-          <Content />
+          <Routes>
+            <Route path="/" exact element={<Content />}></Route>
+            <Route path="/profill" element={<Content2 />}></Route>
+          </Routes>
+         
         </div>
       </div>
       <Bottom />

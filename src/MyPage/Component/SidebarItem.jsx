@@ -1,12 +1,8 @@
 import React from "react";
 
-function SidebarItem({ menu, isActive }) {
-  return isActive == true ? (
-    <div className="sidebar_item active">
-      <p>{menu.title}</p>
-    </div>
-  ) : (
-    <div className="sidebar_item">
+function SidebarItem({ menu }) {
+  return (
+    <div className= {"sidebar_item btn"+ menu.id} >
       <p>{menu.title}</p>
     </div>
   );
