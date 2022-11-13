@@ -165,3 +165,16 @@
     display : flex;
     justify-content: space-between;
 }
+.react-datepicker-wrapper{
+    width : 32%;
+    padding-left : 10px;
+}
+.react-datepicker__input-container{
+    border : 0px;
+}
+textarea{
+    width : 100%;
+}
+.rw-multiselect-tag{
+    margin-bottom:3px;
+}

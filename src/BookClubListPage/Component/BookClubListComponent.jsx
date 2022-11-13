@@ -6,7 +6,11 @@ import Spinner from 'react-bootstrap/Spinner';
 import {Link} from "react-router-dom";
 import "react-widgets/styles.css";
 import Multiselect from "react-widgets/Multiselect";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import apiTest from "../../Api.json";
 import { useDispatch,useSelector } from 'react-redux';
+import { fireEvent } from "@testing-library/react";
 
 const styles = {
   title : {
@@ -80,22 +84,53 @@ function ClubList(){
   const [clubList, setClubList] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  {/**독서모임 검색 */}
-  const searchBookClub = () =>{
-    setClubList(tempList.filter(list => list.booktitle.includes(search)));
+  {/**온라인 오프라인 선택 */}
+  const [checkedPlace, setCheckedPlace] = useState();
+  const getPlaceChange = (event) => {
+    setCheckedPlace(event);
+  };
+
+  const [checkedTema, setCheckedTema] = useState([]);
+  const getTemaChange = (event) => {
+    setCheckedTema(event);
+    console.log(event);
   }
 
-  {/**오프캔버스 */}
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  {/**독서모임 검색 */}
+  const searchBookClub = () =>{
+    //setClubList(tempList.filter(
+    //  (list) => list.booktitle.includes(search) && list.state.includes(place)))
+
+    const place = checkedPlace.reduce((accumulate, currentValue) =>{
+      accumulate.push(currentValue.place);
+      return accumulate;
+    }, [])
+
+    const tema = checkedTema.reduce((accumulate, currentValue) =>{
+      accumulate.push(currentValue.tema);
+      return accumulate;
+    }, [])
+
+    console.log(place);
+    console.log(tema);
+
+    const result = tempList.filter((list) => list.booktitle.includes(search));
+    setClubList(result);
+  }
+    
+  {/** 달력 */}
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
 
   {/**API 가져오기 */}
   const getClubList = async() =>{
         try {
-          const getClubList = await (await axios.get("https://894a7a67-113b-453b-ad3b-578b44b1c2c2.mock.pstmn.io/booklist"));
-          setTempList(getClubList.data);
-          setClubList(getClubList.data); {/** api 가져오기 */} 
+          //const getClubList = await (await axios.get("https://50907063-b25d-4ab2-973c-8d4de9d0c872.mock.pstmn.io/book"));
+          //setTempList(getClubList.data);
+          //setClubList(getClubList.data); {/** api 가져오기 */} 
+          setTempList(apiTest);
+          setClubList(apiTest);
           setLoading(false); {/**로딩중 없애기 */}
         } catch {
           console.log("error");
@@ -141,13 +176,11 @@ function ClubList(){
             <Multiselect
               dataKey="id"
               textField="place"
-              defaultValue={[1]}
+              //defaultValue={[1]}
               data={placeData}
+              onChange = {getPlaceChange}
             />
             </div>
-          </div>
-          <div id = "calendarContainer">
-            <div id = "calendarContent">시간 : </div>
           </div>
           <div id = "temaContainer">
             <div id = "temaContent">테마 : 
@@ -155,8 +188,23 @@ function ClubList(){
               data={bookTemaData}
               dataKey="id"
               textField="tema"
-              defaultValue={[1]}
+              onChange = {getTemaChange}
+              //defaultValue={[1]}
             />
+            </div>
+          </div>
+          <div id = "calendarContainer">
+            <div id = "calendarContent">
+              <span style = {{width : "60px"}}>시간 :</span> 
+              <DatePicker
+                selectsRange={true}
+                startDate={startDate}
+                endDate={endDate}
+                onChange={(update) => {
+                  setDateRange(update);
+                }}
+                isClearable={true}
+              />
             </div>
           </div>
         </div>
