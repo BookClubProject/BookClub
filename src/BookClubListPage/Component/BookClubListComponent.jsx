@@ -85,39 +85,39 @@ function ClubList(){
   const [loading, setLoading] = useState(true);
 
   {/**온라인 오프라인 선택 */}
+  const [place, setPlace] = useState();
   const [checkedPlace, setCheckedPlace] = useState();
   const getPlaceChange = (event) => {
     setCheckedPlace(event);
   };
 
+  const [tema, setTema] = useState();
   const [checkedTema, setCheckedTema] = useState([]);
   const getTemaChange = (event) => {
     setCheckedTema(event);
-    console.log(event);
   }
 
 
   {/**독서모임 검색 */}
   const searchBookClub = () =>{
-    //setClubList(tempList.filter(
-    //  (list) => list.booktitle.includes(search) && list.state.includes(place)))
+    {/** 검색 분류 */}
+    const sortSearchResult = tempList.filter((list) => list.booktitle.includes(search));
 
-    const place = checkedPlace.reduce((accumulate, currentValue) =>{
-      accumulate.push(currentValue.place);
-      return accumulate;
+    {/** 온라인 오프라인 분류 */}
+    const sortPlaceResult = sortSearchResult.reduce((accumulate, currentValue, index) =>{
+      checkedPlace.map((list, index)=>{
+        if(list.place === currentValue.state){
+          accumulate.push(currentValue);
+        }
+      })
+    return accumulate;
     }, [])
 
-    const tema = checkedTema.reduce((accumulate, currentValue) =>{
-      accumulate.push(currentValue.tema);
-      return accumulate;
-    }, [])
-
-    console.log(place);
-    console.log(tema);
-
-    const result = tempList.filter((list) => list.booktitle.includes(search));
-    setClubList(result);
+    console.log(sortPlaceResult);
+    setClubList(sortPlaceResult);
   }
+
+
     
   {/** 달력 */}
   const [dateRange, setDateRange] = useState([null, null]);
