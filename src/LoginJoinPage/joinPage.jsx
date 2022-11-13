@@ -4,7 +4,7 @@ import Bottom from "../PublicComponent/BottomComponent";
 
 const styles = {
     wrapper : {
-        height : "100%",
+        height : "100vh",
         width : "100%",
     },
     messageText : {
