@@ -9,7 +9,7 @@ import calendarImage from '../../ImageSource/calendar.png';
 import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
 import Search from "./SearchPlaceComponent";
 import { ko } from "date-fns/esm/locale";
-import { getMonth, getDate, getDay } from "date-fns";
+import { getYear, getMonth, getDate, getDay } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import "../Write.css";
 
@@ -42,11 +42,16 @@ function EditorRightBottomComponent({dispatch}){
 
     const addList = () => {
         let Days = ['일', '월', '화', '수', '목', '금', '토'];
+        let Year = getYear(calendar);
         let Month = getMonth(calendar) + 1;
         let Date = getDate(calendar);
         let Day = Days[getDay(calendar)]; 
-        dispatch(actionCreators.addPlan((String(Month + "/" + Date + " (" + Day + ")")), Time, state.toString()));
+        dispatch(actionCreators.addPlan(String(Year), String(Month), String(Date), String(Day), Time, state.toString()));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
+        console.log(Year);
+        console.log(Month);
+        console.log(Date);
+        console.log(Day);
       };
 
     return(

@@ -34,7 +34,7 @@ function EditorLeft({storedPlan}){
 
             return <div key={index} class="box">
                         <div class = "plan-container">
-                        <span style = {styles.calender}>{plan.calendar}</span>
+                        <span style = {styles.calender}>{plan.year}.{plan.month}.{plan.date}{plan.day}</span>
                         <span style = {styles.time}>{plan.time}</span>
                         <span style = {{float : "right", width : "50px"}}>
                         <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button><br/>
@@ -55,7 +55,6 @@ function EditorLeft({storedPlan}){
 {/** 스토어에서 정보 가져오는 코드 */}
 function mapStateToProps(plan){
     {/** props */}
-    console.log(plan.state);
     return {
         storedPlan : plan
     };

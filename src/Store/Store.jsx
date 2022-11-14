@@ -5,7 +5,7 @@ import {useState} from "react";
 var location = '';
 var detailLocation = '';
 
-const addPlan = (calendar, time, state) =>{
+const addPlan = (year, month, date, day, time, state) =>{
     if(state == "true") {
         state = "온라인";
         location = '';
@@ -14,7 +14,10 @@ const addPlan = (calendar, time, state) =>{
     else state = "오프라인";
     return{
         type : "ADD",
-        calendar,
+        year,
+        month,
+        date,
+        day,
         time,
         state,
         location,
@@ -36,14 +39,17 @@ export const searchDetailPlace = (setDetailLocation) =>{
     detailLocation = setDetailLocation;
 }
 
-const initstate = ["example"];
+const initstate = [''];
 
 export const reducer = (plan = initstate, action) =>{
     switch(action.type){
         case "ADD" : {
             return [
                 {
-                    calendar : action.calendar.toString(),
+                    year : action.year,
+                    month : action.month,
+                    date : action.date,
+                    day : action.day,
                     time : action.time,
                     state : action.state,
                     location,

@@ -9,6 +9,7 @@ import Multiselect from "react-widgets/Multiselect";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import apiTest from "../../Api.json";
+import { getYear, getMonth, getDate, getDay } from "date-fns";
 import { useDispatch,useSelector } from 'react-redux';
 import { fireEvent } from "@testing-library/react";
 
@@ -86,13 +87,22 @@ function ClubList(){
 
   {/**온라인 오프라인 선택 */}
   const [place, setPlace] = useState();
-  const [checkedPlace, setCheckedPlace] = useState();
+  const [checkedPlace, setCheckedPlace] = useState([{id: 1, place: '온라인'}, {id: 2, place: '오프라인'}]);
   const getPlaceChange = (event) => {
     setCheckedPlace(event);
   };
+  {/**달력 */}
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
 
+  {/**테마 */}
   const [tema, setTema] = useState();
-  const [checkedTema, setCheckedTema] = useState([]);
+  const [checkedTema, setCheckedTema] = useState([
+    {id: 1, tema: '자기계발'}, 
+    {id: 2, tema: '금융/경제'}, 
+    {id: 3, tema: '인문학'}, 
+    {id: 4, tema: '종교'},
+    {id: 5, tema: '과학'}]);
   const getTemaChange = (event) => {
     setCheckedTema(event);
   }
@@ -100,6 +110,7 @@ function ClubList(){
 
   {/**독서모임 검색 */}
   const searchBookClub = () =>{
+
     {/** 검색 분류 */}
     const sortSearchResult = tempList.filter((list) => list.booktitle.includes(search));
 
@@ -113,15 +124,60 @@ function ClubList(){
     return accumulate;
     }, [])
 
-    console.log(sortPlaceResult);
-    setClubList(sortPlaceResult);
+    {/** 테마 분류 */}
+    const sortTema = sortPlaceResult.reduce((accumulate, currentValue, index) =>{
+      checkedTema.map((list, index)=>{
+        if(list.tema === currentValue.tema){
+          accumulate.push(currentValue);
+        }
+      })
+    return accumulate;
+    }, [])
+
+    {/** 시간 분류 */}
+    const sortDate = sortTema.reduce((accumulate, currentValue, index) =>{
+      
+    return accumulate;
+    }, [])
+
+    addDate();
+    console.log(startDate);
+    console.log(endDate);
+    console.log(endDate-startDate);
+    setClubList(sortTema);
+  }
+  const addDate = () => {
+    let startYear = getYear(startDate);
+    let startMonth = getMonth(startDate) + 1;
+    let startDay = getDate(startDate);
+
+    let endYear = getYear(endDate);
+    let endMonth = getMonth(endDate) + 1;
+    let endDay = getDate(endDate);
+    
+    console.log(endYear-startYear);
+    console.log(endMonth-startMonth);
+    console.log(endDay-startDay);
+  };
+
+  {/** 온라인 오프라인 초기화*/}
+  const placeSetting = () =>{
+    setCheckedPlace(
+      [{id: 1, place: '온라인'}, {id: 2, place: '오프라인'}]
+    )
   }
 
-
-    
-  {/** 달력 */}
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startDate, endDate] = dateRange;
+  {/** 테마 초기화*/}
+  const temaSetting = () =>{
+    setCheckedTema(
+      [
+        {id: 1, tema: '자기계발'}, 
+        {id: 2, tema: '금융/경제'}, 
+        {id: 3, tema: '인문학'}, 
+        {id: 4, tema: '종교'},
+        {id: 5, tema: '과학'}]
+    )
+  }
 
   {/**API 가져오기 */}
   const getClubList = async() =>{
@@ -138,6 +194,21 @@ function ClubList(){
         }
   }
 
+  {/**장소 아무것도 체크 안하고 검색 시 초기화 */}
+  useEffect(() => {
+    if(checkedPlace.length === 0){
+      placeSetting();
+    }
+  }, [checkedPlace]);
+
+  {/**테마 아무것도 체크 안하고 검색 시 초기화 */}
+  useEffect(() => {
+    if(checkedTema.length === 0){
+      temaSetting();
+    }
+  }, [checkedTema]);
+
+  {/**모임 리스트 나열*/}
     useEffect(() => {
       getClubList();
     }, []);
@@ -203,7 +274,7 @@ function ClubList(){
                 onChange={(update) => {
                   setDateRange(update);
                 }}
-                isClearable={true}
+                withPortal
               />
             </div>
           </div>
@@ -223,7 +294,7 @@ function ClubList(){
               
                   <div id = "plan-container">
                   <hr style={styles.line}/>
-                    <div>{list.state}&nbsp;{list.location}&nbsp;{list.detailLocation}</div>
+                    <div>{list.tema}&nbsp;{list.state}&nbsp;{list.location}&nbsp;{list.detailLocation}</div>
                     <div>시간 : {list.calendar}&nbsp;{list.time}</div>
                   </div>
               </div>      
