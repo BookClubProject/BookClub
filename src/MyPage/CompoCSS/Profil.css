@@ -1,0 +1,50 @@
+
+.wrap {
+    height: 100%;
+    width: 100%;
+    background-color: bisque;
+}
+.inner_wrap {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+
+/* 소개 */
+.introduction {
+    flex: 1;
+    width: 100%;
+    background-color: rgb(124, 229, 194);
+}
+.introduction_top {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(242, 195, 170);
+    justify-content: flex-start;
+}
+.title {
+    padding: 15px 0px 0px 15px;
+    font-size: 3rem;
+}
+.change_btn {
+    margin: 10px 0px 10px 0px;
+    margin-left: auto;
+    padding: 5px 30px 5px 30px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    border: 2px solid rgb(198, 197, 194);
+}
+.change_btn:hover {
+    background-color: rgb(171, 248, 171);
+    border-color: rgb(85, 166, 71);
+    color:  rgb(85, 166, 71);
+}
+
+/* 토론 후기 */
+.review {
+    flex: 1;
+    width: 100%;
+    background-color: rgb(235, 235, 172);
+}

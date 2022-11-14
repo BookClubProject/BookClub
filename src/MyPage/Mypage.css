@@ -1,13 +1,37 @@
-/* 탑 메뉴 */
+/*탑 정보*/
 .topinf_wrap {
+    /* 탑 메뉴 */
     height: 4rem;
     background-color: aqua;
 }
 
+/*사이드 바*/
 .sidebar {
     flex : 2;
 }
-.content_wrap {
-    flex: 8;
-    background-color: antiquewhite;
+.sidebar_wrap {
+    border : 1px solid rgb(146, 146, 145);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.active {
+    background-color:rgb(208, 245, 170);
+    font-size: 2rem;
+    padding: 8px 3px 3px 3px;
+    color:rgb(49, 129, 41);
+}
+.sidebar_btn {
+    padding-top: 10px;
+    border-radius: 8px;
+    margin-bottom: 3px;
+}
+.sidebar_btn:hover {
+    background-color: rgb(188, 188, 188);
+}
+.active:hover {
+    background-color:rgb(208, 245, 170);
 }
