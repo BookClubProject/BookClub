@@ -48,10 +48,6 @@ function EditorRightBottomComponent({dispatch}){
         let Day = Days[getDay(calendar)]; 
         dispatch(actionCreators.addPlan(String(Year), String(Month), String(Date), String(Day), Time, state.toString()));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
-        console.log(Year);
-        console.log(Month);
-        console.log(Date);
-        console.log(Day);
       };
 
     return(

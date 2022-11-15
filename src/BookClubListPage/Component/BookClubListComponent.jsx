@@ -144,28 +144,25 @@ function ClubList(){
     }, [])
 
     {/** 시간 분류 */}
-    let endYear = parseInt(getYear(endDate));
-    let endMonth = parseInt(getMonth(endDate) + 1);
-    let endDay = parseInt(getDate(endDate));
+      let endYear = parseInt(getYear(endDate)) * 10000;
+      let endMonth = parseInt(getMonth(endDate) + 1) * 100;
+      let endDay = parseInt(getDate(endDate));
 
+      let startYear = parseInt(getYear(startDate)) * 10000;
+      let startMonth = parseInt(getMonth(startDate) + 1) * 100;
+      let startDay = parseInt(getDate(startDate));
 
-    const sortDate = sortTema.reduce((accumulate, currentValue, index) =>{
-      {/**년도가 같을 때  */}
-      for(let startYear = parseInt(getYear(startDate)); startYear<= endYear; startYear++){
-        if(startYear === parseInt(currentValue.year)){
-         {/**월이 같을 때  */}
-        for(let startMonth = parseInt(getMonth(startDate) + 1); startMonth<= endMonth; startMonth++){
-            if(startMonth === parseInt(currentValue.month)){
-            {/**일이 같을 때  */}
-          for(let startDay = parseInt(getDate(startDate)); startDay <= endDay; startDay++){
-              if(startDay === parseInt(currentValue.date)){
-                accumulate.push(currentValue);
-              }
-          }
+      const sortDate = sortTema.reduce((accumulate, currentValue, index) =>{
+      let currentYear = parseInt(currentValue.year) * 10000;
+      let currentMonth = parseInt(currentValue.month) * 100;
+      let currentDay = parseInt(currentValue.date);
+      let currentSum = currentYear + currentMonth + currentDay;
+
+      for(index = startYear + startMonth + startDay; index <= endYear + endMonth + endDay; index++){
+        if(index === currentSum){
+          accumulate.push(currentValue);
         }
       }
-    }
-  }
       return accumulate;
     }, [])
 
@@ -175,9 +172,6 @@ function ClubList(){
     else{
       setClubList(sortTema);
     }
-    console.log(sortDate);
-    console.log(sortTema);
-    console.log(dateCheck);
   }
 
   {/** 온라인 오프라인 초기화*/}
