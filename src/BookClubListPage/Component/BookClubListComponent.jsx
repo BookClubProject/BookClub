@@ -12,6 +12,8 @@ import apiTest from "../../Api.json";
 import { getYear, getMonth, getDate, getDay } from "date-fns";
 import { useDispatch,useSelector } from 'react-redux';
 import { fireEvent } from "@testing-library/react";
+import { listItemTextClasses } from "@mui/material";
+import { current } from "@reduxjs/toolkit";
 
 const styles = {
   title : {
@@ -39,13 +41,12 @@ const styles = {
   },
   searchButton : {
     border : "1px solid black",
-    padding : "0px"
-  },
-  inputSize : {
-    width : "100%",
-    height : "100%",
-    border : "1px solid black",
-    borderRight : "0px",
+    padding : "0px",
+    width: "40px",
+    height: "40px",
+    border: "#ccc 1px solid",
+    boxShadow: "inset 0 1px 1px rgb(0 0 0 / 8%)",
+    borderRadius: "4px",
   },
   line : {
     border: "0.5px solid", 
@@ -54,6 +55,13 @@ const styles = {
     opacity: "0.4",
     margin : "0 0 8px 0px",
     marginBottom : "5px",
+  },
+  bookText : {
+    width : "60px",
+    height : "70%",
+    fontSize: "20px",
+    margin: "auto",
+    marginTop: "10px",
   }
 }
 const placeData = [
@@ -94,6 +102,7 @@ function ClubList(){
   {/**달력 */}
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
+  const [dateCheck, setDateCheck] = useState(false);
 
   {/**테마 */}
   const [tema, setTema] = useState();
@@ -135,30 +144,41 @@ function ClubList(){
     }, [])
 
     {/** 시간 분류 */}
+    let endYear = parseInt(getYear(endDate));
+    let endMonth = parseInt(getMonth(endDate) + 1);
+    let endDay = parseInt(getDate(endDate));
+
+
     const sortDate = sortTema.reduce((accumulate, currentValue, index) =>{
-      
-    return accumulate;
+      {/**년도가 같을 때  */}
+      for(let startYear = parseInt(getYear(startDate)); startYear<= endYear; startYear++){
+        if(startYear === parseInt(currentValue.year)){
+         {/**월이 같을 때  */}
+        for(let startMonth = parseInt(getMonth(startDate) + 1); startMonth<= endMonth; startMonth++){
+            if(startMonth === parseInt(currentValue.month)){
+            {/**일이 같을 때  */}
+          for(let startDay = parseInt(getDate(startDate)); startDay <= endDay; startDay++){
+              if(startDay === parseInt(currentValue.date)){
+                accumulate.push(currentValue);
+              }
+          }
+        }
+      }
+    }
+  }
+      return accumulate;
     }, [])
 
-    addDate();
-    console.log(startDate);
-    console.log(endDate);
-    console.log(endDate-startDate);
-    setClubList(sortTema);
+    if(dateCheck){
+      setClubList(sortDate);
+    }
+    else{
+      setClubList(sortTema);
+    }
+    console.log(sortDate);
+    console.log(sortTema);
+    console.log(dateCheck);
   }
-  const addDate = () => {
-    let startYear = getYear(startDate);
-    let startMonth = getMonth(startDate) + 1;
-    let startDay = getDate(startDate);
-
-    let endYear = getYear(endDate);
-    let endMonth = getMonth(endDate) + 1;
-    let endDay = getDate(endDate);
-    
-    console.log(endYear-startYear);
-    console.log(endMonth-startMonth);
-    console.log(endDay-startDay);
-  };
 
   {/** 온라인 오프라인 초기화*/}
   const placeSetting = () =>{
@@ -208,6 +228,16 @@ function ClubList(){
     }
   }, [checkedTema]);
 
+  {/**시간 아무것도 체크 안하고 검색 시 초기화 */}
+  useEffect(() => {
+    if(startDate === null || endDate === null){
+      setDateCheck(false);
+    }
+    else if(startDate !== null && endDate !== null){
+      setDateCheck(true);
+    }
+  }, [startDate, endDate]);
+
   {/**모임 리스트 나열*/}
     useEffect(() => {
       getClubList();
@@ -229,19 +259,23 @@ function ClubList(){
         <div class = "book-search-container">
           <h1 style = {styles.title}>독서모임을 찾아보세요!(멘트바꿔야함)</h1>
           <div style = {styles.subTitle}>여기엔 수많은 독서모임이 있습니다.(멘트바꿔야함)</div>
-          <div class = "search-book-club-form">
-            <input style = {styles.inputSize}
+        </div>
+
+        {/*추가분류*/}
+        <div class = "sort-container">
+
+        <div id = "searchContainer">
+          <span style = {styles.bookText}>도서 :</span> 
+        <div id = "searchContent">
+            <input id = "inputSize"
                   type="text"
                   placeholder="도서검색"
                   value={search}
                   onChange={handleChange}
               />
             <button type="submit" style = {styles.searchButton}><img src={image.searchImage} style = {styles.imageSize} onClick = {searchBookClub}/></button>
+            </div>
           </div>
-        </div>
-
-        {/*추가분류*/}
-        <div class = "sort-container">
           <div id = "toggleContainer">
             <div id = "toggleContent">지역 : 
             <Multiselect
@@ -266,7 +300,7 @@ function ClubList(){
           </div>
           <div id = "calendarContainer">
             <div id = "calendarContent">
-              <span style = {{width : "60px"}}>시간 :</span> 
+              <span style = {{width : "55px"}}>시간 :</span> 
               <DatePicker
                 selectsRange={true}
                 startDate={startDate}
@@ -274,6 +308,7 @@ function ClubList(){
                 onChange={(update) => {
                   setDateRange(update);
                 }}
+                isClearable={true}
                 withPortal
               />
             </div>
@@ -295,7 +330,7 @@ function ClubList(){
                   <div id = "plan-container">
                   <hr style={styles.line}/>
                     <div>{list.tema}&nbsp;{list.state}&nbsp;{list.location}&nbsp;{list.detailLocation}</div>
-                    <div>시간 : {list.calendar}&nbsp;{list.time}</div>
+                    <div>시간 : {list.year}.{list.month}.{list.date}{list.day}&nbsp;{list.time}</div>
                   </div>
               </div>      
             </Link>
