@@ -1,4 +1,4 @@
-import "../Mypage.css";
+import "./Mypage.css";
 
 function TopInf() {
 

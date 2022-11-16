@@ -1,0 +1,38 @@
+
+.alarm_wrap {
+    height: 100%;
+    padding : 10px;
+    /* background-color: aqua; */
+}
+.alarm_content_wrap {
+    padding: 10px;
+}
+.alarm_title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    /* background-color:antiquewhite; */
+}
+.reservation_alarm {
+    width: 100%;
+    display: flex;
+    border: 1px solid rgb(185, 181, 181);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    background-color: rgb(233, 233, 234);
+
+}
+.reservation_text {
+    width: 100%;
+    flex: 8;
+    padding: 15px 15px 10px 15px;;
+   
+}
+.alarm_text_main {
+    font-size: 1.8rem;
+}
+.alarm_text_sub {
+    font-size: 1.3rem;
+}
+.alarm_on_off {
+    flex: 2;
+}

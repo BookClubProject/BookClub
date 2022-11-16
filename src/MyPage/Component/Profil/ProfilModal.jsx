@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-
+import "../../CompoCSS/Profil.css"
 const styles = {
   body: {
     padding: "10px",
   },
-  label: {
+  label  :{
     height: "10rem",
   },
+  button : {
+    background : "#8ec657",
+    color : "white",
+    border: "none"
+  }
 };
 
 const ProfilModal = ({ show, onHide, content, setContent }) => {
@@ -63,10 +68,10 @@ const ProfilModal = ({ show, onHide, content, setContent }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" type="button" onClick={onChange}>
+        <Button style={styles.button} variant="primary" type="button" onClick={onChange}>
           수정
         </Button>
-        <Button onClick={onHide}>닫기</Button>
+        <Button style={styles.button} onClick={onHide}>닫기</Button>
       </Modal.Footer>
     </Modal>
   );

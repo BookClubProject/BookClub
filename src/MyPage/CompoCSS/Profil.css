@@ -1,4 +1,10 @@
 
+.form-control:focus{
+    outline: none !important;
+    border-color: #8ec657;
+    box-shadow: 0 0 10px #c1e39e;
+    border-radius: 3px;
+}
 .wrap {
     height: 100%;
     width: 100%;

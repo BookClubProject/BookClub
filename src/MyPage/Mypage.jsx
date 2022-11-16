@@ -1,31 +1,36 @@
 import TopMenuBarComponent from "../PublicComponent/TopMenuBarComponent";
 import Bottom from "../PublicComponent/BottomComponent";
-import Sidebar from "./Component/Sidebar";
-import TopInf from "./Component/TopInf";
+import Sidebar from "./Sidebar/Sidebar";
+import TopInf from "./TopInf";
 import { Routes, Route } from "react-router-dom";
 import Profil from "./Component//Profil/Profil.jsx";
-import Content2 from "./Component/Content2.jsx";
+import Alarm from "./Component/Alam/Alarm.jsx";
+import Account from "./Component/Account/Account.jsx"
 
 
 const styles = {
   wrapper: {
-    height: "100vh",
+    height: "150rem",
     width: "100%" /* 가로 사이즈를 브라우저에 가득 채움 */,
     fontFamily: "Jua, sans-serif",
   },
   main_wrap: {
-    height: "75rem",
+    height: "100%",
+    // height: "75rem",
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     background: "yellow",
+    marginBottom : "7rem"
+
   },
   main_content: {
     height: "100%",
     width: "110rem",
     background: "white",
     display: "flex",
+    paddingTop : "10px",
   },
   main_content_cover : {
     height: "100%",
@@ -49,16 +54,16 @@ function MyPage() {
             <Routes>
               <Route path="/" exact element={<Profil />}></Route>
               <Route path="/profil" element={<Profil />}></Route>
-              <Route path="/notice" element={<Content2 />}></Route>
-              <Route path="/editmember" element={<Content2 />}></Route>
-              <Route path="/d2" element={<Content2 />}></Route>
+              <Route path="/notice" element={<Alarm />}></Route>
+              <Route path="/editmember" element={<Account />}></Route>
+              {/* <Route path="/d2" element={<Content2 />}></Route>
               <Route path="/3" element={<Content2 />}></Route>
               <Route path="/4" element={<Content2 />}></Route>
               <Route path="/5" element={<Content2 />}></Route>
               <Route path="/6" element={<Content2 />}></Route>
               <Route path="/7" element={<Content2 />}></Route>
               <Route path="/8" element={<Content2 />}></Route>
-              <Route path="/9" element={<Content2 />}></Route>
+              <Route path="/9" element={<Content2 />}></Route> */}
             </Routes>
           </div>
         </div>
