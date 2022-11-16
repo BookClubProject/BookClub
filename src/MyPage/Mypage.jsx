@@ -3,7 +3,7 @@ import Bottom from "../PublicComponent/BottomComponent";
 import Sidebar from "./Component/Sidebar";
 import TopInf from "./Component/TopInf";
 import { Routes, Route } from "react-router-dom";
-import Profil from "./Component/Profil.jsx";
+import Profil from "./Component//Profil/Profil.jsx";
 import Content2 from "./Component/Content2.jsx";
 
 

@@ -2,7 +2,7 @@
 .wrap {
     height: 100%;
     width: 100%;
-    background-color: bisque;
+    /* background-color: bisque; */
 }
 .inner_wrap {
     height: 100%;
@@ -16,17 +16,16 @@
 .introduction {
     flex: 1;
     width: 100%;
-    background-color: rgb(124, 229, 194);
 }
 .introduction_top {
     display: flex;
     flex-direction: row;
-    background-color: rgb(242, 195, 170);
     justify-content: flex-start;
 }
 .title {
     padding: 15px 0px 0px 15px;
     font-size: 3rem;
+    height: 20%;
 }
 .change_btn {
     margin: 10px 0px 10px 0px;
@@ -41,10 +40,62 @@
     border-color: rgb(85, 166, 71);
     color:  rgb(85, 166, 71);
 }
+.profil_introduction_main {
+    width: 100%;
+    height: 100%;
+}
+.profil_main_title {
+    padding: 5px 0px 10px 15px;
+    font-weight: 500px;
+    font-size: 2rem;
+}
+.profil_main_contents {
+    font-size: 1.5rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.division_line {
+    border: 1px solid rgb(186, 186, 186);
+}
+
+
+
 
 /* 토론 후기 */
 .review {
     flex: 1;
     width: 100%;
-    background-color: rgb(235, 235, 172);
+    height: 100%;
+    /* background-color: rgb(235, 235, 172); */
+}
+.list {
+    height: 80%;
+    padding: 10px;
+}
+.review_list {
+    height: 100%;
+    width: 100%;
+
+}
+.review_link_component {
+    display:flex;
+    text-decoration:none;
+    width: 100%;
+    color: black;
+}
+.review_link_component:hover {
+   
+}
+.review_link_inner {
+    border: 1px solid rgb(154, 154, 159);
+    border-radius: 8px;
+    margin-bottom: 2px;
+    padding: 7px;
+    width: 100%;
+    
+}
+.review_link_inner:hover {
+    color: rgb(49, 129, 41);;
+    background-color:  rgb(208, 245, 170);
 }
