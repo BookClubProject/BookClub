@@ -10,6 +10,7 @@ import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
 import Search from "./SearchPlaceComponent";
 import { ko } from "date-fns/esm/locale";
 import { getYear, getMonth, getDate, getDay } from "date-fns";
+import {useSelector} from 'react-redux';
 import "react-datepicker/dist/react-datepicker.css";
 import "../Write.css";
 
@@ -50,6 +51,10 @@ function EditorRightBottomComponent({dispatch}){
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
       };
 
+    const ADDPLAN = () => {
+        const plans = useSelector(plan => plan);
+        console.log(plans);
+    }
     return(
         <StickyBox offsetTop={340}>
         <div style = {styles.wrapper}>
@@ -136,7 +141,7 @@ function EditorRightBottomComponent({dispatch}){
             </div>
 
             <div>
-            <button type="submit" class = "apply-club">작성하기</button>
+            <button type="submit" class = "apply-club" onClick = {ADDPLAN}>작성하기</button>
             </div>
             </div>
 

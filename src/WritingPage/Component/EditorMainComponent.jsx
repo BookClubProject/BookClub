@@ -4,18 +4,9 @@ import Switch from "react-switch";
 import "react-quill/dist/quill.snow.css";
 import "../Write.css";
 
-class EditorComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { checked: false };
-    this.handleChange = this.handleChange.bind(this);
-  }
+function EditorComponent() {
 
-  handleChange(checked) {
-    this.setState({ checked });
-  }
-
-  modules = {
+  const modules = {
     toolbar: [
       //[{ 'font': [] }],
       [{ header: [1, 2, false] }],
@@ -32,7 +23,7 @@ class EditorComponent extends Component {
     ],
   };
 
-  formats = [
+  const formats = [
     //'font',
     "header",
     "bold",
@@ -49,25 +40,20 @@ class EditorComponent extends Component {
     "color",
     "background",
   ];
+  const [value, onChange] = useState(); //모임 글 수정하는 글 데베에서 글 가져와서 여기 초기값에 대입하면 됨
 
-  render() {
-    const { value, onChange } = this.props;
-    return (
-      
-        <div style={{ height: "600px", width : "400%"}}>{/**여기 높이 올리면 footer랑 간격 높아짐 */}
-          <ReactQuill
-            style={{ height: "660px" }}
-            theme="snow"
-            modules={this.modules}
-            formats={this.formats}
-            value={value || ""}
-            onChange={(content, delta, source, editor) =>
-              onChange(editor.getHTML())
-            }
-          />
-        </div>
- 
-    );
-  }
+  return (
+    <div style={{ height: "600px", width: "400%" }}>
+      {/**여기 높이 올리면 footer랑 간격 높아짐 */}
+      <ReactQuill
+        style={{ height: "660px" }}
+        theme="snow"
+        modules={modules}
+        formats={formats}
+        value={value || ""}
+        onChange={(content, delta, source, editor) => onChange(editor.getHTML())}
+      />
+    </div>
+  );
 }
 export default EditorComponent;

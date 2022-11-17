@@ -60,12 +60,6 @@ const image = {
 }
 
 function EditorRightTopComponent(){
-
-    {/*도서검색관련*/}
-    const [search, setSearch] = useState('');
-    const handleChange = (event) => {
-        setSearch(event.target.value);
-    };
     {/**다이얼로그 도서검색*/}
     const [naverBook, setNaverBook] = useState('');
     const searchNaverBook = (event) =>{
@@ -129,9 +123,7 @@ function EditorRightTopComponent(){
               <input style = {styles.search}
                   type="text"
                   placeholder="도서검색"
-                  value={search}
-                  onChange={handleChange}
-                  disabled={false}
+                  disabled={true}
               />
               <button type="submit" style = {styles.searchButton} onClick = {handleShow}>검색</button>
           </div>
