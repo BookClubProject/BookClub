@@ -62,5 +62,5 @@
   "devDependencies": {
     "sass": "^1.55.0"
   },
-  "proxy" : "http://book.interpark.com"
+  "proxy": "http://book.interpark.com"
 }
