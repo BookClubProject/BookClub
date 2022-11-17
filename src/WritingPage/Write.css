@@ -74,10 +74,13 @@
     border-radius: 5px;
     background-color: white;
     color:green;
+    height : 40px;
+    width : 70px;
 }
 .input-place{
     border : 1px solid black;
     border-radius: 5px;
+    width : 72%;
 }
 .add-club{
     border : 1px solid green;

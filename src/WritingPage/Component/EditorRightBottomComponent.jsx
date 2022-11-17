@@ -56,7 +56,7 @@ function EditorRightBottomComponent({dispatch}){
         console.log(plans);
     }
     return(
-        <StickyBox offsetTop={340}>
+        <StickyBox offsetTop={260}>
         <div style = {styles.wrapper}>
             <div class = "reserve-container">
 

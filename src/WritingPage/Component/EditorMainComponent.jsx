@@ -4,7 +4,7 @@ import Switch from "react-switch";
 import "react-quill/dist/quill.snow.css";
 import "../Write.css";
 
-function EditorComponent() {
+const EditorComponent = () =>{
 
   const modules = {
     toolbar: [

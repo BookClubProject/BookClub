@@ -78,7 +78,6 @@ function EditorRightTopComponent(){
 
     const selectBook = (list) => {
       setPickBook(list);
-      console.log(list);
     }
 
     {/**API 가져오기 */}
