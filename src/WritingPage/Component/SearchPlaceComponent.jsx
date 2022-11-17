@@ -13,10 +13,6 @@ const SearchPlace = () => {
   const [inputDetailLocation, setInputDetailLocation] = useState('');
   const [Place, setPlace] = useState('')
 
-  const [address, setAddress] = useState(''); // 주소
-  const [addressDetail, setAddressDetail] = useState(''); // 상세주소
-  const [isOpenPost, setIsOpenPost] = useState(false);
-
   {/**다이얼로그 관련 */}
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -38,6 +34,7 @@ const SearchPlace = () => {
 
     setShow(false);
     setInputText(fullAddr);
+    setPlace(fullAddr);
     dispatch(searchPlace(fullAddr));
   };
 
@@ -61,7 +58,6 @@ const SearchPlace = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setPlace(InputText)
   }
 
   useEffect(() => {
@@ -98,7 +94,7 @@ const SearchPlace = () => {
   return (
     <>
       <form className="inputForm" onSubmit={handleSubmit}>
-        <input placeholder="모임 장소를 입력하세요" class = "input-place" onChange={onChangeText} value={InputText} />
+        <input placeholder="주소 검색" class = "input-place" onChange={onChangeText} value={InputText} disabled={true}/>
         {/**<button type="submit" class = "input-place-button" onClick={() => dispatch(searchPlace(InputText))}>검색</button>*/}
         <button type="submit" class = "input-place-button" onClick={handleShow}>검색</button>
         <br/>
@@ -112,14 +108,8 @@ const SearchPlace = () => {
         <Modal.Body>
             <DaumPostcode style={postCodeStyle} autoClose onComplete={onCompletePost} />
         </Modal.Body>
-        <Modal.Footer>
-          <button onClick={handleClose}>
-            닫기
-          </button>
-        </Modal.Footer>
       </Modal>
       </form>
-      
       <div id='map' style={{
         width: '98%', 
         height: '250px',

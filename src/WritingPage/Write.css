@@ -181,3 +181,9 @@ textarea{
 .rw-multiselect-tag{
     margin-bottom:3px;
 }
+#planBox{
+    display : flex;
+}
+#contentContainer{
+    margin-left:5px;
+}

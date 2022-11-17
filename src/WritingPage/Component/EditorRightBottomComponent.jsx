@@ -1,6 +1,6 @@
 
 import {connect} from "react-redux";
-import {actionCreators} from "../../Store/Store";
+import {actionCreators, reducer} from "../../Store/Store";
 import React, {useRef, useState, useEffect} from "react";
 import StickyBox from "react-sticky-box";
 import Switch from "react-switch";
@@ -10,7 +10,6 @@ import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
 import Search from "./SearchPlaceComponent";
 import { ko } from "date-fns/esm/locale";
 import { getYear, getMonth, getDate, getDay } from "date-fns";
-import {useSelector} from 'react-redux';
 import "react-datepicker/dist/react-datepicker.css";
 import "../Write.css";
 
@@ -21,8 +20,12 @@ const styles = {
     },
 }
 
-function EditorRightBottomComponent({dispatch}){
+function EditorRightBottomComponent({dispatch, storedPlan}){
 
+    const ADDPLAN = () => {
+        console.log(storedPlan);
+    }
+    
     {/*토글버튼관련*/}
     const [state, setChecked] = useState(true);
     const onOffChange = () =>{
@@ -50,11 +53,6 @@ function EditorRightBottomComponent({dispatch}){
         dispatch(actionCreators.addPlan(String(Year), String(Month), String(Date), String(Day), Time, state.toString()));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
       };
-
-    const ADDPLAN = () => {
-        const plans = useSelector(plan => plan);
-        console.log(plans);
-    }
     return(
         <StickyBox offsetTop={260}>
         <div style = {styles.wrapper}>
@@ -189,4 +187,12 @@ function mapDispatchToProps(dispatch){
      return {dispatch}
 }
 
-export default connect(null, mapDispatchToProps)(EditorRightBottomComponent)
+{/** 스토어에서 정보 가져오는 코드 */}
+function mapStateToProps(plan){
+    {/** props */}
+    return {
+        storedPlan : plan
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditorRightBottomComponent)

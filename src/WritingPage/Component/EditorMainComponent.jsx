@@ -1,10 +1,13 @@
 import React, { Component, useState } from "react";
 import ReactQuill from "react-quill";
 import Switch from "react-switch";
+import { useDispatch } from 'react-redux'
+import {addWriteInformation} from "../../Store/Store";
 import "react-quill/dist/quill.snow.css";
 import "../Write.css";
 
 const EditorComponent = () =>{
+  const dispatch = useDispatch();
 
   const modules = {
     toolbar: [
@@ -40,7 +43,7 @@ const EditorComponent = () =>{
     "color",
     "background",
   ];
-  const [value, onChange] = useState(); //모임 글 수정하는 글 데베에서 글 가져와서 여기 초기값에 대입하면 됨
+  const [value, setValue] = useState(); //모임 글 수정하는 글 데베에서 글 가져와서 여기 초기값에 대입하면 됨
 
   return (
     <div style={{ height: "600px", width: "400%" }}>
@@ -51,7 +54,7 @@ const EditorComponent = () =>{
         modules={modules}
         formats={formats}
         value={value || ""}
-        onChange={(content, delta, source, editor) => onChange(editor.getHTML())}
+        onChange={(content, delta, source, editor) => (setValue(editor.getHTML()), dispatch(addWriteInformation(value)))}
       />
     </div>
   );
