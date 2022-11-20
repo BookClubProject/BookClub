@@ -10,10 +10,9 @@ function Sidebar() {
     { id: 1, title: "알림", path: "/mypage/notice" },
     { id: 2, title: "계정정보", path: "/mypage/editmember" },
     { id: 3, title: "토론관리(승인, 취소)", path: "/mypage/d2" },
-    { id: 4, title: "토론수정", path: "/mypage/4" },
-    { id: 5, title: "참여토론(취소)", path: "/mypage/5" },
-    { id: 6, title: "토론후기", path: "/mypage/6" },
-    { id: 7, title: "문의", path: "/mypage/inquiry" },
+    { id: 4, title: "토론수정", path: "/mypage/1" },
+    { id: 5, title: "참여토론(취소)", path: "/mypage/discussion/records" },
+    { id: 6, title: "문의", path: "/mypage/inquiry" },
   ];
   const pathName = useLocation().pathname;
 

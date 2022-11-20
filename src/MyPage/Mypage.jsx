@@ -7,7 +7,7 @@ import Profil from "./Component//Profil/Profil.jsx";
 import Alarm from "./Component/Alam/Alarm.jsx";
 import Account from "./Component/Account/Account.jsx"
 import Inquiry from "./Component/Inquiry/Inquiry.jsx"
-
+import Record from "./Component/Record/Record.jsx"
 
 const styles = {
   wrapper: {
@@ -58,8 +58,8 @@ function MyPage() {
               <Route path="/notice" element={<Alarm />}></Route>
               <Route path="/editmember" element={<Account />}></Route>
               <Route path="/inquiry" element={<Inquiry />}></Route>
-              {/*<Route path="/3" element={<Content2 />}></Route>
-              <Route path="/4" element={<Content2 />}></Route>
+              <Route path="/discussion/records" element={<Record />}></Route>
+              {/*<Route path="/4" element={<Content2 />}></Route>
               <Route path="/5" element={<Content2 />}></Route>
               <Route path="/6" element={<Content2 />}></Route>
               <Route path="/7" element={<Content2 />}></Route>

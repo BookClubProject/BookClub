@@ -35,8 +35,8 @@ const styles = {
 };
 
 const selectBarData = [
-  { id: 0, name: "해결" },
-  { id: 1, name: "미해결" },
+  { id: 0, name: "문의내역" },
+  { id: 1, name: "문의하기" },
 ];
 
 const data = [
@@ -93,7 +93,7 @@ function Inquiry() {
   // 현재 페이지
   const [currentPage, setCurrentPage] = useState(1);
   // 보여줄 리스트 수
-  const [postsPerPage, setPostsPerPage] = useState(2);
+  const [postsPerPage, setPostsPerPage] = useState(5);
 
   useEffect(() => {
     setLoading(true);
@@ -120,6 +120,7 @@ function Inquiry() {
   return (
     <div className="inquiry">
       <div className="inquiry_wrap">
+    
         {/* 문의 유형, 문의하기버튼 */}
         <div className="inquiry_select_content">
           <div className="inquiry_select_bar">
@@ -158,20 +159,19 @@ function Inquiry() {
                 {/* 내용 부분 */}
                 <tbody>
                   <Posts posts={currentPosts(posts)} loading={loading}></Posts>
-                
                 </tbody>
-              
               </Table>
               <Pagination
-                    postsPerPage={postsPerPage}
-                    totalPosts={posts.length}
-                    currentPage = {currentPage}
-                    setCurrentPage={setCurrentPage}
-                  ></Pagination>
+                postsPerPage={postsPerPage}
+                totalPosts={posts.length}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+              ></Pagination>
             </div>
             <div className="inquiry_next"></div>
           </div>
         </div>
+
       </div>
     </div>
   );
