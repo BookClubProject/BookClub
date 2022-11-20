@@ -4,7 +4,6 @@ import Modal from 'react-bootstrap/Modal';
 import StickyBox from "react-sticky-box";
 import axios from 'axios';
 import "../Write.css";
-import { List } from '@mui/material';
 
 const styles = {
     search : {

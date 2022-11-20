@@ -6,11 +6,12 @@ import { Routes, Route } from "react-router-dom";
 import Profil from "./Component//Profil/Profil.jsx";
 import Alarm from "./Component/Alam/Alarm.jsx";
 import Account from "./Component/Account/Account.jsx"
+import Inquiry from "./Component/Inquiry/Inquiry.jsx"
 
 
 const styles = {
   wrapper: {
-    height: "150rem",
+    height: "100%",
     width: "100%" /* 가로 사이즈를 브라우저에 가득 채움 */,
     fontFamily: "Jua, sans-serif",
   },
@@ -20,9 +21,9 @@ const styles = {
     width: "100%",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    // alignItems: "center",
     background: "yellow",
-    marginBottom : "7rem"
+    // marginBottom : "7rem"
 
   },
   main_content: {
@@ -33,9 +34,9 @@ const styles = {
     paddingTop : "10px",
   },
   main_content_cover : {
-    height: "100%",
+    height: "auto",
     flex : "8",
-    border : "1px solid rgb(146, 146, 145)",
+    // border : "1px solid rgb(146, 146, 145)",
     borderRadius : "8px",
     padding : "5px",
     marginLeft : "4px",
@@ -56,8 +57,8 @@ function MyPage() {
               <Route path="/profil" element={<Profil />}></Route>
               <Route path="/notice" element={<Alarm />}></Route>
               <Route path="/editmember" element={<Account />}></Route>
-              {/* <Route path="/d2" element={<Content2 />}></Route>
-              <Route path="/3" element={<Content2 />}></Route>
+              <Route path="/inquiry" element={<Inquiry />}></Route>
+              {/*<Route path="/3" element={<Content2 />}></Route>
               <Route path="/4" element={<Content2 />}></Route>
               <Route path="/5" element={<Content2 />}></Route>
               <Route path="/6" element={<Content2 />}></Route>

@@ -20,7 +20,7 @@
 
 /* 소개 */
 .introduction {
-    flex: 1;
+    height: 50%;
     width: 100%;
 }
 .introduction_top {
@@ -39,7 +39,7 @@
     padding: 5px 30px 5px 30px;
     border-radius: 8px;
     font-size: 1.5rem;
-    border: 2px solid rgb(198, 197, 194);
+    border: px solid rgb(198, 197, 194);
 }
 .change_btn:hover {
     background-color: rgb(171, 248, 171);
@@ -70,9 +70,9 @@
 
 /* 토론 후기 */
 .review {
-    flex: 1;
+   
     width: 100%;
-    height: 100%;
+    height: 50%;
     /* background-color: rgb(235, 235, 172); */
 }
 .list {
@@ -90,9 +90,7 @@
     width: 100%;
     color: black;
 }
-.review_link_component:hover {
-   
-}
+
 .review_link_inner {
     border: 1px solid rgb(154, 154, 159);
     border-radius: 8px;

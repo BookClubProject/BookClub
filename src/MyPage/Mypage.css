@@ -7,6 +7,7 @@
 
 /*사이드 바*/
 .sidebar {
+    height: 100%;
     flex : 2;
 }
 .sidebar_wrap {

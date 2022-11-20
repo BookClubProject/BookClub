@@ -1,11 +1,12 @@
 .account_wrap{
-    height: 100%;
+    height: auto;
     padding: 10px;
-    background-color: rgb(111, 69, 14);
+    /* background-color: rgb(111, 69, 14); */
+    margin-bottom: -40rem;
 }
 .account_content_wap {
-    height: 100%;
-    background-color: rgb(207, 167, 67);
+    height: auto;
+    /* background-color: white; */
 }
 /* 자기소개 */
 .account_introduction {
@@ -13,9 +14,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 25%;
-    background-color: white;
-    padding: 15px 20px 0px 20px;
+    height: 35rem;
+    /* background-color: white; */
+    border: 2px solid rgb(207, 207, 207);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 15px;
+    
 }
 .account_nickname {
     width: 100%;
@@ -55,14 +60,23 @@
 
 /* 이메일 */
 .account_email{
-    height: 25%;
-    background-color: wheat;
+    height: 16rem;
+    padding: 40px;
+    border: 2px solid rgb(207, 207, 207);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 15px;
+    /* background-color: wheat; */
 }
-.account_password {
-    height: 25%;
-    background-color: aquamarine;
-}
+
 .account_delete {
-    height: 25%;
-    background-color: rgb(167, 184, 166);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 11rem;
+    padding: 40px;
+    border: 2px solid rgb(207, 207, 207);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 15px;
 }

@@ -1,0 +1,51 @@
+.inquiry {
+	height: 100%;
+	/* background-color: aqua; */
+	padding: 10px;
+}
+.inquiry_wrap {
+	height: 100%;
+	/* background-color: violet; */
+}
+
+.inquiry_select_content {
+	background-color:bisque;
+	padding: 20px;
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+	height: 10%;
+}
+.inquiry_select_bar {
+	font-size: 1.4rem;
+	width: 10rem;
+}
+
+/* 문의내역 리스트 */
+.inquiry_content {
+	height: 90%;
+	/* background-color: cadetblue; */
+	padding:20px;
+}
+.inquiry_content_wrap{
+	height: 100%;
+	/* background-color: rgb(181, 178, 178); */
+}
+.inquiry_main_title {
+	font-size: 2.3rem;
+	padding : 0rem 0rem 3rem 3rem;
+}
+.inquiry_main {
+
+	padding-top: 7rem;
+}
+.inquiry_title_table {
+	height: 100%;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+.inquiry_title_tr {
+	text-align: center;
+	height: 100%;
+}
