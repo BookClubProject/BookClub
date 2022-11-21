@@ -50,9 +50,19 @@ function EditorRightBottomComponent({dispatch, storedPlan}){
         let Month = getMonth(calendar) + 1;
         let Date = getDate(calendar);
         let Day = Days[getDay(calendar)]; 
-        dispatch(actionCreators.addPlan(String(Year), String(Month), String(Date), String(Day), Time, state.toString()));
+        dispatch(actionCreators.addPlan(String(Year), String(Month), String(Date), String(Day), Time, state.toString(), quantity));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
       };
+
+    const [quantity, setQuantity] = useState(1);
+    const plus = () =>{
+        setQuantity(prevNumber => prevNumber + 1);
+    }
+    const minus = () =>{
+        if(quantity > 1){
+            setQuantity(prevNumber => prevNumber - 1);
+        }
+    }
     return(
         <StickyBox offsetTop={260}>
         <div style = {styles.wrapper}>
@@ -135,12 +145,15 @@ function EditorRightBottomComponent({dispatch, storedPlan}){
                 id="small-radius-switch"
                 />
             </label>
-                <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
             </div>
 
-            <div>
-            <button type="submit" class = "apply-club" onClick = {ADDPLAN}>작성하기</button>
-            </div>
+            <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
+                <div id = "number-container">
+                <div id = "numberText">모집정원</div>
+                <button className = "minusButton" onClick = {minus}>-</button>
+                <div id = "quantityText">{quantity}</div>
+                <button className = "plusButton" onClick = {plus}>+</button>
+                </div>
             </div>
 
             <div class = "reserve-calender-time">
@@ -165,6 +178,9 @@ function EditorRightBottomComponent({dispatch, storedPlan}){
                     onChange={onChangeTime} 
                     />
                 </span>
+               
+                <button type="submit" class = "apply-club" onClick = {ADDPLAN}>작성하기</button>
+            
             </div>
             {/**오프라인일때 */}
             { !state && <Search /> }
