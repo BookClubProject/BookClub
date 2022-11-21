@@ -45,7 +45,7 @@ function EditorLeft({storedPlan}){
                                         <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button><br/>
                                     </span>
                                 </div>
-                                <div>{plan.author}</div>
+                                <div>{plan.author}&nbsp;{plan.quantity}명</div>
                                 <span style = {styles.calender}>{plan.year}.{plan.month}.{plan.date}&nbsp;({plan.day})</span>
                                 <span style = {styles.time}>{plan.time}</span>
                                 <div style = {styles.decoLocation}>{plan.location}</div>

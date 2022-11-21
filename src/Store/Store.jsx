@@ -11,7 +11,7 @@ var pubdate = '';
 var publisher = '';
 var writing = '';
 
-const addPlan = (year, month, date, day, time, state) =>{
+const addPlan = (year, month, date, day, time, state, quantity) =>{
     if(state == "true") {
         state = "온라인";
         location = '';
@@ -28,6 +28,7 @@ const addPlan = (year, month, date, day, time, state) =>{
         state,
         location,
         detailLocation,
+        quantity,
     };
 };
 
@@ -59,6 +60,7 @@ export const searchDetailPlace = (setDetailLocation) =>{
 const initstate = [''];
 
 export const reducer = (plan = initstate, action) =>{
+    console.log(plan);
     switch(action.type){
         case "ADD" : {
             return [
@@ -69,6 +71,7 @@ export const reducer = (plan = initstate, action) =>{
                     day : action.day,
                     time : action.time,
                     state : action.state,
+                    quantity : action.quantity,
                     location,
                     detailLocation,
                     image,
