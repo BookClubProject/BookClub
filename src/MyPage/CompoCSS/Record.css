@@ -2,5 +2,22 @@
 .record{
     height: 100%;
     width: 100%;
+    padding: 10px;
     background-color: antiquewhite;
+}
+.record_wrap {
+    height: 100%;
+    background-color: burlywood;
+}
+.record_title {
+    background-color: aqua;
+    height: 5%;
+}
+.record_select_bar {
+    width: 10rem;
+    height: auto;
+}
+.record_main {
+    height:95% ;
+    background-color: cadetblue;
 }
