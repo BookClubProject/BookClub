@@ -5,10 +5,67 @@
     background-color: aqua;
 }
 
+.sidebar_sub_profil {
+    height: 20rem;
+    background-color:rgb(119, 195, 44);
+    border-radius: 20px;
+    margin-bottom: 7px;
+    padding-top: 35px;
+}
+.sidebar_sub_profil_top{
+    display: flex;
+    flex-direction: row;
+    /* background-color: rgb(60, 52, 213); */
+}
+.sidebar_profil_icon {
+    margin-left: 25px;
+}
+.side_bar_profil_name{
+    display: flex;
+    align-items: center;
+    padding-top: 23px;
+    margin-left: 15px ;
+    color: white;
+}
+.sidebar_bell_icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding-top: 14px;
+}
+.sidebar_sub_profil_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    color:  rgb(23, 106, 54);
+  
+}
+.seperate_line {
+    margin: 10px 20px;
+    border: 1px solid rgb(233, 228, 228);
+}
+.sidebar_user_book_list {
+    /* background-color: cadetblue; */
+}
+.sidebar_user_create_book {
+    /* background-color: slateblue; */
+}
+.sidebar_user_p {
+    font-size: 2.2rem;
+    color: white;
+    text-decoration: none;
+}
+.sidebar_user_p:hover {
+    color : rgb(23, 106, 54);
+}
 /*사이드 바*/
 .sidebar {
     height: 100%;
     flex : 2;
+    min-width: 20rem;
 }
 .sidebar_wrap {
     border : 1px solid rgb(146, 146, 145);

@@ -1,0 +1,95 @@
+.manage {
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	background-color: rgb(37, 77, 219);
+}
+.manage_wrap {
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	background-color: aquamarine;
+	display: flex;
+	flex-direction: row;
+}
+/* 왼쪽 본문 */
+.manage_left_wrap {
+	height: 100%;
+	width: 60%;
+}
+.manage_left_top {
+	height: 50%;
+	width: 100%;
+	padding: 10px;
+	background-color: olivedrab;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.manage_book_tpye {
+	height: 40rem;
+	width: 40rem;
+	padding: 10px;
+	min-width: 20rem;
+	background-color: sienna;
+}
+
+/*  책 리스트  */
+.manage_book_list_wrap{
+	height: 33rem;
+	padding: 20px 0px;
+	background-color: blanchedalmond;
+}
+.manage_book_title {
+	height: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: yellowgreen;
+}
+.manage_book_list{
+	height: 70%;
+}
+.manage_book_img {
+	height: 100%;
+	background-color: lawngreen;
+}
+
+/*  책 본문 */
+.manage_left_bottom {
+	height: 50%;
+	background-color: blueviolet;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.manage_left_bottom_wrap {
+	width: 40rem;
+	height: 100%;
+}
+.manage_book_name_wrap {
+	background-color: aquamarine;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20%;
+}
+.manage_book_name_content_wrap {
+	height: 80%;
+	width: 100%;
+	padding: 5px;
+	background-color: rgb(129, 129, 199);
+}
+.manage_book_name_content {
+	font-size: 2rem;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+/* 오른쪽 본문 */
+.manage_right_wrap {
+	height: 100%;
+	width: 40%;
+	background-color: wheat;
+}

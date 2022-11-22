@@ -3,21 +3,68 @@
     height: 100%;
     width: 100%;
     padding: 10px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 }
 .record_wrap {
     height: 100%;
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
+/* 타이틀 */
 .record_title {
-    background-color: aqua;
-    height: 5%;
+    /* background-color: aqua; */
+    /* height: 5%; */
+
+    border: 2px solid rgb(207, 207, 207);
+	border-radius: 8px;
+	padding: 20px;
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 .record_select_bar {
-    width: 10rem;
-    height: auto;
+    font-size: 1.4rem;
+	width: 10rem;
 }
 .record_main {
-    height:95% ;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
+}
+
+/* RecordDetail 페이지 */
+.record_detail_wrap {
+    padding:20px;
+}
+.record_detail_title {
+    font-size: 2.3rem;
+	padding : 0rem 0rem 3rem 3rem;
+}
+.record_table_wrap {
+	height: 20rem;
+}
+.record_title_table {
+	text-align: center;
+	font-size: 1.4rem;
+    /* background-color: antiquewhite; */
+}
+
+.record_title_tr {
+	text-align: center;
+    background-color: rgb(53, 117, 39);
+	height: 100%;
+}
+
+/* RecordCancel 페이지 */
+.record_cancel_wrap {
+    height: 100%;
+    padding: 20px;
+    background-color: chartreuse;
+}
+.record_cancel_title {
+    font-size: 2.3rem;
+	padding : 0rem 0rem 3rem 3rem;
+}
+.record_cancel_content_wrap {
+    padding: 20px;
+    background-color: blueviolet;
+    height: 45.5rem;
+    min-width: 40rem;
 }

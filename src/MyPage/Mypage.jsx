@@ -8,6 +8,7 @@ import Alarm from "./Component/Alam/Alarm.jsx";
 import Account from "./Component/Account/Account.jsx"
 import Inquiry from "./Component/Inquiry/Inquiry.jsx"
 import Record from "./Component/Record/Record.jsx"
+import Manage from "./Component/Manage/Manage.jsx"
 
 const styles = {
   wrapper: {
@@ -59,12 +60,8 @@ function MyPage() {
               <Route path="/editmember" element={<Account />}></Route>
               <Route path="/inquiry" element={<Inquiry />}></Route>
               <Route path="/discussion/records" element={<Record />}></Route>
-              {/*<Route path="/4" element={<Content2 />}></Route>
-              <Route path="/5" element={<Content2 />}></Route>
-              <Route path="/6" element={<Content2 />}></Route>
-              <Route path="/7" element={<Content2 />}></Route>
-              <Route path="/8" element={<Content2 />}></Route>
-              <Route path="/9" element={<Content2 />}></Route> */}
+              <Route path="/manage" element={<Manage />}></Route>
+            
             </Routes>
           </div>
         </div>

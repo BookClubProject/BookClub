@@ -120,7 +120,6 @@ function Inquiry() {
   return (
     <div className="inquiry">
       <div className="inquiry_wrap">
-    
         {/* 문의 유형, 문의하기버튼 */}
         <div className="inquiry_select_content">
           <div className="inquiry_select_bar">
@@ -145,22 +144,28 @@ function Inquiry() {
           <div className="inquiry_content_wrap">
             <div className="inquiry_main">
               <p className="inquiry_main_title">준희형이 문의한 내용이에요!</p>
-              <Table striped bordered hover className="inquiry_title_table">
-                {/* 타이틀부분 */}
-                <thead className="inquiry_title_thead">
-                  <tr className="inquiry_title_tr">
-                    <th style={styles.number_data}>번호</th>
-                    <th style={styles.id_data}>문의자</th>
-                    <th style={styles.title_data}>제목</th>
-                    <th style={styles.date_data}>문의일</th>
-                    <th style={styles.state_data}>구분</th>
-                  </tr>
-                </thead>
-                {/* 내용 부분 */}
-                <tbody>
-                  <Posts posts={currentPosts(posts)} loading={loading}></Posts>
-                </tbody>
-              </Table>
+              <div className="inquiry_table_wrap ">
+                <Table striped bordered hover className="inquiry_title_table">
+                  {/* 타이틀부분 */}
+                  <thead className="inquiry_title_thead">
+                    <tr className="inquiry_title_tr">
+                      <th style={styles.number_data}>번호</th>
+                      <th style={styles.id_data}>문의자</th>
+                      <th style={styles.title_data}>제목</th>
+                      <th style={styles.date_data}>문의일</th>
+                      <th style={styles.state_data}>구분</th>
+                    </tr>
+                  </thead>
+                  {/* 내용 부분 */}
+                  <tbody>
+                    <Posts
+                      posts={currentPosts(posts)}
+                      loading={loading}
+                    ></Posts>
+                  </tbody>
+                </Table>
+              </div>
+
               <Pagination
                 postsPerPage={postsPerPage}
                 totalPosts={posts.length}
@@ -171,7 +176,6 @@ function Inquiry() {
             <div className="inquiry_next"></div>
           </div>
         </div>
-
       </div>
     </div>
   );
