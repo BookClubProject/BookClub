@@ -17,24 +17,24 @@ const styles = {
 const data = [
   // {
   //   // 사이트에 있는 이미지 가져오는 소스
-  //  image: 'https://i.pinimg.com/originals/b7/b7/15/b7b715190586b985db6b5c46997fc54c.jpg',
+  //  image: 'https://file.miricanvas.com/template_thumb/2021/09/10/16/40/k2hgdbi1hntoeo8f/thumb.jpg',
   //  caption:"Caption",
   //  description:"첫 번째 화면"
   // },
   {
     // 내 컴퓨터 혹은 폴더 안에있는 이미지 가져오는 소스
-    image: require("../../ImageSource/BannerImage/example1.jpg"),
+    image: require("../../ImageSource/BannerImage/banner1.png"),
     caption: "Caption",
     description: "첫 번째 화면",
   },
   {
     // 내 컴퓨터 혹은 폴더 안에있는 이미지 가져오는 소스
-    image: require("../../ImageSource/BannerImage/example2.jpg"),
+    image: require("../../ImageSource/BannerImage/banner2.png"),
     caption: "Caption",
     description: "두 번째 화면",
   },
   {
-    image: require("../../ImageSource/BannerImage/example3.jpg"),
+    image: require("../../ImageSource/BannerImage/banner3.png"),
     caption: "Caption",
     description: "세 번쨰 화면",
   },
@@ -61,11 +61,7 @@ function Homecarousel() {
       {data.map((slide, i) => {
         return (
           <Carousel.Item style={styles.wrapper} key={i}>
-            <img className="d-block" src={slide.image} alt="slider image" />
-            <Carousel.Caption>
-              <h3>{slide.caption}</h3>
-              <p>{slide.description}</p>
-            </Carousel.Caption>
+            <img className="d-block" src={slide.image} alt="slider image" style = {{width : "100%" , height : "100%" , padding : "0px"}} />
           </Carousel.Item>
         );
       })}

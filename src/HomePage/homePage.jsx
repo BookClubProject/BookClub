@@ -27,7 +27,7 @@ function TopMenu(){
         <Header />
         <Banner />
         <Content1/>
-        <Content2/>
+        
         <Content3/>
         <BestSeller/>
         <Footer />
