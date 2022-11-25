@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
 html,
 body {
@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  /*ont-family: Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  font-family: 'Noto Sans KR', sans-serif;
   color: rgb(0, 0, 0);
 }
 .bestseller_wrap {
@@ -208,6 +208,11 @@ body {
   text-decoration-line: none;
   box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%);
   transition-duration: 0.3s;
+  transition: all 0.2s linear;
+}
+
+.content2_wrap:hover {
+  transform: scale(1.04); 
 }
 .content2_book_list_wrap {
   border-radius: 0px 0px 20px 20px ;

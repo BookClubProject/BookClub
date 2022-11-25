@@ -14,7 +14,7 @@ const styles = {
   wrapper: {
     height: "100%",
     width: "100%" /* 가로 사이즈를 브라우저에 가득 채움 */,
-    fontFamily: "Jua, sans-serif",
+    // fontFamily: "Jua, sans-serif",
   },
   main_wrap: {
     height: "100%",
