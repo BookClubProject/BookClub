@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-
+import "../../CompoCSS/Record.css"
 const styles = {
   box: {
     background: "white",
@@ -13,11 +13,9 @@ const styles = {
 function RecordCancelPosts({}) {
   return (
     <Grid item xs={6}>
-      <div style={styles.box} className="record_cancel_box">
-        <a className="record_cancel_a">
-          <div> 책이미지랑 글 등등</div>
-        </a>
-      </div>
+      <a className="record_cancel_a" href="www.naver.com">
+          <div className="record_cancel_box_wrap"> 책이미지랑 글 등등</div>
+      </a>
     </Grid>
   );
 }

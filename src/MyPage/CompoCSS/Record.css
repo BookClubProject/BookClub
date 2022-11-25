@@ -14,16 +14,17 @@
     /* background-color: aqua; */
     /* height: 5%; */
 
-    border: 2px solid rgb(207, 207, 207);
-	border-radius: 8px;
+    border-bottom: 2px solid rgb(207, 207, 207);
+	/* border-radius: 8px; */
 	padding: 20px;
+    margin: 0px 20px;
 	display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
 .record_select_bar {
-    font-size: 1.4rem;
-	width: 10rem;
+    font-size: 1.6rem;
+	width: 12rem;
 }
 .record_main {
     /* background-color: cadetblue; */
@@ -52,11 +53,12 @@
 	height: 100%;
 }
 
+
 /* RecordCancel 페이지 */
 .record_cancel_wrap {
     height: 100%;
     padding: 20px;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
 }
 .record_cancel_title {
     font-size: 2.3rem;
@@ -64,7 +66,26 @@
 }
 .record_cancel_content_wrap {
     padding: 20px;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 45.5rem;
     min-width: 40rem;
+}
+.record_cancel_box_wrap {
+    height: 20rem;
+    text-align: center; 
+    border: 2px solid black;
+    border-radius : 10px;
+    width: 100%;
+    transition: all 0.2s linear;
+    background-color: aqua;
+
+}
+.record_cancel_box_wrap :hover {
+    transform: scale(1.03); 
+}
+.record_cancel_a {
+    transition: all 0.2s linear;
+}
+.record_cancel_a :hover{
+    transform: scale(1.01); 
 }

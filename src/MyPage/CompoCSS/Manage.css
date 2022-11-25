@@ -1,14 +1,25 @@
 .manage {
-	height: 100%;
+	/* height: 100%; */
+	height: 105rem;
 	width: 100%;
-	padding: 10px;
-	background-color: rgb(37, 77, 219);
+	padding: 0px 10px 10px 10px;
+	/* background-color: rgb(235, 235, 235); */
+	/* box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%); */
+}
+.manage_top_title {
+	font-size: 2.3rem;
+	padding: 0rem 5rem;
+	/* background-color: aqua; */
+}
+.manage_top_division {
+	border: 1px solid  rgb(216, 215, 215);
+	padding: 0px 10px;
 }
 .manage_wrap {
 	height: 100%;
 	width: 100%;
-	padding: 10px;
-	background-color: aquamarine;
+	padding: 0px 10px 10px 0px;
+	/* background-color: aquamarine; */
 	display: flex;
 	flex-direction: row;
 }
@@ -16,12 +27,14 @@
 .manage_left_wrap {
 	height: 100%;
 	width: 60%;
+
+	/* background-color: antiquewhite; */
 }
 .manage_left_top {
 	height: 50%;
 	width: 100%;
-	padding: 10px;
-	background-color: olivedrab;
+	padding: 0px 10px 10px 10px;
+	/* background-color: olivedrab; */
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -32,14 +45,15 @@
 	width: 40rem;
 	padding: 10px;
 	min-width: 20rem;
-	background-color: sienna;
+	/* box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%); */
+	border: 1px solid gray;
+	border-radius: 8px;
+	/* background-color: sienna; */
 }
 
 /*  책 리스트  */
 .manage_book_list_wrap{
 	height: 33rem;
-	padding: 20px 0px;
-	background-color: blanchedalmond;
 }
 .manage_book_title {
 	height: 30%;
@@ -59,7 +73,7 @@
 /*  책 본문 */
 .manage_left_bottom {
 	height: 50%;
-	background-color: blueviolet;
+	/* background-color: blueviolet; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -67,9 +81,12 @@
 .manage_left_bottom_wrap {
 	width: 40rem;
 	height: 100%;
+	border: 2px solid rgb(159, 158, 157);
+	border-radius: 8px;
 }
 .manage_book_name_wrap {
-	background-color: aquamarine;
+	background-color: rgb(55, 185, 62);
+	border-radius: 8px 8px 0px 0px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -79,7 +96,8 @@
 	height: 80%;
 	width: 100%;
 	padding: 5px;
-	background-color: rgb(129, 129, 199);
+	border-radius: 0px 0px 8px 8px;
+	background-color: rgb(241, 241, 242);
 }
 .manage_book_name_content {
 	font-size: 2rem;
@@ -89,7 +107,56 @@
 
 /* 오른쪽 본문 */
 .manage_right_wrap {
-	height: 100%;
+	height: 95rem;
 	width: 40%;
-	background-color: wheat;
+	/* background-color: wheat; */
+	padding: 50px 10px 0px 10px;
+}
+
+/* 오른쪽 top */
+.manage_right_admission {
+	height: 50%;
+	background-color: coral;
+	margin-bottom: 10px;
+}
+.managepost_user_name_wrap {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-left: 50px;
+}
+.managepost_user_name {
+	font-size: 1.6rem;
+	margin-right: 10px;
+	text-align: center;
+}
+.managepost_cancel_btn {
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+}
+.manage_admission_title {
+	text-align: center;
+	padding-top: 15px;
+}
+
+
+/* 오른쪽 bottom */
+.manage_right_application {
+	height: 50%;
+	background-color: rgb(137, 137, 192);
+}
+.manage_application_title {
+	text-align: center;
+	padding-top: 15px;
+}
+.managepost_accept_btn {
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+}
+
+.managepost_accept_btn :hover,
+.managepost_cancel_btn:hover {
+	opacity: 0.6;
 }

@@ -23,6 +23,7 @@ const ProfilModal = ({ show, onHide, content, setContent }) => {
             title : value.title,
             content : value.content,
         });
+        onHide();
     };
     const onChangeValue = (e) => {
         setValue({

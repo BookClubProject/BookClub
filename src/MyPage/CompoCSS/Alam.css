@@ -8,8 +8,10 @@
     padding: 10px;
 }
 .alarm_title {
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin-bottom: 30px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid rgb(186, 186, 186);
     /* background-color:antiquewhite; */
 }
 .reservation_alarm {

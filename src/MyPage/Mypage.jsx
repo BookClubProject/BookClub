@@ -23,7 +23,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     // alignItems: "center",
-    background: "yellow",
+    //  background: "yellow",
     // marginBottom : "7rem"
 
   },
@@ -33,6 +33,8 @@ const styles = {
     background: "white",
     display: "flex",
     paddingTop : "10px",
+
+  
   },
   main_content_cover : {
     height: "auto",

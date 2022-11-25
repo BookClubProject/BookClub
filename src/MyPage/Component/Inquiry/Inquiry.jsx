@@ -123,12 +123,7 @@ function Inquiry() {
         {/* 문의 유형, 문의하기버튼 */}
         <div className="inquiry_select_content">
           <div className="inquiry_select_bar">
-            <DropdownList
-              dataKey="id"
-              textField="name"
-              defaultValue={["해결"]}
-              data={selectBarData}
-            />
+            <p className="inquiry_content_title">문의</p>
           </div>
           <Button style={styles.button} onClick={() => setInquiryModalOn(true)}>
             {" "}

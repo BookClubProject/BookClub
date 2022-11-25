@@ -93,15 +93,6 @@ function RecordCancel() {
           <Grid container spacing={2}>
             {currentPosts(posts).map((post) => (
               <RecordCancelPosts />
-              //   <RecordPost/>
-              // <tr>
-              //   <td>{post.number}</td>
-              //   <td>{post.book}</td>
-              //   <td>{post.title}</td>
-              //   <td>{post.signupdate}</td>
-              //   <td>{post.date}</td>
-              //   <td>{post.participant}</td>
-              // </tr>
             ))}
           </Grid>
         </div>
