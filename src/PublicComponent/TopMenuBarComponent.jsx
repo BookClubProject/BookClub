@@ -37,7 +37,9 @@ function TopMenuComponent(){
             navbarScroll
           >
             <Link to = {`/clublist`} class = "club-list-menu">모임목록</Link>
+
             <Link to = {`/test`} class = "club-list-menu" style = {{marginLeft : "10px"}}>test</Link>
+            
             <NavDropdown title="캘린더" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">
                 Action
@@ -52,25 +54,30 @@ function TopMenuComponent(){
             id="basic-nav-dropdown"
           
             title = {
+              
             <div className = "image">
+              {/**
             <img src={calendar} id = "calendar"/>
+             */}
             </div>
             }>
                 <div>
+                  
                 <DatePicker disablePreviousDays />
                 <hr />
                 </div>
             </NavDropdown>
 
-            {/*도서검색*/}
+            {/*도서검색
             <Form.Control
               type="search"
               placeholder="도서검색"
               className="me-2"
               aria-label="Search"
             />
+            */}
           </Form>
-          <Button variant="outline-success" class = "login-button">검색</Button>
+         {/** <Button variant="outline-success" class = "login-button">검색</Button> */}
           
         </Navbar.Collapse>
       </Container>

@@ -19,15 +19,13 @@ const styles = {
         fontSize: 16,
     },
 };
-
 function TopMenu(){
-
     return(
         <div style = {styles.wrapper}>
         <Header />
         <Banner />
         <Content1/>
-        <Content2/>
+        
         <Content3/>
         <BestSeller/>
         <Footer />
