@@ -7,8 +7,8 @@ import styled from "styled-components";
 import ManageAcceptPost from "./ManageAcceptPost.jsx";
 import ManageApplicationPost from "./ManageApplicationPost.jsx";
 import Box from "@mui/material/Box";
-import { FixedSizeList } from 'react-window';
-import { BsGearFill} from "react-icons/bs";
+import { FixedSizeList } from "react-window";
+import { BsGearFill } from "react-icons/bs";
 
 // 슬라이드 CSS
 const StyledSlider = styled(Slider)`
@@ -30,7 +30,7 @@ const StyledSlider = styled(Slider)`
     line-height: 1;
 
     opacity: 0.75;
-    color: yellowgreen;
+    color: #005100;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -58,14 +58,14 @@ const StyledSlider = styled(Slider)`
     text-align: center;
 
     opacity: 0.25;
-    color: yellowgreen;
+    color: #007f00;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   .slick-dots li.slick-active button:before {
     opacity: 0.75;
-    color: yellowgreen;
+    color: #005100;
   }
 `;
 const settings = {
@@ -100,22 +100,44 @@ const bookData = [
 ];
 
 const acceptData = [
-  { id: 0, name :"조준희"}, { id: 1, name :"조준희"}, { id: 2, name :"조준희"}, { id: 3, name :"조준희"}, { id: 4, name :"조준희"}, { id: 5, name :"조준희"},
-  { id: 0, name :"조준희"}, { id: 1, name :"조준희"}, { id: 2, name :"조준희"}, { id: 3, name :"조준희"}, { id: 4, name :"조준희"}, { id: 5, name :"조준희"},
-  { id: 0, name :"조준희"}, { id: 1, name :"조준희"}, { id: 2, name :"조준희"}, { id: 3, name :"조준희"}, { id: 4, name :"조준희"}, { id: 5, name :"조준희"},
-  { id: 0, name :"조준희"}, { id: 1, name :"조준희"}, { id: 2, name :"조준희"}, { id: 3, name :"조준희"}, { id: 4, name :"조준희"}, { id: 5, name :"조준희"},
-  { id: 0, name :"조준희"}, { id: 1, name :"조준희"}, { id: 2, name :"조준희"}, { id: 3, name :"조준희"}, { id: 4, name :"조준희"}, 
-
-]
+  { id: 0, name: "조준희" },
+  { id: 1, name: "조준희" },
+  { id: 2, name: "조준희" },
+  { id: 3, name: "조준희" },
+  { id: 4, name: "조준희" },
+  { id: 5, name: "조준희" },
+  { id: 0, name: "조준희" },
+  { id: 1, name: "조준희" },
+  { id: 2, name: "조준희" },
+  { id: 3, name: "조준희" },
+  { id: 4, name: "조준희" },
+  { id: 5, name: "조준희" },
+  { id: 0, name: "조준희" },
+  { id: 1, name: "조준희" },
+  { id: 2, name: "조준희" },
+  { id: 3, name: "조준희" },
+  { id: 4, name: "조준희" },
+  { id: 5, name: "조준희" },
+  { id: 0, name: "조준희" },
+  { id: 1, name: "조준희" },
+  { id: 2, name: "조준희" },
+  { id: 3, name: "조준희" },
+  { id: 4, name: "조준희" },
+  { id: 5, name: "조준희" },
+  { id: 0, name: "조준희" },
+  { id: 1, name: "조준희" },
+  { id: 2, name: "조준희" },
+  { id: 3, name: "조준희" },
+  { id: 4, name: "조준희" },
+];
 function Manage() {
-
   return (
     <div className="manage">
       <div className="manage_top_title_wrap">
-      <p className="manage_top_title">토론관리</p>
-       <BsGearFill className="manage_react_icon" size={25}/>
+        <p className="manage_top_title">토론관리</p>
+        <BsGearFill className="manage_react_icon" size={25} />
       </div>
-       <div className="manage_top_division"></div>
+      <div className="manage_top_division"></div>
       <div className="manage_wrap">
         {/* 왼쪽 본문 */}
         <div className="manage_left_wrap">
@@ -152,7 +174,9 @@ function Manage() {
         {/* 오른쪽 본문 */}
         <div className="manage_right_wrap">
           <div className="manage_right_admission">
-            <h2 className="manage_admission_title">승인 리스트</h2>
+            <div className="manage_admission_title_wrap">
+              <h2 className="manage_admission_title">승인 리스트</h2>
+            </div>
             <div className="manage_admission_accept">
               <Box
                 sx={{
@@ -163,8 +187,8 @@ function Manage() {
                 }}
               >
                 <FixedSizeList
-                  height={400}
-                  width= {312}
+                  height={390}
+                  width={312}
                   itemSize={50} // 아이템의 높이
                   itemCount={acceptData.length} //아이템의 수
                   itemData={acceptData}
@@ -176,9 +200,11 @@ function Manage() {
             </div>
           </div>
           <div className="manage_right_application">
-            <h2 className="manage_application_title">신청 리스트</h2>
+            <div className="manage_application_title_wrap">
+              <h2 className="manage_application_title">신청 리스트</h2>
+            </div>
             <div className="manage_application_accept">
-            <Box
+              <Box
                 sx={{
                   width: "100%",
                   height: "100%",
@@ -187,8 +213,8 @@ function Manage() {
                 }}
               >
                 <FixedSizeList
-                  height={400}
-                  width= {312}
+                  height={390}
+                  width={312}
                   itemSize={50} // 아이템의 높이
                   itemCount={acceptData.length} //아이템의 수
                   itemData={acceptData}

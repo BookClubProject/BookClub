@@ -56,9 +56,9 @@
 	width: 40rem;
 	padding: 10px;
 	min-width: 20rem;
-	/* box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%); */
-	border: 1px solid gray;
-	border-radius: 8px;
+	box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%);
+	/* border: 1px solid gray;
+	border-radius: 8px; */
 	/* background-color: sienna; */
 }
 
@@ -88,12 +88,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
 }
 .manage_left_bottom_wrap {
 	width: 40rem;
 	height: 100%;
-	border: 2px solid rgb(159, 158, 157);
 	border-radius: 8px;
+	box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%);
 }
 .manage_book_name_wrap {
 	background-color: rgb(55, 185, 62);
@@ -127,8 +128,9 @@
 /* 오른쪽 top */
 .manage_right_admission {
 	height: 50%;
-	background-color: coral;
+	background-color: #4baf3a;
 	margin-bottom: 10px;
+	border-radius: 5px;
 }
 .managepost_user_name_wrap {
 	width: 100%;
@@ -146,20 +148,44 @@
 	border: 0;
 	outline: 0;
 }
-.manage_admission_title {
+.manage_admission_title_wrap {
 	text-align: center;
-	padding-top: 15px;
+	display: flex;
+	justify-content: center;
+	padding-top: 5px;
 }
-
+.manage_admission_title {
+	width: 200px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 5px;
+}
+.manage_admission_accept {
+	border: 1px solid #4baf3a;
+}
 
 /* 오른쪽 bottom */
 .manage_right_application {
 	height: 50%;
-	background-color: rgb(137, 137, 192);
+	background-color: #4baf3a;
+	border-radius: 5px;
 }
-.manage_application_title {
+.manage_application_title_wrap {
 	text-align: center;
-	padding-top: 15px;
+	display: flex;
+	justify-content: center;
+	padding-top: 5px;
+}
+
+.manage_application_accept {
+	border: 1px solid #4baf3a;
+}
+
+.manage_application_title {
+	width: 200px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 5px;
 }
 .managepost_accept_btn {
 	background-color: transparent;
