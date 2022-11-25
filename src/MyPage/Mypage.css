@@ -7,7 +7,8 @@
 
 .sidebar_sub_profil {
     height: 20rem;
-    background-color:rgb(119, 195, 44);
+    background-color: #4baf3a;
+    /* background-color:rgb(119, 195, 44); */
     border-radius: 20px;
     margin-bottom: 7px;
     padding-top: 35px;
@@ -15,6 +16,7 @@
 .sidebar_sub_profil_top{
     display: flex;
     flex-direction: row;
+    min-width: 30rem;
     /* background-color: rgb(60, 52, 213); */
 }
 .sidebar_profil_icon {
@@ -40,7 +42,8 @@
     margin-top: 20px;
     text-align: center;
     font-size: 1.5rem;
-    color:  rgb(23, 106, 54);
+    font-weight: 700;
+    color:  #005100;
   
 }
 .seperate_line {
@@ -75,12 +78,14 @@
     flex-direction: column;
     text-align: center;
     font-size: 1.5rem;
+    font-weight: 500;
 }
 .sidebar_item.active {
     /* background-color:rgb(208, 245, 170); */
     font-size: 2rem;
     padding: 8px 3px 3px 3px;
-    color:rgb(49, 129, 41);
+    color: #4baf3a;
+    font-weight: 700;
 }
 .sidebar_btn {
     padding-top: 10px;

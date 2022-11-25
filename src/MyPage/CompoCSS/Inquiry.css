@@ -2,6 +2,7 @@
 	height: 100%;
 	/* background-color: aqua; */
 	padding: 10px;
+	font-weight: 500;
 }
 .inquiry_wrap {
 	height: 100%;
@@ -24,6 +25,7 @@
 
 .inquiry_content_title {
 	font-size: 2.3rem;
+	font-weight: 700;
 }
 
 /* 문의내역 리스트 */
@@ -51,5 +53,6 @@
 .inquiry_title_tr {
 	text-align: center;
 	height: 100%;
+	background-color: #4baf3a;
 }
 

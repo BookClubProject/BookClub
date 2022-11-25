@@ -15,7 +15,8 @@ const styles = {
     maxWidth: "100%",
   },
   change_btn: {
-    background: "#8ec657",
+    background: "#007f00",
+    fontWeight : "500",
     color: "white",
     width: "100px",
     margin: "10px",

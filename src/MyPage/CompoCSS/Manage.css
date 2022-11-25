@@ -3,17 +3,19 @@
 	height: 105rem;
 	width: 100%;
 	padding: 0px 10px 10px 10px;
+	font-weight: 500;
 	/* background-color: rgb(235, 235, 235); */
 	/* box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%); */
 }
 .manage_top_title {
 	font-size: 2.3rem;
 	padding: 0rem 5rem;
+	font-weight: 700;
 	/* background-color: aqua; */
 }
 .manage_top_division {
 	border: 1px solid  rgb(216, 215, 215);
-	padding: 0px 10px;
+	margin: 0px 20px 0px 50px;
 }
 .manage_wrap {
 	height: 100%;

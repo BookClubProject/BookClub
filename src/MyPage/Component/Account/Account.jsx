@@ -6,13 +6,13 @@ import DeleteModal from "./DeleteModal"
 
 const styles = {
   save: {
-    background: "#8ec657",
+    background: "#007f00",
     color: "white",
     padding: "10px 100px",
     fontSize: "1.2rem",
   },
   delete : {
-    background: "#8ec657",
+    background: "#007f00",
     color: "white",
     padding: "20px 40px",
     fontSize: "1.2rem",

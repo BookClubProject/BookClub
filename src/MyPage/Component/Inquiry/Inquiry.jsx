@@ -10,7 +10,7 @@ import Posts from "./Posts";
 
 const styles = {
   button: {
-    background: "#8ec657",
+    background: "#007f00",
     color: "white",
     border: "none",
     padding: "10px 30px",

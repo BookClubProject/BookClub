@@ -30,7 +30,7 @@
   
   ul.pagination li a {
     text-decoration: none;
-    color: rgb(53, 195, 31);
+    color: #005100;
     font-size: 1.7rem;
   }
   
@@ -39,13 +39,13 @@
   }
 
   ul.pagination li.active {
-    background-color:rgb(29, 185, 5);
+    background-color : #4baf3a;
     border-radius: 0px;
   }
   
   ul.pagination li a:hover,
   ul.pagination li a.active {
-    color: rgb(24, 117, 10);
+    color: #005100;
   }
   
   .page-selection {
