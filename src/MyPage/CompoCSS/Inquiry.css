@@ -21,11 +21,18 @@
 .inquiry_select_bar {
 	font-size: 1.6rem;
 	width: 12rem;
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
-
+.inquiry_react_icon {
+	margin-bottom: 5px;
+}
 .inquiry_content_title {
 	font-size: 2.3rem;
 	font-weight: 700;
+	margin-right: 10px; 
 }
 
 /* 문의내역 리스트 */
@@ -55,4 +62,3 @@
 	height: 100%;
 	background-color: #4baf3a;
 }
-

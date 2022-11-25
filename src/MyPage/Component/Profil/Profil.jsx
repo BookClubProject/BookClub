@@ -5,7 +5,8 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import Pagination from "../Inquiry/Pagination";
 import axios from 'axios';
-
+import { BsFilePerson } from "react-icons/bs";
+import { BsFillChatLeftTextFill } from "react-icons/bs";
 const styles = {
   wrapper: {
     background: "blue",
@@ -84,6 +85,8 @@ function Profil() {
         <div className="introduction">
           <div className="introduction_top">
             <p className="title">소개</p>
+            <BsFilePerson  className="introduction_react_icon" size={25}/>
+         
             <Button
               style={styles.change_btn}
               onClick={() => setProfilModalOn(true)}
@@ -107,7 +110,10 @@ function Profil() {
         <div className="division_line"></div>
         {/* 후기 */}
         <div className="review">
-          <p className="title">토론후기</p>
+          <div className="review_title_wrap">
+          <p className="title1">토론후기</p>
+          <BsFillChatLeftTextFill className="review_react_icon" size={25}/>
+          </div>
           <div className="list">
             <div className="review_list">
               {currentPosts(posts).map((item) => {

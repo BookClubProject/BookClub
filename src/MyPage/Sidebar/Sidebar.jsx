@@ -6,14 +6,15 @@ import SidebarItem from "./SidebarItem";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsFillBellFill } from "react-icons/bs";
 
+
 function Sidebar() {
   const data = [
     { id: 0, title: "프로필", path: "/mypage/profil" },
     { id: 1, title: "알림", path: "/mypage/notice" },
     { id: 2, title: "계정정보", path: "/mypage/editmember" },
-    { id: 3, title: "토론관리(승인, 취소)", path: "/mypage/manage" },
+    { id: 3, title: "토론관리", path: "/mypage/manage" },
     { id: 4, title: "토론수정", path: "/mypage/1" },
-    { id: 5, title: "참여토론(취소)", path: "/mypage/discussion/records" },
+    { id: 5, title: "참여토론", path: "/mypage/discussion/records" },
     { id: 6, title: "문의", path: "/mypage/inquiry" },
   ];
   const pathName = useLocation().pathname;

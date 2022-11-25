@@ -5,14 +5,17 @@ const styles = {
 
   body: {
     padding: "10px",
+    fontSize : "1.3rem",
+    fontWeight : "500",
   },
   label: {
     height: "10rem",
   },
   button: {
-    background: "#8ec657",
-    color: "white",
+    background : "#007f00",
+    color : "white",
     border: "none",
+    fontSize : "1.2rem",
   },
   password : {
 	marginTop : "20px",  

@@ -8,12 +8,25 @@
 .alarm_content_wrap {
     padding: 10px;
 }
+.alarm_content_title_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+   
+    border-bottom: 2px solid rgb(186, 186, 186);
+    margin-bottom: 25px;
+    
+}
+.alarm_react_icon {
+    margin-bottom: 10px;
+}
 .alarm_title {
     font-size: 2.3rem;
     font-weight: 700;
-    margin-bottom: 30px;
-    padding-bottom: 14px;
-    border-bottom: 2px solid rgb(186, 186, 186);
+    margin-right: 10px;
+    /* margin-bottom: 30px;
+    padding-bottom: 14px; */
     /* background-color:antiquewhite; */
 }
 .reservation_alarm {

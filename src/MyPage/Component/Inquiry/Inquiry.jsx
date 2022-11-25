@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Pagination from "./Pagination";
 import Posts from "./Posts";
+import { BsChatSquareDotsFill } from "react-icons/bs";
 
 const styles = {
   button: {
@@ -124,6 +125,7 @@ function Inquiry() {
         <div className="inquiry_select_content">
           <div className="inquiry_select_bar">
             <p className="inquiry_content_title">문의</p>
+            <BsChatSquareDotsFill  className="inquiry_react_icon" size={25}/>
           </div>
           <Button style={styles.button} onClick={() => setInquiryModalOn(true)}>
             {" "}

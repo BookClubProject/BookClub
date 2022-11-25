@@ -4,14 +4,17 @@ import "../../CompoCSS/Profil.css"
 const styles = {
   body: {
     padding: "10px",
+    fontSize : "1.5rem",
+    fontWeight : "700",
   },
   label  :{
     height: "10rem",
   },
   button : {
-    background : "#8ec657",
+    background : "#007f00",
     color : "white",
-    border: "none"
+    border: "none",
+    fontSize : "1.2rem",
   }
 };
 
