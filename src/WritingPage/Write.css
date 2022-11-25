@@ -74,10 +74,13 @@
     border-radius: 5px;
     background-color: white;
     color:green;
+    height : 40px;
+    width : 70px;
 }
 .input-place{
     border : 1px solid black;
     border-radius: 5px;
+    width : 72%;
 }
 .add-club{
     border : 1px solid green;
@@ -87,6 +90,12 @@
     color:green;
     height : 40px;
     width : 80px;
+    transition-duration: 0.3s;
+    box-shadow: -1px -1px 3px gray inset;
+    margin-top: 10px;
+}
+.add-club:active{
+    box-shadow : none;
 }
 .information{
     margin-left : 10px;
@@ -102,6 +111,7 @@
     border : 1px solid black;
     border-radius: 5px;
     padding : 5px;
+    width : 100%;
 }
 .box{
     border-radius: 5px;
@@ -125,10 +135,9 @@
     border-radius: 5px;
     background-color: white;
     color:green;
-    height : 40px;
-    width : 80px;
-    margin-top : 10px;
-    margin-right : 10px;
+    height : 37px;
+    width : 70px;
+    margin-left:5px;
     transition-duration: 0.3s;
 }
 .apply-club:active{
@@ -162,5 +171,79 @@
 }
 .example{
     display : flex;
-    justify-content: space-between;
 }
+.react-datepicker-wrapper{
+    width : 32%;
+    padding-left : 10px;
+}
+.react-datepicker__input-container{
+    border : 0px;
+}
+textarea{
+    width : 100%;
+}
+.rw-multiselect-tag{
+    margin-bottom:3px;
+}
+#planBox{
+    display : flex;
+}
+#contentContainer{
+    margin-left:5px;
+}
+#minusButton{
+    width : 20px;
+    height : 20px;
+}
+#plusButton{
+    width : 20px;
+    height : 20px;
+}
+#clubNumber{
+    width : 20px;
+    height : 20px;
+    background-color: black;
+}
+.plusButton{
+    background-color: white;
+    border: 0px;
+    border-right: 1px solid rgb(201, 201, 201);
+    border-top: 1px solid rgb(201, 201, 201);
+    border-bottom: 1px solid rgb(201, 201, 201);
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .minusButton{
+    background-color: white;
+    border: 0px;
+    border-left: 1px solid rgb(201, 201, 201);
+    border-top: 1px solid rgb(201, 201, 201);
+    border-bottom: 1px solid rgb(201, 201, 201);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  #quantityText{
+    width : 30px;
+    height : 30px;
+    text-align: center;
+    font-size:20px;
+    border : 1px solid rgb(201, 201, 201);
+    border-right:0px;
+    border-left:0px;
+  }
+  #number-container{
+    display : flex;
+    align-items: center;
+    margin-top:10px;
+  }
+  #numberText{
+    margin-left : 10px;
+    font-size:15px;
+    margin-right : 10px;
+  }

@@ -34,14 +34,24 @@ function EditorLeft({storedPlan}){
 
             return <div key={index} class="box">
                         <div class = "plan-container">
-                        <span style = {styles.calender}>{plan.calendar}</span>
-                        <span style = {styles.time}>{plan.time}</span>
-                        <span style = {{float : "right", paddingBottom : "30px"}}>
-                        <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button><br/>
-                        </span>
-                        <div>{plan.state}</div>
-                        <div style = {styles.decoLocation}>{plan.location}</div>
-                        <div>{plan.detailLocation}</div>
+                        <div id = "planBox">
+                            <div id = "imageContainer">
+                                <img src = {plan.image} style = {{width : "60px", height : "100%"}}/>
+                            </div>
+
+                            <div id = "contentContainer">
+                                <div>{plan.title}&nbsp;{plan.state} 
+                                    <span style = {{float : "right", width : "50px"}}>
+                                        <button id = "button-init" style = {styles.button} onClick={() => dispatch(actionCreators.deletePlan(plan.id))}>취소</button><br/>
+                                    </span>
+                                </div>
+                                <div>{plan.author}&nbsp;{plan.quantity}명</div>
+                                <span style = {styles.calender}>{plan.year}.{plan.month}.{plan.date}&nbsp;({plan.day})</span>
+                                <span style = {styles.time}>{plan.time}</span>
+                                <div style = {styles.decoLocation}>{plan.location}</div>
+                                <div>{plan.detailLocation}</div>
+                            </div>
+                        </div>
                         </div>
                     </div>;
                 }})}
@@ -55,7 +65,6 @@ function EditorLeft({storedPlan}){
 {/** 스토어에서 정보 가져오는 코드 */}
 function mapStateToProps(plan){
     {/** props */}
-    console.log(plan.state);
     return {
         storedPlan : plan
     };

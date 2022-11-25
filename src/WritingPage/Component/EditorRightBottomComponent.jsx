@@ -1,6 +1,6 @@
 
 import {connect} from "react-redux";
-import {actionCreators} from "../../Store/Store";
+import {actionCreators, reducer} from "../../Store/Store";
 import React, {useRef, useState, useEffect} from "react";
 import StickyBox from "react-sticky-box";
 import Switch from "react-switch";
@@ -9,7 +9,7 @@ import calendarImage from '../../ImageSource/calendar.png';
 import TimeRangePicker from '@wojtekmaj/react-timerange-picker';
 import Search from "./SearchPlaceComponent";
 import { ko } from "date-fns/esm/locale";
-import { getMonth, getDate, getDay } from "date-fns";
+import { getYear, getMonth, getDate, getDay } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import "../Write.css";
 
@@ -20,8 +20,12 @@ const styles = {
     },
 }
 
-function EditorRightBottomComponent({dispatch}){
+function EditorRightBottomComponent({dispatch, storedPlan}){
 
+    const ADDPLAN = () => {
+        console.log(storedPlan);
+    }
+    
     {/*토글버튼관련*/}
     const [state, setChecked] = useState(true);
     const onOffChange = () =>{
@@ -42,15 +46,25 @@ function EditorRightBottomComponent({dispatch}){
 
     const addList = () => {
         let Days = ['일', '월', '화', '수', '목', '금', '토'];
+        let Year = getYear(calendar);
         let Month = getMonth(calendar) + 1;
         let Date = getDate(calendar);
         let Day = Days[getDay(calendar)]; 
-        dispatch(actionCreators.addPlan((String(Month + "/" + Date + " (" + Day + ")")), Time, state.toString()));
+        dispatch(actionCreators.addPlan(String(Year), String(Month), String(Date), String(Day), Time, state.toString(), quantity));
         {/** setList((t) => [...t, `${calendar}`, `${Time}`]); */}
       };
 
+    const [quantity, setQuantity] = useState(1);
+    const plus = () =>{
+        setQuantity(prevNumber => prevNumber + 1);
+    }
+    const minus = () =>{
+        if(quantity > 1){
+            setQuantity(prevNumber => prevNumber - 1);
+        }
+    }
     return(
-        <StickyBox offsetTop={340}>
+        <StickyBox offsetTop={260}>
         <div style = {styles.wrapper}>
             <div class = "reserve-container">
 
@@ -131,12 +145,15 @@ function EditorRightBottomComponent({dispatch}){
                 id="small-radius-switch"
                 />
             </label>
-                <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
             </div>
 
-            <div>
-            <button type="submit" class = "apply-club">작성하기</button>
-            </div>
+            <button type="submit" class = "add-club" onClick={addList}>모임추가</button>
+                <div id = "number-container">
+                <div id = "numberText">모집정원</div>
+                <button className = "minusButton" onClick = {minus}>-</button>
+                <div id = "quantityText">{quantity}</div>
+                <button className = "plusButton" onClick = {plus}>+</button>
+                </div>
             </div>
 
             <div class = "reserve-calender-time">
@@ -161,6 +178,9 @@ function EditorRightBottomComponent({dispatch}){
                     onChange={onChangeTime} 
                     />
                 </span>
+               
+                <button type="submit" class = "apply-club" onClick = {ADDPLAN}>작성하기</button>
+            
             </div>
             {/**오프라인일때 */}
             { !state && <Search /> }
@@ -183,4 +203,12 @@ function mapDispatchToProps(dispatch){
      return {dispatch}
 }
 
-export default connect(null, mapDispatchToProps)(EditorRightBottomComponent)
+{/** 스토어에서 정보 가져오는 코드 */}
+function mapStateToProps(plan){
+    {/** props */}
+    return {
+        storedPlan : plan
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditorRightBottomComponent)

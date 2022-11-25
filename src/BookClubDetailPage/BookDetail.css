@@ -34,12 +34,14 @@
     display : flex;
     flex-direction: column;
     padding : 10px 15px;
+    border-radius : 5px;
 }
-#register-date-text{
+#register-date-container{
     display : flex;
 }
 #register-number{
     display : flex;
+    font-size : 15px;
 }
 #register-button{
     width : 100%;
@@ -47,4 +49,17 @@
     background-color: rgb(29, 185, 5);
     color :white;
     border : 0;
+    font-weight : bold;
+    font-size : 13px;
+}
+#register-date-text{
+    font-size : 15px;
+}
+#register-date-clock{
+    font-size : 15px;
+}
+#registerTitle{
+    font-size:13px;
+    margin-left:3px;
+    margin-bottom : 5px;
 }

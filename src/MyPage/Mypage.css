@@ -76,7 +76,7 @@
     text-align: center;
     font-size: 1.5rem;
 }
-.active {
+.sidebar_item.active {
     /* background-color:rgb(208, 245, 170); */
     font-size: 2rem;
     padding: 8px 3px 3px 3px;
@@ -90,6 +90,4 @@
 .sidebar_btn:hover {
     background-color: rgb(242, 242, 242);
 }
-.active:hover {
-    /* background-color:rgb(208, 245, 170); */
-}
+

@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import StickyBox from "react-sticky-box";
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {addBookInformation} from "../../Store/Store";
 import "../Write.css";
 
 const styles = {
@@ -59,12 +61,8 @@ const image = {
 }
 
 function EditorRightTopComponent(){
+  const dispatch = useDispatch();
 
-    {/*도서검색관련*/}
-    const [search, setSearch] = useState('');
-    const handleChange = (event) => {
-        setSearch(event.target.value);
-    };
     {/**다이얼로그 도서검색*/}
     const [naverBook, setNaverBook] = useState('');
     const searchNaverBook = (event) =>{
@@ -83,7 +81,7 @@ function EditorRightTopComponent(){
 
     const selectBook = (list) => {
       setPickBook(list);
-      console.log(list);
+      dispatch(addBookInformation(list.image, list.title, list.author, list.pubdate, list.publisher));  
     }
 
     {/**API 가져오기 */}
@@ -128,9 +126,7 @@ function EditorRightTopComponent(){
               <input style = {styles.search}
                   type="text"
                   placeholder="도서검색"
-                  value={search}
-                  onChange={handleChange}
-                  disabled={false}
+                  disabled={true}
               />
               <button type="submit" style = {styles.searchButton} onClick = {handleShow}>검색</button>
           </div>

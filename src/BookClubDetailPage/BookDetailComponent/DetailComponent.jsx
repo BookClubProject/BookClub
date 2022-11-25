@@ -1,4 +1,5 @@
 import React from "react";
+import {useEffect} from "react"
 import StickyBox from "react-sticky-box";
 import "../BookDetail.css"
 
@@ -9,6 +10,10 @@ const styles = {
 }
 const DetailComponent = () => {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
     return(
         <div class = "book-detail-container">
             <div class = "blank-container"/>
@@ -18,12 +23,12 @@ const DetailComponent = () => {
             <div class = "plan-container-box">
                 <StickyBox offsetTop={80}>
                     <div class = "register-container">
-                        <div>모임일정</div>
+                        <div id = "registerTitle">모임일정</div>
                         <div class = "register-box">
-                            <div id = "register-date-text">
-                                <div>2022-11-16 (수)</div>
-                                <div style = {{margin : "0 10px"}}>|</div>
-                                <div>14:00~15:30</div>
+                            <div id = "register-date-container">
+                                <div id = "register-date-text">2022-11-16 (수)</div>
+                                <div style = {{margin : "0 10px", fontSize : "15px"}}>|</div>
+                                <div id = "register-date-clock">14:00~15:30</div>
                             </div>
                             <div id = "register-number">
                                 <div style = {{marginRight : "85px"}}>온라인</div>
