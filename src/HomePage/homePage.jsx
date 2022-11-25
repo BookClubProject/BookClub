@@ -3,7 +3,6 @@ import Banner from "./Component/Banner";
 import BestSeller from "./Component/BestSeller";
 import Footer from "../PublicComponent/BottomComponent";
 import Content1 from "./Component/Content1";
-
 import Content3 from "./Component/Content3";
 
 const styles = {
