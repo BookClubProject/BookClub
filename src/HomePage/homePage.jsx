@@ -19,9 +19,7 @@ const styles = {
         fontSize: 16,
     },
 };
-
 function TopMenu(){
-
     return(
         <div style = {styles.wrapper}>
         <Header />

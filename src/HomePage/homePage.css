@@ -250,7 +250,7 @@ body {
 }
 
 .content3_wrap {
-  padding : 7rem 5rem ;
+  padding : 7rem;
   /* background-color: #cacaca; */
   width: 124.2rem;
   height: 80rem;
@@ -332,14 +332,12 @@ flex-direction:column;
   height: 40%;
   margin: 10px 40px 0px 40px;
   padding-top: 40px;
-  background-color: #c5cccc;
 }
 .content3_debate_write {
   height: 50%;
   margin: 0px 40px 0px 40px;
   padding: 30px;
   text-align: left;
-  background-color: #9d9e9e;
 }
 .content3_right_title {
   font-size: 2rem;
