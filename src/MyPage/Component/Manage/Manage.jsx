@@ -8,10 +8,7 @@ import ManageAcceptPost from "./ManageAcceptPost.jsx";
 import ManageApplicationPost from "./ManageApplicationPost.jsx";
 import Box from "@mui/material/Box";
 import { FixedSizeList } from 'react-window';
-
-
-// import './slick.css';
-// import './slick-theme.css';
+import { BsGearFill} from "react-icons/bs";
 
 // 슬라이드 CSS
 const StyledSlider = styled(Slider)`
@@ -114,7 +111,10 @@ function Manage() {
 
   return (
     <div className="manage">
-       <p className="manage_top_title">토론관리</p>
+      <div className="manage_top_title_wrap">
+      <p className="manage_top_title">토론관리</p>
+       <BsGearFill className="manage_react_icon" size={25}/>
+      </div>
        <div className="manage_top_division"></div>
       <div className="manage_wrap">
         {/* 왼쪽 본문 */}
