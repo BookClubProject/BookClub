@@ -275,8 +275,7 @@ body {
  padding-left: 0px;
  height: 100%; 
   display :flex;
-flex-direction:column;
- 
+  flex-direction:column;
 }
 .report_li a{
   text-decoration:none;
@@ -370,4 +369,55 @@ flex-direction:column;
 #mainContentText{
   font-size: 40px;
   text-align: justify;
+  margin-left:30px;
+}
+.content3_list_container{
+  width : 100%;
+  height : 100%;
+}
+#contentLeft{
+  width : 100%;
+  height : 100%;
+}
+#contentContainer{
+  width : 100%;
+  height: 170px;
+  margin-top:20px;
+  display : flex;
+  flex-direction: column;
+}
+#contentListContainer{
+  width : 100%;
+  height : 100%;
+  display : flex;
+}
+#titleContainer{
+  width : 100%;
+  height: 20%;
+  margin-bottom:10px;
+  display : flex;
+  justify-content: space-between;
+}
+#leftContentTitle{
+  font-size:20px;
+}
+#leftContentTema{
+  font-size: 13px;
+}
+#titleContentContainer{
+  display : flex;
+  flex-direction: column;
+  padding-left:10px;
+  padding-right:10px;
+  width:100%;
+}
+#leftContentAuthor{
+  font-size:15px;
+}
+#leftContentpubDate{
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+#leftContentPublisher{
+  margin-bottom: 4px;
 }
