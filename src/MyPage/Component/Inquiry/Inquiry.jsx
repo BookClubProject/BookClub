@@ -142,7 +142,7 @@ function Inquiry() {
             <div className="inquiry_main">
               <p className="inquiry_main_title">준희형이 문의한 내용이에요!</p>
               <div className="inquiry_table_wrap ">
-                <Table striped bordered hover className="inquiry_title_table">
+                <Table bordered hover className="inquiry_title_table">
                   {/* 타이틀부분 */}
                   <thead className="inquiry_title_thead">
                     <tr className="inquiry_title_tr">

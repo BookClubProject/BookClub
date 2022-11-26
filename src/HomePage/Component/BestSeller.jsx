@@ -52,14 +52,23 @@ const Book = () => {
           navigation
           className="mySwiper"
         >
-          {loading ? <SwiperSlide>loading</SwiperSlide> :( <div>
-            {bestBooks.map((bestbook) => (
-              <div key={bestbook.isbn}>
-                <SwiperSlide key ={bestbook.isbn}> <img src={bestbook.coverSmallUrl}></img></SwiperSlide>
-              </div>
-            ))}
-          </div>) }
-
+          {loading ? (
+            <SwiperSlide>loading</SwiperSlide>
+          ) : (
+            <div>
+              {bestBooks.map((bestbook) => (
+                <div key={bestbook.isbn}>
+                  <SwiperSlide key={bestbook.isbn}>
+                    {" "}
+                    <a href={bestbook.link} className="bestseller_img_link">
+                    <img className="bestseller_img" src={bestbook.coverLargeUrl}></img>
+                    </a>
+                   
+                  </SwiperSlide>
+                </div>
+              ))}
+            </div>
+          )}
         </Swiper>
       </div>
     </div>

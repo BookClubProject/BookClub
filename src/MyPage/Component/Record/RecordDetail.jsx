@@ -2,7 +2,8 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import { useState, useEffect } from "react";
 import Pagination from "../Inquiry/Pagination";
-
+import { Link } from "react-router-dom";
+import RecordDeatilPosts from "./RecordDeatilPosts.jsx";
 const data = [
   {
     number: 1,
@@ -54,25 +55,25 @@ const data = [
   },
 ];
 const styles = {
-	number_data: {
-	  data_width: "10%",
-	},
-	book_data: {
-	  data_width: "15%",
-	},
-	title_data: {
-	  width: "35%",
-	},
-	signupdate_data: {
-	  width: "15%",
-	},
-	date_data: {
-	  width: "15%",
-	},
-	participant_data: {
-		width: "10%"
-	}
-  };
+  number_data: {
+    data_width: "10%",
+  },
+  book_data: {
+    data_width: "15%",
+  },
+  title_data: {
+    width: "35%",
+  },
+  signupdate_data: {
+    width: "15%",
+  },
+  date_data: {
+    width: "15%",
+  },
+  participant_data: {
+    width: "10%",
+  },
+};
 
 function RecordDetail() {
   // 데이터 배열
@@ -124,16 +125,10 @@ function RecordDetail() {
             </thead>
             {/* 내용 부분 */}
             <tbody>
-              {currentPosts(posts).map((post) => (
-                <tr>
-                  <td>{post.number}</td>
-                  <td>{post.book}</td>
-                  <td>{post.title}</td>
-                  <td>{post.signupdate}</td>
-                  <td>{post.date}</td>
-                  <td>{post.participant}</td>
-                </tr>
-              ))}
+              <RecordDeatilPosts
+                posts={currentPosts(posts)}
+                loading={loading}
+              ></RecordDeatilPosts>
             </tbody>
           </Table>
         </div>
