@@ -76,7 +76,7 @@ function Content1() {
   return (
     <>
     <div id = "contentMainContainer">
-      <div id = "mainContentText">지금 가장 인기있는 독서 모임 🔥</div>
+      <div id = "mainContentText">현재 모집중인 장르별 독서모임 🔥</div>
     </div>
     <article className={"Content1 backGround"+image}>
       <section className="Content1-session">

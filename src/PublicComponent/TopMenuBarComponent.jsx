@@ -27,7 +27,7 @@ function TopMenuComponent(){
         <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
-          <Link to = {`/`} class = "home">Reading</Link>
+          <Link to = {`/`} class = "home">Reader</Link>
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -38,6 +38,7 @@ function TopMenuComponent(){
           >
             <Link to = {`/clublist`} class = "club-list-menu">모임목록</Link>
 
+          {/** 
             <Link to = {`/test`} class = "club-list-menu" style = {{marginLeft : "10px"}}>test</Link>
             
             <NavDropdown title="캘린더" id="navbarScrollingDropdown">
@@ -45,6 +46,7 @@ function TopMenuComponent(){
                 Action
                 </NavDropdown.Item>
             </NavDropdown>
+            */}
           </Nav>
 
           {/*캘린더*/}

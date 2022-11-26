@@ -185,7 +185,8 @@ function ClubList(){
         {id: 2, tema: '금융/경제'}, 
         {id: 3, tema: '인문학'}, 
         {id: 4, tema: '종교'},
-        {id: 5, tema: '과학'}]
+        {id: 5, tema: '과학'}
+      ]
     )
   }
 
