@@ -5,11 +5,11 @@ import TopInf from "./TopInf";
 import { Routes, Route } from "react-router-dom";
 import Profil from "./Component//Profil/Profil.jsx";
 import Alarm from "./Component/Alam/Alarm.jsx";
-import Account from "./Component/Account/Account.jsx"
-import Inquiry from "./Component/Inquiry/Inquiry.jsx"
-import Record from "./Component/Record/Record.jsx"
-import Manage from "./Component/Manage/Manage.jsx"
-
+import Account from "./Component/Account/Account.jsx";
+import Inquiry from "./Component/Inquiry/Inquiry.jsx";
+import Record from "./Component/Record/Record.jsx";
+import Manage from "./Component/Manage/Manage.jsx";
+import Edit from "./Component/Edit/Edit.jsx";
 const styles = {
   wrapper: {
     height: "100%",
@@ -63,6 +63,7 @@ function MyPage() {
               <Route path="/inquiry" element={<Inquiry />}></Route>
               <Route path="/discussion/records" element={<Record />}></Route>
               <Route path="/manage" element={<Manage />}></Route>
+              <Route path="/edit" element={<Edit />}></Route>
             
             </Routes>
           </div>
