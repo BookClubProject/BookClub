@@ -27,7 +27,7 @@ function TopMenuComponent(){
         <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
-          <Link to = {`/`} class = "home">Reading</Link>
+          <Link to = {`/`} class = "home">Reader</Link>
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

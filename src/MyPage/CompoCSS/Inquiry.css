@@ -7,6 +7,7 @@
 .inquiry_wrap {
 	height: 100%;
 	/* background-color: violet; */
+	
 }
 
 /* 문의하기 */
@@ -61,4 +62,17 @@
 	text-align: center;
 	height: 100%;
 	background-color: #4baf3a;
+}
+
+
+/* post css */
+.post_tr {
+	display: table-row;
+	text-decoration: none;
+	color: black;
+	border: 1px solid #dddcdc;
+}
+.post_tr:hover {
+	color: black;
+	background-color: #ececec;
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Pagination from "../Inquiry/Pagination";
 import RecordCancelPosts from "./RecordCancelPosts";
 import Grid from "@material-ui/core/Grid";
+import apiTest from "../../../Api.json";
 
 const data = [
   {
@@ -64,9 +65,24 @@ function RecordCancel() {
   const [currentPage, setCurrentPage] = useState(1);
   // 보여줄 리스트 수
   const [postsPerPage, setPostsPerPage] = useState(4);
+  // 독서모임 api 가져오기
+  const [clubList, setClubList] = useState([]);
+  {/**API 가져오기 */}
+  const getClubList = async() =>{
+    try {
+      //const getClubList = await (await axios.get("https://50907063-b25d-4ab2-973c-8d4de9d0c872.mock.pstmn.io/book"));
+      //setTempList(getClubList.data);
+      //setClubList(getClubList.data); {/** api 가져오기 */} 
+      setClubList(apiTest);
+    } catch {
+      console.log("error");
+      // 오류 발생시 실행
+    }
+}
   useEffect(() => {
     setLoading(true);
     setPosts(data);
+    getClubList();
     // const fetchData = async () => {ㅇ
     //   setLoading(true);
     //   const response = await axios.get(
@@ -91,8 +107,8 @@ function RecordCancel() {
         <p className="record_cancel_title">신청한 토론을 취소하시겠어요?</p>
         <div className="record_cancel_content_wrap">
           <Grid container spacing={2}>
-            {currentPosts(posts).map((post) => (
-              <RecordCancelPosts />
+            {currentPosts(clubList).map((list,index) => (
+              <RecordCancelPosts list={list} index={index}/>
             ))}
           </Grid>
         </div>

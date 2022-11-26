@@ -43,7 +43,7 @@ function BottomComponent() {
               사업자등록번호 : 123-45-67899 통신판매업신고 :
               세종대학교-학생회관-530호 대표 : 홍영환
             </p>
-            <p>주소 : 서울시 구로구 경인로 248-29 기숙사 304호</p>
+            <p>주소 : 서울특별시 광진구 능동로 209 세종대학교</p>
           </div>
           <p className="copyright">
             Copyright © 2018 HongSee Inc. All rights reserved

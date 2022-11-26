@@ -92,3 +92,15 @@
     /* box-shadow: 10px 5px 5px rgb(0 0 0 / 50%); */
     box-shadow: 0.5rem 0.5rem 2rem 0rem rgb(0 0 0 / 40%);
 }
+
+/* post css */
+.record_post_tr {
+	display: table-row;
+	text-decoration: none;
+	color: black;
+    border: 1px solid #dddcdc;
+}
+.record_post_tr:hover {
+	color: black;
+	background-color: #ececec;
+}

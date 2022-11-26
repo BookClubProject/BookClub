@@ -55,7 +55,7 @@ const Book = () => {
           {loading ? <SwiperSlide>loading</SwiperSlide> :( <div>
             {bestBooks.map((bestbook) => (
               <div key={bestbook.isbn}>
-                <SwiperSlide key ={bestbook.isbn}> <img src={bestbook.coverSmallUrl}></img></SwiperSlide>
+                <SwiperSlide key ={bestbook.isbn}> <img src={bestbook.coverLargeUrl}></img></SwiperSlide>
               </div>
             ))}
           </div>) }
