@@ -1,7 +1,7 @@
 import "../Mypage.css";
 import { useState } from "react";
 import styled from "styled-components";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link,NavLink, useLocation } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsFillBellFill } from "react-icons/bs";
@@ -30,28 +30,28 @@ function Sidebar() {
       <div className="sidebar_sub_profil">
         <div className="sidebar_sub_profil_top">
           <span className="sidebar_profil_icon">
-            <a href="https://ko-kr.facebook.com/">
+            <Link to="/mypage/profil">
               <BsPersonCircle size="50" color="rgb(213, 211, 211)" />
-            </a>
+            </Link>
           </span>
           <h2 className="side_bar_profil_name">조준희님</h2>
           <span className="sidebar_bell_icon">
-            <a href="https://ko-kr.facebook.com/">
+            <Link to="/mypage/notice">
               <BsFillBellFill size={20} color="rgb(231, 235, 133)" />
-            </a>
+            </Link>
           </span>
         </div>
         <div className="sidebar_sub_profil_bottom">
           <div className="sidebar_user_book_list">
             <p>토론예약</p>
-            <a className="sidebar_user_p" href="https://ko-kr.facebook.com/"><p >{bookCount}</p></a>
+            <Link className="sidebar_user_p" to="/mypage/discussion/records"><p >{bookCount}</p></Link>
           </div>
 
           <div className="seperate_line"></div>
 
           <div className="sidebar_user_create_book">
             <p>생성토론</p>
-            <a className="sidebar_user_p" href="https://ko-kr.facebook.com/" ><p >{createCount}</p></a>
+            <Link className="sidebar_user_p" to="/mypage/manage" ><p >{createCount}</p></Link>
           </div>
         </div>
       </div>

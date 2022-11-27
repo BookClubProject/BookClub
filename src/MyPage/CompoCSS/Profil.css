@@ -107,6 +107,7 @@
     width: 100%;
     padding-top: 15px;
     transition: all 0.2s linear;
+    cursor: pointer;
 }
 .review_link_inner:hover {
     color: #007f00;

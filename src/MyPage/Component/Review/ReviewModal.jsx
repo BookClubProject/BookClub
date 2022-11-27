@@ -9,9 +9,11 @@ const styles = {
       fontWeight: "500",
       color: "white",
       width: "50px",
-      margin: "0px 10px",
       fontSize: "1.2rem",
     },
+    body : {
+      width : "40rem",
+    }
   };
 function ReviewModal(props) {
  

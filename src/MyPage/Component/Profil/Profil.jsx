@@ -1,5 +1,6 @@
 import "../../CompoCSS/Profil.css";
 import ProfilModal from "./ProfilModal.jsx";
+import ReviewShowModal from "../Review/ReviewShowModal";
 import { useState, useEffect } from "react";
 import React from "react";
 import { Button } from "@material-ui/core";
@@ -7,6 +8,7 @@ import Pagination from "../Inquiry/Pagination";
 import axios from 'axios';
 import { BsFilePerson } from "react-icons/bs";
 import { BsFillChatLeftTextFill } from "react-icons/bs";
+
 const styles = {
   wrapper: {
     background: "blue",
@@ -28,6 +30,8 @@ const styles = {
 
 function Profil() {
 
+
+  // 편집버튼
   const [profilModalOn, setProfilModalOn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -57,6 +61,8 @@ function Profil() {
     { id: 3, title: "계정정보", content: "안녕하세요" },
     { id: 4, title: "토론관리", content: "안녕하세요" },
   ];
+    // 토론후기 클릭
+    const [reviewModalOn, setReviewModalOn] = useState(false);
   // 토론후기 데이터
   const [posts, setPosts] = useState([]);
   // 현재 페이지
@@ -70,6 +76,7 @@ function Profil() {
     currentPosts = posts.slice(indexOfFirst, indexOfLast);
     return currentPosts;
   };
+  const [showIndex, setShowIndex] = useState(0);
 
   useEffect(() => {
     // 프로필 소개
@@ -116,18 +123,28 @@ function Profil() {
           </div>
           <div className="list">
             <div className="review_list">
-              {currentPosts(posts).map((item) => {
+              {currentPosts(posts).map((item,index) => {
                 return (
-                  <a href="www.naver.com" className="review_link_component">
+                  <>
+                   <a  onClick={() => {setReviewModalOn(true); setShowIndex(index);}} 
+                  className="review_link_component">
                     <div className="review_link_inner">
                       <h3>
                         {item.id}. {item.title}
                       </h3>
                       <p> {item.content}</p>
                     </div>
+                  
                   </a>
-                );
+                 </>
+                 
+                ); 
               })}
+                 <ReviewShowModal
+                 show={reviewModalOn}
+                 onHide={() => setReviewModalOn(false)}
+                 content={data[showIndex]}
+                 />
                <Pagination
               postsPerPage={postsPerPage}
               totalPosts={posts.length}
