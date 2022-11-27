@@ -80,12 +80,16 @@
     font-size: 1.5rem;
     font-weight: 500;
 }
+.sidebar_item {
+    transition: all 0.1s linear;
+}
 .sidebar_item.active {
     /* background-color:rgb(208, 245, 170); */
     font-size: 2rem;
-    padding: 8px 3px 3px 3px;
+    /* padding: 8px 3px 3px 3px; */
     color: #4baf3a;
     font-weight: 700;
+    transform: scale(1.01);
 }
 .sidebar_btn {
     padding-top: 10px;

@@ -327,12 +327,12 @@ body {
 .conten3_right {
   width: 100%;
   /* background: #EFD236; */
-  margin-left: 30px;
+  margin-left: 70px;
   text-align: center;
 
 }
 .content3_right_wrap{
-  height: 90%;
+  height: 55rem;
   padding-top: 20px;
   border-radius: 4%;
   /* background-color: #E6C9FF; */

@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import Form from "react-bootstrap/Form";
 import { Button } from "@material-ui/core";
+import ReviewModal from "./ReviewModal.jsx";
+import { useState } from "react";
 
 const StyledSlider = styled(Slider)`
   .slick-prev:hover:before,
@@ -109,6 +111,15 @@ const bookData = [
 ];
 
 function Review() {
+  const [modalShow, setModalShow] = React.useState(false);
+  const onChangeModal = () => {
+    setModalShow(true);
+  };
+  const [textValue, setTextValue] = useState("");
+  const onChangeTextValue = (event) => {
+    setTextValue(event.currentTarget.value);
+  };
+
   return (
     <div className="review_wrap">
       <div className="review_content_wrap">
@@ -140,11 +151,25 @@ function Review() {
             <Form.Label className="review_book_review_input_title">
               토론에 대한 평가를 20자 이상 작성해 주세요.
             </Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Control
+              as="textarea"
+              rows={3}
+              value={textValue}
+              onChange={onChangeTextValue}
+            />
           </Form.Group>
         </div>
         <div className="review_book_btn1">
-          <Button style={styles.change_btn}>등록</Button>
+          <Button style={styles.change_btn} onClick={onChangeModal}>
+            등록
+          </Button>
+          <ReviewModal
+            show={modalShow}
+            setModalShow={ setModalShow}
+            booktitle="세종대학교 안드로이드 앱 프로그래밍"
+            bookcontent={textValue}
+            setTextValue = {setTextValue}
+          ></ReviewModal>
         </div>
       </div>
     </div>
