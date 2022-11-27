@@ -327,23 +327,37 @@ body {
 .conten3_right {
   width: 100%;
   /* background: #EFD236; */
+  margin-left: 30px;
   text-align: center;
+
 }
 .content3_right_wrap{
   height: 90%;
   padding-top: 20px;
   border-radius: 4%;
+  /* background-color: #E6C9FF; */
+  margin : 0px 15px;
+  box-shadow: 0.2rem 0.3rem 1rem 0rem rgb(0 0 0 / 30%);
   /* padding: 20px; */
 }
 .content3_debate_img {
   height: 40%;
-  margin: 10px 40px 0px 40px;
-  padding-top: 40px;
+  margin: 0px 40px 10px 40px;
+  padding-top: 20px;
+  /* background-color: #82BAF3; */
+}
+#contentListContainer2{
+  width : 100%;
+  height : 100%;
+  display : flex;
+  text-align: left;
+  padding: 10px;
+  background-color: #e7e6e8;
 }
 .content3_debate_write {
   height: 50%;
   margin: 0px 40px 0px 40px;
-  padding: 30px;
+  padding: 20px;
   text-align: left;
 }
 .content3_right_title {

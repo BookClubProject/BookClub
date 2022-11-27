@@ -1,6 +1,6 @@
 import "../HomePage.css";
 import React from "react";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 function Content3() {
   const content3_1 =
@@ -12,43 +12,75 @@ function Content3() {
   const content3_3 =
     "제목부터 강렬하고 도발적인 프랑스 상징주의 대표시인 샤를 보들레르의 시집 《악의 꽃》이 더스토리 1857년 오리지널 초판본 표지디자인으로 새롭게 출간되었다. 이 시집은 시인 보들레르가 1840년대부터 쓰기 시작해서 갑자기 죽음을 맞은 1867년까지 쓴 운문으로 된 작품을 거의 다 싣고 있는 모음집이다.";
 
-  const debate_contents = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  const debate_contents =
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
   const image = {
-    testImage: require('../../ImageSource/imagetest.png'),
-  }
-  
+    testImage: require("../../ImageSource/imagetest.png"),
+  };
+
   const bookData = [
-    { image: require('../../ImageSource/Demian.jpg'), title : "데미안", tema: "자기계발",  author : '헤르만 헤세', pubdate : '1919', publisher : '조준희출판사', content : content3_1},
-    { image: require('../../ImageSource/content2.jpg'), title : "부의 추월차선", tema: "금융/경제", author : '엠제이 드마코', pubdate : '2022.02.04', publisher : '토트', content : content3_2 },
-    { image: require('../../ImageSource/content3.jpg'), title : "악의꽃", tema: "인문학", author : '샤를 피에르 보들레르', pubdate : '1857', publisher : '더스토리', content : content3_3 }
-  ]
+    {
+      image: require("../../ImageSource/Demian.jpg"),
+      title: "데미안",
+      tema: "자기계발",
+      author: "헤르만 헤세",
+      pubdate: "1919",
+      publisher: "조준희출판사",
+      content: content3_1,
+    },
+    {
+      image: require("../../ImageSource/content2.jpg"),
+      title: "부의 추월차선",
+      tema: "금융/경제",
+      author: "엠제이 드마코",
+      pubdate: "2022.02.04",
+      publisher: "토트",
+      content: content3_2,
+    },
+    {
+      image: require("../../ImageSource/content3.jpg"),
+      title: "악의꽃",
+      tema: "인문학",
+      author: "샤를 피에르 보들레르",
+      pubdate: "1857",
+      publisher: "더스토리",
+      content: content3_3,
+    },
+  ];
 
   return (
     <div className="content3_wrap">
       <div className="content3_left">
         <p className="content3_left_title">이달의 추천 도서</p>
         <div className="content3_list_container">
-        <div id = "contentLeft">
-          {bookData.map((list, index)=>{
-            return <div id = "contentContainer" key={index}>
-              <div id = "contentListContainer">
-              <img src = {list.image} style = {{width : "120px", height : "150px"}}/>
-              <div id = "titleContentContainer">
-                <div id = "titleContainer">
-                  <div id = "leftContentTitle">{list.title}</div>
-                  <div id = "leftContentTema">{list.tema}</div>
-                </div>
+          <div id="contentLeft">
+            {bookData.map((list, index) => {
+              return (
+                <div id="contentContainer" key={index}>
+                  <div id="contentListContainer">
+                    <img
+                      src={list.image}
+                      style={{ width: "120px", height: "150px" }}
+                    />
+                    <div id="titleContentContainer">
+                      <div id="titleContainer">
+                        <div id="leftContentTitle">{list.title}</div>
+                        <div id="leftContentTema">{list.tema}</div>
+                      </div>
 
-                <div id =  "leftContentAuthor">{list.author}</div>
-                <div id =  "leftContentpubDate">{list.pubdate}</div>
-                <div id =  "leftContentPublisher">{list.publisher}</div>
-                <div id =  "leftContent">{list.content}</div>
-              </div>
-            </div>
-            <div style = {{border : "0.5px solid gray", marginTop:"10px"}}/>
-            </div>
-          })}
+                      <div id="leftContentAuthor">{list.author}</div>
+                      <div id="leftContentpubDate">{list.pubdate}</div>
+                      <div id="leftContentPublisher">{list.publisher}</div>
+                      <div id="leftContent">{list.content}</div>
+                    </div>
+                  </div>
+                  <div
+                    style={{ border: "0.5px solid gray", marginTop: "10px" }}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -56,11 +88,26 @@ function Content3() {
         <p className="content3_right_title"> 토론 후기 </p>
         <div className="content3_right_wrap">
           <div className="content3_debate_img">
-            <img src="https://bimage.interpark.com/partner/goods_image/7/3/5/9/355777359h.jpg"></img>
+            <div id="contentContainer">
+              <div id="contentListContainer2">
+                <img
+                  src="https://bimage.interpark.com/partner/goods_image/7/3/5/9/355777359h.jpg"
+                  style={{ width: "120px", height: "150px" }}
+                />
+                <div id="titleContentContainer">
+                  <div id="titleContainer">
+                    <div id="leftContentTitle">제목입니다</div>
+                  </div>
+                  <div id="leftContentAuthor">헤르만 헤세</div>
+                  <div id="leftContentpubDate">2000.2.12</div>
+                  <div id="leftContentPublisher">안녕하세요 반갑습니다</div>
+                  <div id="leftContent">반갑습니다 단녕하세요</div>
+                </div>
+              </div>
+              <div style={{ border: "0.5px solid gray", marginTop: "10px" }} />
+            </div>
           </div>
-          <div className="content3_debate_write">
-            {debate_contents}
-          </div>
+          <div className="content3_debate_write">{debate_contents}</div>
         </div>
         <button className="contetn3_right_add_button">더보기</button>
       </div>
