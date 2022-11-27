@@ -10,6 +10,8 @@ import Inquiry from "./Component/Inquiry/Inquiry.jsx";
 import Record from "./Component/Record/Record.jsx";
 import Manage from "./Component/Manage/Manage.jsx";
 import Edit from "./Component/Edit/Edit.jsx";
+import Review from "./Component/Review/Review.jsx";
+
 const styles = {
   wrapper: {
     height: "100%",
@@ -64,6 +66,7 @@ function MyPage() {
               <Route path="/discussion/records" element={<Record />}></Route>
               <Route path="/manage" element={<Manage />}></Route>
               <Route path="/edit" element={<Edit />}></Route>
+              <Route path="/review" element={<Review />}></Route>
             
             </Routes>
           </div>

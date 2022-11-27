@@ -14,8 +14,9 @@ function Sidebar() {
     { id: 2, title: "계정정보", path: "/mypage/editmember" },
     { id: 3, title: "토론관리", path: "/mypage/manage" },
     { id: 4, title: "토론수정", path: "/mypage/edit" },
-    { id: 5, title: "참여토론", path: "/mypage/discussion/records" },
-    { id: 6, title: "문의", path: "/mypage/inquiry" },
+    { id: 5, title: "토론후기", path: "/mypage/review" },
+    { id: 6, title: "참여토론", path: "/mypage/discussion/records" },
+    { id: 7, title: "문의", path: "/mypage/inquiry" },
   ];
   const pathName = useLocation().pathname;
 

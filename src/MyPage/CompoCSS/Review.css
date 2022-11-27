@@ -1,0 +1,51 @@
+.review_wrap {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    /* background-color: antiquewhite; */
+}
+.review_content_wrap {
+    height: 100%;
+    /* background-color: aqua; */
+}
+.review_content_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid rgb(186, 186, 186);
+    margin: 0px 10px;
+    /* background-color: brown; */
+}
+.review_book_type_wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    /* background-color: springgreen; */
+}
+.review_book_type {
+    height: 42rem;
+	width: 50rem;
+	padding: 10px;
+	min-width: 30rem;
+	box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 50%);
+    /* background-color: violet; */
+}
+.review_book_review_input {
+    display: flex;
+    justify-content: center;
+}
+.review_book_textarea {
+    padding: 50px 50px 10px 50px;
+    width: 60rem;
+    /* background-color: blueviolet; */
+}
+.review_book_review_input_title {
+    font-size: 1.4rem;
+}
+.review_book_btn1 {
+    display: flex;
+    justify-content: center;
+    /* background-color: bisque; */
+  
+}
